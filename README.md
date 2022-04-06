@@ -1,10 +1,10 @@
-# -                      web_project_2a21_armac               -
+#  *********** web_project_2a21_by_armac  ***************             -
 #
-#  DATA_BASE_DETAILS: 
+# I/ DATA_BASE_DETAILS: 
 #
-#  1/****Database Name = armac  ********
+#  a/****Database Name = armac  ********
 #
-#  2/Tables :
+#  b/Tables :
 #
 #  seif <<# tables "users" and "admin"
 
