@@ -2,15 +2,16 @@
 * ppt presentation and diagrams => branch : diagram_et_presentation
 * website => branch : master
 #
-# I/ DATA_BASE_DETAILS: 
+# 
+<h1> I/ DATA_BASE_DETAILS:</h1>
 #
- <h2> * Database Name  =  armac </h2>
+* <h2> 1)  Database Name  =  armac </h2>
 #
-#  b/Tables :
+* <h2> 2)  Tables : </h2>
 #
-#  seif <<# tables "users" and "admin"
+* <h3> seif <<# tables "users" and "admin" </h3>
 
-#        "users" :
+  </h4>"users" : </h4>
 
 CREATE TABLE users (
    user_id INTEGER NOT NULL
@@ -27,7 +28,7 @@ CREATE TABLE users (
 
 INSERT INTO users (name,email,password) VALUES ('a','a@a.a','aaa');
 
-#        "admin" :
+</h4> "admin" : </h4>
 
 CREATE TABLE admin (
    adminid VARCHAR(50) NOT NULL PRIMARY KEY,
@@ -36,12 +37,12 @@ CREATE TABLE admin (
 ) ENGINE=InnoDB CHARSET=utf8;
 
 INSERT INTO admin (adminid, adminpassword) VALUES ('admin','adminpassword');
-# ------------ end seif table-------------------------
+</h3>  ------------ end seif table-------------------------   </h3>
+
+</h3> Mouhamed <<# Tables "service"   </h3>
 
 
-# Mouhamed <<# Tables "service"
-
-#        "service"
+</h4>   "service" </h4>    
 
 CREATE TABLE service (
   ID int(11) NOT NULL,
@@ -52,6 +53,7 @@ CREATE TABLE service (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 
-# ---------- end Mouhamed table------------
+</h3> ------------ end mouhamed table-------------------------   </h3>
+
 
 
