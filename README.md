@@ -1,10 +1,11 @@
 # web_project_2a21_armac
+#
+#  DATA_BASE_DETAILS: 
+#  Database Name = armac
+#
+#  seif <<# tables "users" and "admin"
 
-#  DATA_BASE_details:  nommez "armac"
-
-# seif <<# tables "users" and "admin"
-
-# "users" :
+#        "users" :
 
 CREATE TABLE users (
    user_id INTEGER NOT NULL
@@ -21,7 +22,7 @@ CREATE TABLE users (
 
 INSERT INTO users (name,email,password) VALUES ('a','a@a.a','aaa');
 
-# "admin" :
+#        "admin" :
 
 CREATE TABLE admin (
    adminid VARCHAR(50) NOT NULL PRIMARY KEY,
@@ -33,7 +34,9 @@ INSERT INTO admin (adminid, adminpassword) VALUES ('admin','adminpassword');
 # ------------ end seif table-------------------------
 
 
-# Mouhamed <<# Table "service"
+# Mouhamed <<# Tables "service"
+
+#         "service"
 
 CREATE TABLE service (
   ID int(11) NOT NULL,
