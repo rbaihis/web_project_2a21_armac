@@ -16,7 +16,7 @@ CREATE TABLE users (
    INDEX(email)
 ) ENGINE=InnoDB CHARSET=utf8;
 
-INSERT INTO users (name,email,password) VALUES ('seif','seif@gmail.com','111');
+INSERT INTO users (name,email,password) VALUES ('seif','seif@gmail.com','111'); 
 INSERT INTO users (name,email,password) VALUES ('a','a@a.a','aaa');
 
 
