@@ -4,7 +4,7 @@
 #
 # I/ DATA_BASE_DETAILS: 
 #
-#  a/****Database Name = armac  ********
+* Database Name =  # armac 
 #
 #  b/Tables :
 #
