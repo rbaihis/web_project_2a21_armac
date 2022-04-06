@@ -12,7 +12,7 @@
 #
 + <h3> seif <<# tables "users" and "admin" </h3>
 
-  * </h3>"users"</h3>  
+   * <h3>"users"</h3>  
   
 
 CREATE TABLE users (
@@ -31,7 +31,7 @@ CREATE TABLE users (
 INSERT INTO users (name,email,password) VALUES ('a','a@a.a','aaa');
 
 
-  * </h3> "admin" </h3>  
+   * <h3>"admin"</h3> 
 
 
 CREATE TABLE admin (
