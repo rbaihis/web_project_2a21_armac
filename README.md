@@ -11,7 +11,7 @@
 
 + <h4> seif <<# tables "users" and "admin" </h4>
 
-   * a) <h5>"users"</h5>  
+   * <h5>a) "users" </h5>  
   
 
 CREATE TABLE users (
@@ -30,7 +30,7 @@ CREATE TABLE users (
 INSERT INTO users (name,email,password) VALUES ('a','a@a.a','aaa');
 
 
-   * b) <h5>"admin"</h5> 
+   * <h5>b) "admin" </h5> 
 
 
 CREATE TABLE admin (
@@ -48,7 +48,7 @@ INSERT INTO admin (adminid, adminpassword) VALUES ('admin','adminpassword');
 
  + <h4> Mouhamed <<# Tables "service"   </h4>
 
-   * c) <h5>"service"</h5>    
+   *<h5>c) "service"</h5>    
 
 CREATE TABLE service (
   ID int(11) NOT NULL,
