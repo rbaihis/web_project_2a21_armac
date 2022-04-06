@@ -8,8 +8,7 @@
 #
 #
 * <h2> 2)  Tables : </h2>
-#
-#
+
 + <h3> seif <<# tables "users" and "admin" </h3>
 
    * <h3>"users"</h3>  
