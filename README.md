@@ -10,7 +10,7 @@
 * <h2> 2)  Tables : </h2>
 #
 #
-* <h3> seif <<# tables "users" and "admin" </h3>
++ <h3> seif <<# tables "users" and "admin" </h3>
 
   </h3>"users"</h3>  
   
@@ -46,9 +46,9 @@ INSERT INTO admin (adminid, adminpassword) VALUES ('admin','adminpassword');
 
 #
 
-* </h3> Mouhamed <<# Tables "service"   </h3>
++ </h3> Mouhamed <<# Tables "service"   </h3>
 
-  </h3>"service"</h3>    
+   * </h3>"service"</h3>    
 
 CREATE TABLE service (
   ID int(11) NOT NULL,
