@@ -2,7 +2,7 @@
 * ppt presentation and diagrams => branch : diagram_et_presentation
 * website => branch : master
 #
-<h1> I/ DATA_BASE_DETAILS:</h1>
+<h2> I/ DATA_BASE_DETAILS:</h2>
 
 * <h2> 1)  Database Name  =  "armac"  </h2>
 #
