@@ -1,6 +1,6 @@
 # web_project_2a21_armac
 
-#seif <<# nommez la base de données "armac" s'il vous plaît
+#  DATA_BASE_details:  nommez la base de données "armac" s'il vous plaît
 
 #seif <<# table basic "users" and "admin"
 
