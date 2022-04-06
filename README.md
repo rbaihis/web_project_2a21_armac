@@ -1,7 +1,8 @@
 # web_project_2a21_armac
 
-#seif
-#base de donner et table basic "users" and "admin"
+#seif <<# nommez la base de données "armac" s'il vous plaît
+
+#seif <<# table basic "users" and "admin"
 
 CREATE TABLE users (
    user_id INTEGER NOT NULL
@@ -27,4 +28,4 @@ CREATE TABLE admin (
 
 INSERT INTO admin (adminid, adminpassword) VALUES ('admin','adminpassword');
 
-#end seif table
+#seif<<# end seif table.
