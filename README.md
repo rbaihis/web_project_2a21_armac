@@ -7,10 +7,11 @@
 * <h2> 1)  Database Name  = </h2>  <h1> armac </h1> 
 
 * <h2> 2)  Tables : </h2>
-
+#
+#
 * <h3> seif <<# tables "users" and "admin" </h3>
 
-  </h4>"users" : </h4>
+  </h3>"users" : </h3>
 
 CREATE TABLE users (
    user_id INTEGER NOT NULL
@@ -37,10 +38,11 @@ CREATE TABLE admin (
 
 INSERT INTO admin (adminid, adminpassword) VALUES ('admin','adminpassword');
 </h3>  ------------ end seif table-------------------------   </h3>
-
+#
+#
 * </h3> Mouhamed <<# Tables "service"   </h3>
 
-</h3>-          "service"        -</h3>    
+</h3>"service"</h3>    
 
 CREATE TABLE service (
   ID int(11) NOT NULL,
@@ -52,6 +54,8 @@ CREATE TABLE service (
 
 
 </h3> ------------ end mouhamed table-------------------------   </h3>
+#
+#
 
 
 
