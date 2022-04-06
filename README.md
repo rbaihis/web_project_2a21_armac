@@ -32,7 +32,6 @@ INSERT INTO admin (adminid, adminpassword) VALUES ('admin','adminpassword');
 
 
 <<<Table service Mouhamed >>>
-
 CREATE TABLE `service` (
   `ID` int(11) NOT NULL,
   `TYPE` varchar(10) NOT NULL,
