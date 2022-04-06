@@ -39,8 +39,10 @@ CREATE TABLE admin (
 
 INSERT INTO admin (adminid, adminpassword) VALUES ('admin','adminpassword');
 </h3>  ------------ end seif table-------------------------   </h3>
+
+
 #
-#
+
 * </h3> Mouhamed <<# Tables "service"   </h3>
 
 </h3>"service"</h3>    
@@ -55,7 +57,6 @@ CREATE TABLE service (
 
 
 </h3> ------------ end mouhamed table-------------------------   </h3>
-#
 #
 
 
