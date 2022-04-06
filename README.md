@@ -1,4 +1,6 @@
 #  *********** web_project_2a21_by_armac  ***************             -
+* ppt presentation and diagrams => branch : diagram_et_presentation
+* website => branch : master
 #
 # I/ DATA_BASE_DETAILS: 
 #
