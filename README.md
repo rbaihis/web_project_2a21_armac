@@ -4,14 +4,14 @@
 #
 <h2> I/ DATA_BASE_DETAILS:</h2>
 
-* <h2> 1)  Database Name  =  "armac"  </h2>
+* <h3> 1)  Database Name  =  "armac"  </h3>
 #
 #
-* <h2> 2)  Tables : </h2>
+* <h3> 2)  Tables : </h3>
 
-+ <h3> seif <<# tables "users" and "admin" </h3>
++ <h4> seif <<# tables "users" and "admin" </h4>
 
-   * <h3>"users"</h3>  
+   * <h5>"users"</h5>  
   
 
 CREATE TABLE users (
@@ -30,7 +30,7 @@ CREATE TABLE users (
 INSERT INTO users (name,email,password) VALUES ('a','a@a.a','aaa');
 
 
-   * <h3>"admin"</h3> 
+   * <h5>"admin"</h5> 
 
 
 CREATE TABLE admin (
@@ -41,14 +41,14 @@ CREATE TABLE admin (
 
 INSERT INTO admin (adminid, adminpassword) VALUES ('admin','adminpassword'); 
 
-<h3>  ------------ end seif table-------------------------   </h3>
+<h4>  ------------ end seif table-------------------------   </h4>
 
 
 #
 
- + <h3> Mouhamed <<# Tables "service"   </h3>
+ + <h4> Mouhamed <<# Tables "service"   </h4>
 
-   * </h3>"service"</h3>    
+   * <h5>"service"</h5>    
 
 CREATE TABLE service (
   ID int(11) NOT NULL,
@@ -59,7 +59,7 @@ CREATE TABLE service (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 #
-<h3> ------------ end mouhamed table-------------------------</h3>  
+<h4> ------------ end mouhamed table-------------------------</h4>  
 
 #
 
