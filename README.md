@@ -12,7 +12,8 @@
 #
 * <h3> seif <<# tables "users" and "admin" </h3>
 
-  </h3>"users" : </h3>
+  </h3>"users"</h3>  
+  
 
 CREATE TABLE users (
    user_id INTEGER NOT NULL
@@ -29,7 +30,8 @@ CREATE TABLE users (
 
 INSERT INTO users (name,email,password) VALUES ('a','a@a.a','aaa');
 
-</h3> "admin" : </h3>
+</h3> "admin" </h3>  
+
 
 CREATE TABLE admin (
    adminid VARCHAR(50) NOT NULL PRIMARY KEY,
@@ -37,7 +39,8 @@ CREATE TABLE admin (
    INDEX(adminid)
 ) ENGINE=InnoDB CHARSET=utf8;
 
-INSERT INTO admin (adminid, adminpassword) VALUES ('admin','adminpassword');
+INSERT INTO admin (adminid, adminpassword) VALUES ('admin','adminpassword'); 
+
 </h3>  ------------ end seif table-------------------------   </h3>
 
 
@@ -45,7 +48,7 @@ INSERT INTO admin (adminid, adminpassword) VALUES ('admin','adminpassword');
 
 * </h3> Mouhamed <<# Tables "service"   </h3>
 
-</h3>"service"</h3>    
+  </h3>"service"</h3>    
 
 CREATE TABLE service (
   ID int(11) NOT NULL,
