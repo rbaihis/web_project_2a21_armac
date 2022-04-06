@@ -4,8 +4,9 @@
 #
 <h1> I/ DATA_BASE_DETAILS:</h1>
 
-* <h2> 1)  Database Name  = </h2><h1> armac </h1> 
-
+* <h2> 1)  Database Name  =  "armac"  </h2>
+#
+#
 * <h2> 2)  Tables : </h2>
 #
 #
