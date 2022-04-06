@@ -29,9 +29,11 @@ CREATE TABLE admin (
 INSERT INTO admin (adminid, adminpassword) VALUES ('admin','adminpassword');
 
 #seif<<# end seif table.
+# ------------ end seif table-------------------------
 
 
-<<<Table service Mouhamed >>>
+#Mouhamed <<# tTable service
+
 CREATE TABLE `service` (
   `ID` int(11) NOT NULL,
   `TYPE` varchar(10) NOT NULL,
@@ -40,5 +42,6 @@ CREATE TABLE `service` (
   `DESCRIPTION` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
-<<<--------------------->>>
+#Mouhamed<<# end mouhamed table.
+#<<<------# ------------ end Mouhamed table----------------------------->>>
 
