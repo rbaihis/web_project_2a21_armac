@@ -1,8 +1,10 @@
 # web_project_2a21_armac
 
-#  DATA_BASE_details:  nommez la base de données "armac" s'il vous plaît
+#  DATA_BASE_details:  nommez "armac"
 
-#seif <<# table basic "users" and "admin"
+# seif <<# tables "users" and "admin"
+
+# "users" :
 
 CREATE TABLE users (
    user_id INTEGER NOT NULL
@@ -19,6 +21,7 @@ CREATE TABLE users (
 
 INSERT INTO users (name,email,password) VALUES ('a','a@a.a','aaa');
 
+# "admin" :
 
 CREATE TABLE admin (
    adminid VARCHAR(50) NOT NULL PRIMARY KEY,
@@ -27,12 +30,10 @@ CREATE TABLE admin (
 ) ENGINE=InnoDB CHARSET=utf8;
 
 INSERT INTO admin (adminid, adminpassword) VALUES ('admin','adminpassword');
-
-#seif<<# end seif table.
 # ------------ end seif table-------------------------
 
 
-#Mouhamed <<# tTable service
+# Mouhamed <<# Table "service"
 
 CREATE TABLE `service` (
   `ID` int(11) NOT NULL,
@@ -43,5 +44,5 @@ CREATE TABLE `service` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 #Mouhamed<<# end mouhamed table.
-#<<<------# ------------ end Mouhamed table----------------------------->>>
+# ---------- end Mouhamed table------------
 
