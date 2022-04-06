@@ -4,7 +4,7 @@
 #
 # I/ DATA_BASE_DETAILS: 
 #
-* Database <h2> Name  =  armac </h2>
+ <h2> * Database Name  =  armac </h2>
 #
 #  b/Tables :
 #
