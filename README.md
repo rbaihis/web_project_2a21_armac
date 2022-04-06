@@ -29,3 +29,15 @@ CREATE TABLE admin (
 INSERT INTO admin (adminid, adminpassword) VALUES ('admin','adminpassword');
 
 #seif<<# end seif table.
+
+
+//////////////////////Table service Mouhamed ////////////////////////
+CREATE TABLE `service` (
+  `ID` int(11) NOT NULL,
+  `TYPE` varchar(10) NOT NULL,
+  `NOM` varchar(10) NOT NULL,
+  `PRIX` float NOT NULL,
+  `DESCRIPTION` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+/////////////////////////////////////////////////////////////////////
+
