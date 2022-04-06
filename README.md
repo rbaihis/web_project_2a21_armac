@@ -36,7 +36,7 @@ INSERT INTO admin (adminid, adminpassword) VALUES ('admin','adminpassword');
 
 # Mouhamed <<# Tables "service"
 
-#         "service"
+# #        "service"
 
 CREATE TABLE service (
   ID int(11) NOT NULL,
@@ -46,6 +46,6 @@ CREATE TABLE service (
   DESCRIPTION varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
-#Mouhamed<<# end mouhamed table.
+
 # ---------- end Mouhamed table------------
 
