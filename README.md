@@ -2,13 +2,12 @@
 * ppt presentation and diagrams => branch : diagram_et_presentation
 * website => branch : master
 #
-# 
 <h1> I/ DATA_BASE_DETAILS:</h1>
-#
+
 * <h2> 1)  Database Name  =  armac </h2>
-#
+
 * <h2> 2)  Tables : </h2>
-#
+
 * <h3> seif <<# tables "users" and "admin" </h3>
 
   </h4>"users" : </h4>
