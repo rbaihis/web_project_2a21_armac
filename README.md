@@ -1,7 +1,10 @@
-# web_project_2a21_armac
+# -                      web_project_2a21_armac               -
 #
 #  DATA_BASE_DETAILS: 
-#  Database Name = armac
+#
+#  1/****Database Name = armac  ********
+#
+#  2/Tables :
 #
 #  seif <<# tables "users" and "admin"
 
@@ -36,7 +39,7 @@ INSERT INTO admin (adminid, adminpassword) VALUES ('admin','adminpassword');
 
 # Mouhamed <<# Tables "service"
 
-# #        "service"
+#        "service"
 
 CREATE TABLE service (
   ID int(11) NOT NULL,
@@ -48,4 +51,5 @@ CREATE TABLE service (
 
 
 # ---------- end Mouhamed table------------
+
 
