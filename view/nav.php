@@ -9,8 +9,16 @@
 <div class="loader-section section-right"></div>
 </div>
 
+   <!-- ==== LOGIN & register seif ===== -->
+
+<div class="fixedcallicon">
+<i class="fa fa-text"><a href="../view/login.php"><h3 style=" font-size: 20px;  margin: 15px 0px 0px 2px; "> <b> LogIn </b> </h3></a></i>
+ <span class="hide"> <a href="../view/register.php" style=" font-size: 20px;  margin: 15px 0px 0px 2px; ">  <b> Register </b> </a></span>
+</div>
+    <!-- ========================== -->
 
 <div class="menu-outer">
+ 
     <div class="menu-icon">
         <div class="bar"></div>
         <div class="bar"></div>
@@ -19,10 +27,8 @@
     <nav>
         <ul>
 <!-- ==========   add links here "also add the same on navloggedin.php"  ========== -->
-           <li><a href="homepage.php">Home</a></li>
-           <li><a href="login.php">Login</a></li>
-           <li><a href="register.php">register</a></li>
-           <li><a href="blog.php">Offre et promo</a></li>
+           <li><a href="../view/homepage.php">Home</a></li>
+           <li><a href="../view/blog.php">Offre et promo</a></li>
 <!-- ============================================================================= -->
         </ul>
    </nav>
@@ -34,9 +40,7 @@
     </div>
 </a>
 
-<div class="fixedcallicon">
-	<i class="fa fa-phone"></i><span class="hide">Réserver - 00 123 000</span>
-</div>
+
 
 <!-- --------------------------------------------------------------------------------------------------------- -->
 

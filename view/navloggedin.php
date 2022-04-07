@@ -9,6 +9,18 @@
 <div class="loader-section section-right"></div>
 </div>
 
+   <!-- ==== LOGOUT seif ===== -->
+
+<div class="fixedcalliconlogout">
+    <i class="fa fa-text"  style="color:rgba(255, 255, 255, 0.62)"> 
+        <a  href="../controller/logout.php"> 
+            <h3 style=" font-size: 18px;  margin: 15px 0px 0px 2px; ">
+             <b>LogOut</b> 
+            </h3>
+        </a>
+    </i>
+</div>
+    <!-- ========================== -->
 
 <div class="menu-outer">
     <div class="menu-icon">
@@ -33,9 +45,6 @@
     </div>
 </a>
 
-<div class="fixedcallicon">
-	<i class="fa fa-phone"></i><span class="hide">Réserver - 00 123 000</span>
-</div>
 
 <!-- --------------------------------------------------------------------------------------------------------- -->
 
