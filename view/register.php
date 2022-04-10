@@ -1,18 +1,22 @@
-<?php
-// add this to every page you create
-// -------------------------------------
-session_start();
- require "header.php";
 
- if( isset($_SESSION['account']) ) 
+<?php
+session_start();
+
+
+ if( isset($_SESSION['account'])  ) 
 {
-	header("Location:  homepage.php"); 
+	header("Location: ../view/homepage.php"); 
 } else{
+	require("../controller/usercontroller.php");
+    $user =new UserC();
+	$user->createController();
+
+	require("header.php");
 	require "nav.php"; 
 }
-// copy the last line as well " require "footer.php"; (e5er star )
-// -------------------------------------
+
 ?>
+
 
 
 <div class="page-wrapper bg-gra-02 p-t-130 p-b-100 font-poppins">
@@ -20,43 +24,41 @@ session_start();
         <div class="card card-4">
             <div class="card-body">
                 <h2 class="title">Registration Form</h2>
+<?php
+
+if( isset($_SESSION['errormsg']) && ! isset($_POST['name'])  ) 
+{
+    echo('<p class="label"  style="color:red;">'."*".$_SESSION['errormsg']."</p>\n"); 
+    unset($_SESSION['errormsg']);
+}else if (!isset($_SESSION['errormsg']) && ! isset($_POST['name'])){ 
+	 //to initialise input field in error 
+	$_SESSION['inputsTab'] =["","","","",""];  
+ }
+
+
+?>
                 <form method="POST">
                     <div class="row row-space">
                         <div class="col-2">
                             <div class="input-group">
-                                <label class="label">first name</label>
-                                <input class="input--style-4" type="text" name="first_name">
+                                <label class="label">Full name</label>
+                                <input class="input--style-4" type="text" name="name" value="<?=  htmlentities( $_SESSION['inputsTab'][0] ) ?>">
                             </div>
                         </div>
                         <div class="col-2">
                             <div class="input-group">
-                                <label class="label">last name</label>
-                                    <input class="input--style-4" type="text" name="last_name">
+                                <label class="label">Address</label>
+                                    <input class="input--style-4" type="text" name="address" value="<?=  htmlentities( $_SESSION['inputsTab'][1] ) ?>">
                                 </div>
                             </div>
                         </div>
                         <div class="row row-space">
                             <div class="col-2">
                                 <div class="input-group">
-                                    <label class="label">Birthday</label>
+                                    <label class="label">Postalcode</label>
                                     <div class="input-group-icon">
-                                        <input class="input--style-4 js-datepicker" type="text" name="birthday">
+                                        <input class="input--style-4 js-datepicker" type="text" name="postalcode" value="<?=  htmlentities( $_SESSION['inputsTab'][2] ) ?>">
                                         <i class="zmdi zmdi-calendar-note input-icon js-btn-calendar"></i>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-2">
-                                <div class="input-group">
-                                    <label class="label">Gender</label>
-                                    <div class="p-t-10">
-                                        <label class="radio-container m-r-45">Male
-                                            <input type="radio" checked="checked" name="gender">
-                                            <span class="checkmark"></span>
-                                        </label>
-                                        <label class="radio-container">Female
-                                            <input type="radio" name="gender">
-                                            <span class="checkmark"></span>
-                                        </label>
                                     </div>
                                 </div>
                             </div>
@@ -65,13 +67,13 @@ session_start();
                             <div class="col-2">
                                 <div class="input-group">
                                     <label class="label">Email</label>
-                                    <input class="input--style-4" type="email" name="email">
+                                    <input class="input--style-4" type="email" name="email" value="<?=  htmlentities( $_SESSION['inputsTab'][3] ) ?>">
                                 </div>
                             </div>
                             <div class="col-2">
                                 <div class="input-group">
-                                    <label class="label">Phone Number</label>
-                                    <input class="input--style-4" type="text" name="phone">
+                                    <label class="label">Password</label>
+                                    <input class="input--style-4" type="password" name="password"  value="<?=  htmlentities( $_SESSION['inputsTab'][4] ) ?>">
                                 </div>
                             </div>
                         </div>
