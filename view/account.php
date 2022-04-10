@@ -66,11 +66,11 @@ if( isset($_SESSION['successmsg']) &&  ! isset($_POST['password'])   )
     unset($_SESSION['successmsg']);
 }
 
-if( isset($_SESSION['errormsg']) && ! isset($_POST['update'])  ) 
-{
-    echo('<p class="label"  style="color:red;">'."*".$_SESSION['errormsg']."</p>\n"); 
-    unset($_SESSION['errormsg']);
-}
+// if( isset($_SESSION['errormsg']) && ! isset($_POST['update'])  ) 
+// {
+//     echo('<p class="label"  style="color:red;">'."*".$_SESSION['errormsg']."</p>\n"); 
+//     unset($_SESSION['errormsg']);
+// }
 
 
 ?>
