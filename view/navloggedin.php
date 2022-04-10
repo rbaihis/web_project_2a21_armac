@@ -13,7 +13,7 @@
 
 <div class="fixedcalliconlogout">
     <i class="fa fa-text"  style="color:rgba(255, 255, 255, 0.62)"> 
-        <a  href="../controller/logout.php"> 
+        <a  href="../view/logout.php">
             <h3 style=" font-size: 18px;  margin: 15px 0px 0px 2px; ">
              <b>LogOut</b> 
             </h3>
@@ -34,6 +34,7 @@
            <li><a href="homepage.php">Home</a></li>
            <li><a href="account.php">account</a></li>
            <li><a href="blog.php">Offre et promo</a></li>
+           <li><a href="debugsession.php">Debug seif</a></li>
 <!-- =============================================================================== -->
         </ul>
    </nav>

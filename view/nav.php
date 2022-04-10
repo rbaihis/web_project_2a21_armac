@@ -29,6 +29,7 @@
 <!-- ==========   add links here "also add the same on navloggedin.php"  ========== -->
            <li><a href="../view/homepage.php">Home</a></li>
            <li><a href="../view/blog.php">Offre et promo</a></li>
+           <li><a href="debugsession.php">Debug seif</a></li>
 <!-- ============================================================================= -->
         </ul>
    </nav>
