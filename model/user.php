@@ -1,8 +1,6 @@
 <?php
 require "../model/sanitize.php";
-if(session_status() !== PHP_SESSION_ACTIVE) {
-       session_start();
-   }
+
 
 class UserModel extends Sanitize{
        public $user_id;
