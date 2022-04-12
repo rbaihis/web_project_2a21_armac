@@ -15,7 +15,7 @@ class UserC{
             session_start();
         }
 
-        require_once "../dbconfig.php";
+        require_once "../../dbconfig.php";
         
         
         if ( isset($_POST['account']) && isset($_POST['pw'])  )
@@ -108,7 +108,7 @@ function createController(){
             
         }else{
             // call database config file
-            require_once "../dbconfig.php";
+            require_once "../../dbconfig.php";
 
             // statment if string (error returned) else => pdo->prepare() is  returned .
             $statment = UserModel::verifyCreateForm( $_POST['name'], $_POST['address'], $_POST['postalcode'], $_POST['email'], $_POST['password'] ,50,50,8,70,70 );
@@ -206,7 +206,7 @@ function updateController(){
             if( $_SESSION['userdatatab']['password'] === $pwd ) {
 
                 // call database config file
-                require_once "../dbconfig.php";
+                require_once "../../dbconfig.php";
                 
                 // statment if string (error returned) else => pdo->prepare() is  returned .
                 $statment = UserModel::verifyUpdateForm( $_POST['name'], $_POST['address'], $_POST['postalcode'], $_POST['email'], $_POST['password'] ,50,50,8,70,70 );
@@ -276,7 +276,7 @@ function updateController(){
                     $pw=UserModel::sanitizeinput($_POST['password']);
                     if( $_SESSION['userdatatab']['password'] === $pw )
                     {
-                        require("../dbconfig.php");
+                        require("../../dbconfig.php");
                         $statment=UserModel:: deletefromDb();
                         
                         if( is_object($statment) && ($statment->rowCount() > 0) ){

@@ -1,5 +1,6 @@
 <?php
-require "../model/sanitize.php";
+require "sanitize.php";
+
 
 
 class UserModel extends Sanitize{

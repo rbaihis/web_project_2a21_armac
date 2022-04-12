@@ -4,7 +4,7 @@ session_start();
 
  if( isset($_SESSION['admin_on'])  ) 
 {
-	header("Location: ../view_back/accounts.php"); 
+	header("Location: ../../back/view_back/accounts.php"); 
 } else{
 	require("../controller_back/admincontroller.php");
 
@@ -13,8 +13,8 @@ session_start();
 	if( isset($_POST['admin_id']) )
 	$adminC->login( $_POST['admin_id'] , $_POST['admin_password'] );
 
-	include "../view/header.php" ;
-	include "../view/nav.php" ;
+	include "../../front/view/header.php" ;
+	
 	
 }
 
@@ -97,7 +97,7 @@ if( isset($_SESSION['aderror']) && ! isset($_POST['admin_id'])  )
 <?php 
 
 
-require "../view/footer.php"
+require "../../front/view/footer.php";
 //require "../view_back/Footer.php"
 
 

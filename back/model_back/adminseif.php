@@ -1,6 +1,6 @@
 <?php
-require "../model/user.php";
-require "../dbconfig.php";
+require "../../front/model/user.php";
+require "../../dbconfig.php";
 
 class Admin extends UserModel {
        public $admin_id;
