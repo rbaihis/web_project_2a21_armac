@@ -1,48 +1,31 @@
 <?php
-	  include_once "../controller/produitC.php";
- 
-      
-	
-	$error = "";
+   
+    include_once '../../controller/categorie_c.php';
+    include_once '../../model/categorie.php';
 
-    $produitC = new produitC(); 
-    $produit1C = new produitC();
-	$listeCategorie= $produit1C->listeCategorie();
-    $produit2C = new produitC();
+        $error = "";
+  
+      $categorie = null;
 
-	
-	if (
-        isset($_POST['libelle']) 
-        && isset($_POST['nb_calories']) 
-        && isset($_POST['prix']) 
-        && isset($_POST['description'])
-         && isset($_POST['categorie'])
-         && isset($_POST['img'])
-	){
-		if (
-            !empty($_POST['libelle']) &&
-            !empty($_POST['nb_calories']) &&
-            !empty($_POST['prix']) &&
-            !empty($_POST['description']) &&
-            !empty($_POST['categorie']) &&
-            !empty($_POST['img'])
+    $categorieC = new categorieC();
+    if ( 
+        isset($_POST["nomCategorie"]) 
         ) {
-            $produit = new produit(
-                $_POST['libelle'],
-                $_POST['nb_calories'], 
-                $_POST['prix'],
-                $_POST['description'],
-                $_POST['categorie'],
-                $_POST['img']
+        if (
+            !empty($_POST["nomCategorie"])    
+        ) {
+            $categorie= new categorie(
+                $_POST['nomCategorie'] 
+            
             );
-			
-            $produitC->modifierProduit($produit, $_GET['id']);
-            header('Location:afficherproduit.php');
+            $categorieC->ajouterCategorie($categorie);
+            header('Location:affichercategorie.php');
         }
         else
             $error = "Missing information";
-	}
+    }
 
+    
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -51,9 +34,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Add Product</title>
+    <title>Add Product - Dashboard Admin Template</title>
+    <!--
 
+    Template 2108 Dashboard
 
+	http://www.tooplate.com/view/2108-dashboard
+
+    -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600">
     <!-- https://fonts.google.com/specimen/Open+Sans -->
     <link rel="stylesheet" href="css/fontawesome.min.css">
@@ -74,7 +62,8 @@
                         <i class="fas fa-3x fa-tachometer-alt tm-site-icon"></i>
                         <h1 class="tm-site-title mb-0">Bioté center</h1>
                     </a>
-                    <button class="navbar-toggler ml-auto mr-0" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <button class="navbar-toggler ml-auto mr-0" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
 
@@ -86,7 +75,8 @@
                                 </a>
                             </li>
                             <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="index.html" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <a class="nav-link dropdown-toggle" href="index.html" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+                                    aria-expanded="false">
                                     Reports
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -95,15 +85,16 @@
                                     <a class="dropdown-item" href="index.html">Yearly Report</a>
                                 </div>
                             </li>
-                            <li class="nav-item">
+                            <li class="nav-item active">
                                 <a class="nav-link" href="affichercategorie.php">categorie</a>
                             </li>
 
-                            <li class="nav-item active">
-                                <a class="nav-link" href="afficherproduit.php">Produits</a>
+                            <li class="nav-item">
+                                <a class="nav-link" href="accounts.html">Accounts</a>
                             </li>
                             <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+                                    aria-expanded="false">
                                     Settings
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -131,52 +122,39 @@
                 <div class="bg-white tm-block">
                     <div class="row">
                         <div class="col-12">
-                            <h2 class="tm-block-title d-inline-block">Modifier produit</h2>
+                            <h2 class="tm-block-title d-inline-block">Add categorie</h2>
                         </div>
                     </div>
                     <div class="details">
-                        <div class="recentorders">
-                            <div class="cardheader">
-                                <h2>Modifier produit</h2>
-
+                    <div class="recentorders">
+                        <div class="cardheader">
+                            <h2>Ajouter Catégorie</h2>
+                            
                             </div>
+        
+        <form action="" method="POST">
 
-                            <form action="" method="POST">
-                                <div>
-                                    <label for="libelle">Nom du produit:
-                                    </label>
-                                    <input type="text" name="libelle" id="libelle" maxlength="20">
-                                </div>
-                                <div>
-                                    <label for="nb_calories">Nombre de calories:
-                                    </label>
-                                    <input type="text" name="nb_calories" id="nb_calories">
-                                </div>
-                                <div>
-                                    <label for="prix">Prix:
-                                    </label>
-                                    <input type="text" name="prix" id="prix">
-                                </div>
-                                <div>
-                                    <label for="description">Description:
-                                    </label>
-                                    <input type="text" name="description" id="description">
-                                </div>
-                                <div>
-                                    <label for="categorie">Categorie:
-                                    </label>
-                                    <input type="text" name="categorie" id="categorie">
-                                </div>
-                                <div>
-                                    <label for="img">image:
-                                    </label>
-                                    <input type="file" name="img" id="img">
-                                </div>
-                                <input type="submit" class="btn" value="Envoyer">
-                                <input type="reset" class="btn" value="Annuler">
-                            </form>
-                            <button class="btn"><a href="afficherproduit.php">Retour à la liste des catégories</a></button>
-                        </div>
+           
+                
+                <tr>
+                    <td>
+                        <label for="nomCategorie">Nom du catégorie:
+                        </label>
+                    </td>
+                    <td><input type="text" name="nomCategorie" id="nomCategorie" maxlength="20"></td>
+                </tr>
+                
+                
+                    <tr>
+                    <td>
+                    <input type="submit" class="btn" value="Envoyer">
+                        <input type="reset"  class="btn" value="Annuler" >
+                        </td>
+                </tr>
+            </table>
+        </form>
+                        <button class="btn"><a href="affichercategorie.php">Retour à la liste des catégories</a></button>
+</div>
                     </div>
                 </div>
             </div>
@@ -198,17 +176,10 @@
     <script src="js/bootstrap.min.js"></script>
     <!-- https://getbootstrap.com/ -->
     <script>
-        $(function() {
+        $(function () {
             $('#expire_date').datepicker();
         });
     </script>
 </body>
 
 </html>
-
-
-
-
-
-
-

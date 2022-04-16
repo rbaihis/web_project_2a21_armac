@@ -1,5 +1,5 @@
 <?php
-include '../controller/produitC.php';
+include '../../controller/produitC.php';
 $ProduitC = new produitC();
 $listep = $ProduitC->afficherproduit();
 ?>

@@ -1,7 +1,7 @@
 <?PHP
 
-include "../controller/produitC.php";
-include "../controller/categorie_c.php";
+include "../../controller/produitC.php";
+include "../../controller/categorie_c.php";
 
 
 $produitC = new produitC();

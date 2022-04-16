@@ -1,6 +1,6 @@
 <?php
-require_once "../config.php";
-include "../model/produit.php"; 
+require_once "../../config.php";
+include "../../Model/produit.php"; 
 
  class produitC{
 
@@ -64,46 +64,82 @@ include "../model/produit.php";
 				die('Erreur: '.$e->getMessage());
 			}
 		}
-    function modifierProduit($produit, $id){
+		function modifierProduit($produit, $id){
 			try {
+
+				$query=null;
 				$db = config::getConnexion();
-				$query = $db->prepare(
-					'UPDATE produit SET 
-						libelle = :libelle, 
-						nb_calories = :nb_calories,
-						prix = :prix,
-						description = :description,
-						categorie = :categorie,
-						img = :img
-					WHERE id = :id'
-				);
-				$query->execute([
-					'libelle' => $produit->getLibelle(),
-					'nb_calories' => $produit->getNb_calories(),
-					'prix' => $produit->getprix(),
-						 'description' => $produit->getDescription(),
-					'categorie' => $produit->getCategorie(),
-				    'id' => $id  , 
-					'img' => $produit->getImg()
-					 ]);
+
+
+				if($produit->getImg()==null)
+				{
+					$query = $db->prepare(
+						'UPDATE produit SET 
+							libelle = :libelle, 
+							nb_calories = :nb_calories,
+							prix = :prix,
+							description = :description,
+							categorie = :categorie
+							
+						WHERE id = :id'
+					);
+
+					$query->execute([
+						'libelle' => $produit->getLibelle(),
+						'nb_calories' => $produit->getNb_calories(),
+						'prix' => $produit->getprix(),
+							 'description' => $produit->getDescription(),
+						'categorie' => $produit->getCategorie(),
+						'id' => $id  
+						
+						 ]);
+
+				}
+				else {
+
+
+					$query = $db->prepare(
+						'UPDATE produit SET 
+							libelle = :libelle, 
+							nb_calories = :nb_calories,
+							prix = :prix,
+							description = :description,
+							categorie = :categorie,
+							img = :img
+						WHERE id = :id'
+					);
+					$query->execute([
+						'libelle' => $produit->getLibelle(),
+						'nb_calories' => $produit->getNb_calories(),
+						'prix' => $produit->getprix(),
+							 'description' => $produit->getDescription(),
+						'categorie' => $produit->getCategorie(),
+						'id' => $id  , 
+						'img' => $produit->getImg()
+						 ]);
+
+				}
+				
+				
+				
 
 				echo $query->rowCount() . " records UPDATED successfully <br>";
+
 			} catch (PDOException $e) {
 				$e->getMessage();
 			}
 		}
-		function recupererProduit($id){
-			$sql="SELECT * from produit where	id=$id";
-			$db = config::getConnexion();
-			try{
-				$query=$db->prepare($sql);
-				$query->execute();
+		
 
-				$produit=$query->fetch();
-				return $produit;
-			}
-			catch (Exception $e){
-				die('Erreur: '.$e->getMessage());
+		function recupererProduit($id)
+		{
+			$sql = "SELECT * from  produit where id=$id";
+			$db = config::getConnexion();
+			try {
+				$liste = $db->query($sql);
+				return $liste;
+			} catch (Exception $e) {
+				die('Erreur: ' . $e->getMessage());
 			}
 		}
 

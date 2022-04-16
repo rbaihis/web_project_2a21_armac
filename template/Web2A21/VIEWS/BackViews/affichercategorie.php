@@ -1,5 +1,5 @@
 <?php
-include '../controller/categorie_c.php';
+include '../../controller/categorie_c.php';
 $categorieC = new categorieC();
 $listec = $categorieC->afficherCategorie();
 ?>

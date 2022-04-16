@@ -1,7 +1,7 @@
 <?PHP
 
-include "../controller/produitC.php";
-include "../controller/categorie_c.php";
+include "../../controller/produitC.php";
+include "../../controller/categorie_c.php";
 
 
 $produitC = new produitC();
@@ -9,7 +9,7 @@ $listeProduit = $produitC->afficherProduit();
 $categorieC = new categorieC();
 $listeCategorie = $categorieC->afficherCategorie();
 $categorieC = new categorieC();
-// $localC = new localC();
+
 // $listeLocal = $localC->afficherLocal();
 ?>
 

@@ -1,32 +1,30 @@
 <?php
-   
-    include_once '../controller/categorie_c.php';
-    include_once '../model/categorie.php';
+       include_once '../../controller/categorie_c.php';
+       include_once '../../model/categorie.php';
 
         $error = "";
-  
-      $categorie = null;
-
+    
+     $categorie = null;
+$id=$_GET['idCategorie'];
     $categorieC = new categorieC();
-    if ( 
+    if (
         isset($_POST["nomCategorie"]) 
-        ) {
+    ) {
         if (
-            !empty($_POST["nomCategorie"])    
+            !empty($_POST["nomCategorie"])  
         ) {
-            $categorie= new categorie(
-                $_POST['nomCategorie'] 
+            $categorie = new categorie(
+                $_POST["nomCategorie"]
             
             );
-            $categorieC->ajouterCategorie($categorie);
+            $categorieC->modifierCategorie($categorie,$id);
             header('Location:affichercategorie.php');
         }
         else
             $error = "Missing information";
     }
-
-    
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -122,37 +120,56 @@
                 <div class="bg-white tm-block">
                     <div class="row">
                         <div class="col-12">
-                            <h2 class="tm-block-title d-inline-block">Add categorie</h2>
+                            <h2 class="tm-block-title d-inline-block">modifierCategorie </h2>
                         </div>
                     </div>
-                    <div class="details">
-                    <div class="recentorders">
-                        <div class="cardheader">
-                            <h2>Ajouter Catégorie</h2>
-                            
-                            </div>
-        
-        <form action="" method="POST">
-
-           
+                    
+    
+         
+       <div class="details">
+             <div class="recentorders">
+                 <div class="cardheader">
+                     
+                     
+                      </div>
                 
+                
+<div id="error">
+            <?php echo $error; ?>
+ </div>
+            <?php
+            if (isset($_GET['idCategorie'])){
+                $categorie = $categorieC->recuperercategorie($_GET['idCategorie']);
+                    
+            ?>
+
+            <form action="" method="POST">
+            
+           <hr>    	
+           
                 <tr>
                     <td>
                         <label for="nomCategorie">Nom du catégorie:
                         </label>
                     </td>
-                    <td><input type="text" name="nomCategorie" id="nomCategorie" maxlength="20"></td>
+                    <td><input type="text" name="nomCategorie" id="nomCategorie" value="<?php echo $categorie['nomCategorie']; ?>" maxlength="20"></td>
                 </tr>
-                
-                
-                    <tr>
+
+                  <tr>
                     <td>
                     <input type="submit" class="btn" value="Envoyer">
                         <input type="reset"  class="btn" value="Annuler" >
                         </td>
                 </tr>
+
             </table>
         </form>
+       <?php
+        }
+       ?>
+   </tbody>
+    </table>
+</div>
                         <button class="btn"><a href="affichercategorie.php">Retour à la liste des catégories</a></button>
 </div>
                     </div>

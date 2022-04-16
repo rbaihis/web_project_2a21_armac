@@ -1,8 +1,9 @@
 <?php
-
-include_once '../controller/produitC.php';
-include_once '../model/produit.php';
-
+include '../../controller/categorie_c.php';
+include_once '../../controller/produitC.php';
+include_once '../../model/produit.php';
+$categorieC = new categorieC();
+$listec = $categorieC->afficherCategorie();
 $error = "";
 
 $produit = null;
@@ -37,7 +38,7 @@ if (
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Add Product</title>
+    <title>Ajouter Produit</title>
 
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600">
@@ -55,60 +56,8 @@ if (
     <div class="container">
         <div class="row">
             <div class="col-12">
-                <nav class="navbar navbar-expand-xl navbar-light bg-light">
-                    <a class="navbar-brand" href="index.html">
-                        <i class="fas fa-3x fa-tachometer-alt tm-site-icon"></i>
-                        <h1 class="tm-site-title mb-0">Bioté center</h1>
-                    </a>
-                    <button class="navbar-toggler ml-auto mr-0" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
+                               <?php require_once('navbar.php'); ?> 
 
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul class="navbar-nav mx-auto">
-                            <li class="nav-item">
-                                <a class="nav-link" href="index.html">Bioté center
-                                    <span class="sr-only">(current)</span>
-                                </a>
-                            </li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="index.html" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Reports
-                                </a>
-                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="#">Daily Report</a>
-                                    <a class="dropdown-item" href="#">Weekly Report</a>
-                                    <a class="dropdown-item" href="index.html">Yearly Report</a>
-                                </div>
-                            </li>
-                            <li class="nav-item active">
-                                <a class="nav-link" href="affichercategorie.php">categorie</a>
-                            </li>
-
-                            <li class="nav-item">
-                                <a class="nav-link" href="afficherproduit.php">Produits</a>
-                            </li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Settings
-                                </a>
-                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="#">Profile</a>
-                                    <a class="dropdown-item" href="#">Billing</a>
-                                    <a class="dropdown-item" href="#">Customize</a>
-                                </div>
-                            </li>
-                        </ul>
-                        <ul class="navbar-nav">
-                            <li class="nav-item">
-                                <a class="nav-link d-flex" href="login.html">
-                                    <i class="far fa-user mr-2 tm-logout-icon"></i>
-                                    <span>Logout</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </nav>
             </div>
         </div>
         <!-- row -->
@@ -117,7 +66,7 @@ if (
                 <div class="bg-white tm-block">
                     <div class="row">
                         <div class="col-12">
-                            <h2 class="tm-block-title d-inline-block">Ajouter produit</h2>
+                            <h2 class="tm-block-title d-inline-block">Add product</h2>
                         </div>
                     </div>
                     <div class="details">
@@ -127,32 +76,43 @@ if (
 
                             </div>
 
-                            <form action="" method="POST">
+                            <form action="" method="POST" name="ajouterProduitForm" onsubmit="return ajouterProduit()">
                                 <div>
-                                    <label for="libelle">Nom du produit:
+                                    <label for="libelle" class="col-xl-4 col-lg-4 col-md-4 col-sm-5 col-form-label">Nom de produit:
                                     </label>
                                     <input type="text" name="libelle" id="libelle" maxlength="20">
                                 </div>
                                 <div>
-                                    <label for="nb_calories">Nombre de calories:
+                                    <label for="nb_calories" class="col-xl-4 col-lg-4 col-md-4 col-sm-5 col-form-label">Nombre de colie:
                                     </label>
                                     <input type="text" name="nb_calories" id="nb_calories">
                                 </div>
                                 <div>
-                                    <label for="prix">Prix:
+                                    <label for="prix" class="col-xl-4 col-lg-4 col-md-4 col-sm-5 col-form-label">Prix:
                                     </label>
                                     <input type="text" name="prix" id="prix">
                                 </div>
                                 <div>
-                                    <label for="description">Description:
+                                    <label for="description" class="col-xl-4 col-lg-4 col-md-4 col-sm-5 col-form-label">Description:
                                     </label>
                                     <input type="text" name="description" id="description">
                                 </div>
-                                <div>
-                                    <label for="categorie">Categorie:
-                                    </label>
-                                    <input type="text" name="categorie" id="categorie">
+                               
+                                
+                                <div class="input-group mb-3">
+                                
+                                    <label for="category" class="col-xl-4 col-lg-4 col-md-4 col-sm-5 col-form-label">Category</label>
+                                    <select class="custom-select col-xl-9 col-lg-8 col-md-8 col-sm-7" id="category">
+                                    <?php
+                                        foreach ($listec as $categorie) {
+                                        ?>    
+                                    <option selected><?php echo $categorie['idCategorie']; ?></option>
+                                    <?php } ?>
+                                    </select>
+                                   
+                                   
                                 </div>
+                                
                                 <div>
                                     <label for="img">image:
                                     </label>
@@ -188,6 +148,8 @@ if (
             $('#expire_date').datepicker();
         });
     </script>
+    	<script src="addProduct.js"></script>
+
 </body>
 
 </html>

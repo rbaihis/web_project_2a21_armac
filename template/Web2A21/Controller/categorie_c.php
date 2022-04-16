@@ -1,6 +1,6 @@
 <?php
-	include_once '../config.php';
-	include_once '../model/categorie.php';
+	include_once '../../config.php';
+	include_once '../../model/categorie.php';
 
 	class categorieC {
 		function afficherCategorie(){
