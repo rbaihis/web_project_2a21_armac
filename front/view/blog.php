@@ -51,7 +51,7 @@ session_start();
 </div>
 </footer>	
 <!-- Scripts -->
-<script src="../../assets/js/nicescroll.js"></script>
+<script src="../assets/js/nicescroll.js"></script>
 
 
 
