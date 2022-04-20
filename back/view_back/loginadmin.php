@@ -4,7 +4,7 @@ session_start();
 
  if( isset($_SESSION['admin_on'])  ) 
 {
-	header("Location: ../../back/view_back/accounts.php"); 
+	header("Location: ../../back/view_back/index.php"); 
 } else{
 	require("../controller_back/admincontroller.php");
 

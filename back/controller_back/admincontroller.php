@@ -1,7 +1,7 @@
 <?php
     require "../model_back/adminseif.php";
 
-class AdminController{
+class AdminController{ 
 
     function update_Admin($admin_id, $admin_password){
         
@@ -53,7 +53,7 @@ class AdminController{
                 $_SESSION['admindatatab']=$statmentfromselect->fetch(PDO::FETCH_ASSOC);
                 $msg="success";
                 $_SESSION['admin_on']=$admin_id;
-                header("../view_back/accounts.php");
+                header("../../back/view_back/index.php");
                 
             }else 
                 $msg="wrong id or password or both";
@@ -64,7 +64,7 @@ class AdminController{
 
         // in this stage we re sure that statment it can be string only 
         $_SESSION['aderror']=$msg;
-        header('Location: ../view_back/loginadmin.php'); 
+        header('Location: ../../back/view_back/loginadmin.php'); 
         return; 
 
 
@@ -72,6 +72,20 @@ class AdminController{
     }
 
 
+    //-------------------------------------------------------------------------
+    static function logout_admin(){
+        if(session_status() !== PHP_SESSION_ACTIVE) {
+            session_start();
+        }
+    
+        unset($_SESSION['admin_on']); // this line of code is useless i know i just like to put it in session
+        session_destroy();
+        header("Location: ../../back/view_back/loginadmin.php");
+    }
+
+
+    // =========user side functions==================================================================================
+    // ===============================================================================================================
     // user_data on admin side functions dispaly delete and update_Admin
 
     function displayUsers(){
@@ -97,19 +111,35 @@ class AdminController{
         // if isarray === 1 ==> data entred where legit 
         if( ! $important_empty  ){
  
-               $msg= Admin::update_user_adminside($name, $address="" , $postalcode="" , $email);
+               $msg= Admin::update_user_adminside($name, $address , $postalcode, $email);
                
  
         }else
                $msg= "name and password must be filled .";
 
         
-        $_SESSION['aderror']=$msg;
+        $_SESSION['aderror_update']=$msg;
         header('Location: ../view_back/accounts.php'); 
         return; 
                
         
     }
+    //------------------------------------------------------
+
+    function delete_user_by_admin($email){
+
+    $msg=Admin::delete_user_admin_side($email);
+
+    $_SESSION['aderror_delete']=$msg;
+    header('Location: ../view_back/accounts.php'); 
+    return; 
+
+    }
+
+
+
+
+
 
 
 }

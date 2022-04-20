@@ -47,6 +47,11 @@ class UserC{
                 
                 // saving welcome message
                 $_SESSION['successlogin']= "Welcome ".$userdata['name']." enjoy our services";
+
+                //update connection SQL TABLE 
+                require_once "../../dbconfig.php";
+                $pdo=getdbconnection();
+                $pdo->query("UPDATE connexion SET logged_in=logged_in+1 , registred_accounts = (SELECT COUNT(user_id) FROM users) , account_created = (SELECT MAX(user_id) from users ) , last_login= CURRENT_TIMESTAMP() ;");
                 
                 //succeful log in redirect to the main application page after succesful 
                 header('location: ../view/login.php' ); 
@@ -77,6 +82,13 @@ class UserC{
     
         unset($_SESSION['account']); // this line of code is useless i know i just like to put it in session
         session_destroy();
+
+        // update connection table for backend statistics
+        require_once "../../dbconfig.php";
+        $pdo=getdbconnection();
+        $pdo->query("UPDATE connexion SET logged_in=logged_in-1 , registred_accounts = (SELECT COUNT(user_id) FROM users)  ;");
+        //end
+
         header("Location: ../view/homepage.php ");
     }
 

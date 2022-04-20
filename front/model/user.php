@@ -1,5 +1,5 @@
 <?php
-require "sanitize.php";
+require "../../front/model/sanitize.php";
 
 
 
