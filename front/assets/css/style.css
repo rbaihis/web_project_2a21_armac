@@ -204,7 +204,7 @@ a {text-decoration:none;}
 	background: rgba(245, 228, 25, 0.5);
     color: rgba(255,255,255,0.7);
     position: fixed;
-    top: 43%;
+    top: 17%;
     right: 0;
     width: 80px;
     height: 60px;
@@ -219,10 +219,10 @@ a {text-decoration:none;}
 .fixedcalliconlogout i {width:80px;height:60px;text-align:center; background:rgba(245, 228, 25, 0.5)}
 
 .fixedcallicon {
-	background: rgba(0,0,0,0.5);
+	background: rgba(245, 228, 25, 0.5);
     color: rgba(255,255,255,0.7);
     position: fixed;
-    top: 43%;
+    top: 17%;
     right: 0;
     width: 60px;
     height: 60px;
@@ -235,7 +235,7 @@ a {text-decoration:none;}
     transition: all 1s ease;
 }
 .fixedcallicon i {width:60px;height:60px;text-align:center; background:rgba(245, 228, 25, 0.5)}
-.fixedcallicon:hover {width:220px;background:rgba(245, 228, 25, 0.5);}
+.fixedcallicon:hover {width:150px;background:rgba(245, 228, 25, 0.5);}
 
 
 .intro h1 {font-family:Great Vibes;font-size:150px;font-weight:400;line-height:1.1;}
