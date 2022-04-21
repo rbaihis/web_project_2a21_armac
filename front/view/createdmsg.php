@@ -23,7 +23,7 @@ if( $_SESSION['info_msg']["create_msg"]===true )
     	<div class="fof">
         		<h1> ACCOUNT CREATE</h1>
                 <h3>Congratulations!  we are glad to have you *_* </h3>
-    	         <h4>please <a href="../view/login.php" > login</a> </h4>
+    	         <h4>please <a href="../../front/view/login.php" > login</a> </h4>
         
     </body>
 </html>
@@ -35,7 +35,7 @@ if( $_SESSION['info_msg']["create_msg"]===true )
 
 }else{
 
-    header('location: ../view/404.php');
+    header('location: ../../front/view/404.php');
 
 }
 

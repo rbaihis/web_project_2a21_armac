@@ -9,15 +9,15 @@
             </footer>
         </div>
 
-        <script src="../assets/js/jquery-3.3.1dashboard.min.js"></script>
+        <script src="../../back/assets_back/js/jquery-3.3.1dashboard.min.js"></script>
         <!-- https://jquery.com/download/ -->
-        <script src="../assets/js/momentdashboard.min.js"></script>
+        <script src="../../back/js/momentdashboard.min.js"></script>
         <!-- https://momentjs.com/ -->
-        <script src="../assets/js/Chartdashboard.min.js"></script>
+        <script src="../../back/assets_back/js/Chartdashboard.min.js"></script>
         <!-- http://www.chartjsdashboard.org/docs/latest/ -->
-        <script src="../assets/js/bootstrapdashboard.min.js"></script>
+        <script src="../../back/assets_back/js/bootstrapdashboard.min.js"></script>
         <!-- https://getbootstrap.com/ -->
-        <script src="../assets/js/tooplate-scriptsdashboard.js"></script>
+        <script src="../../back/assets_back/js/tooplate-scriptsdashboard.js"></script>
         <script>
             Chart.defaults.global.defaultFontColor = 'white';
             let ctxLine,

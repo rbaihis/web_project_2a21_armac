@@ -1,5 +1,6 @@
 <?php
-    require "../model_back/adminseif.php";
+    require "../../back/model_back/adminseif.php";
+    require "../../back/model_back/infoconnexion.php";
 
 class AdminController{ 
 
@@ -28,7 +29,7 @@ class AdminController{
 
         // in this stage we re sure that statment it can be string only 
         $_SESSION['aderror']=$msg;
-        header('Location: ../view_back/accounts.php'); 
+        header('Location: ../../back/view_back/accounts.php'); 
         return; 
 
            
@@ -119,7 +120,7 @@ class AdminController{
 
         
         $_SESSION['aderror_update']=$msg;
-        header('Location: ../view_back/accounts.php'); 
+        header('Location: ../../back/view_back/accounts.php'); 
         return; 
                
         
@@ -129,6 +130,12 @@ class AdminController{
     function delete_user_by_admin($email){
 
     $msg=Admin::delete_user_admin_side($email);
+
+    if($msg==="account deleted ."){
+        //start: update InfoConnexion table for backend admin use statistics  
+        InfoConnexion::update_status_after_account_deleted_by_admin();
+        //end
+    }
 
     $_SESSION['aderror_delete']=$msg;
     header('Location: ../view_back/accounts.php'); 

@@ -50,7 +50,7 @@ class Admin extends UserModel {
                                           
                             }catch(PDOException $error){
                                 //putting error message in log for debug 
-                                error_log("configdb.php, SQL error=".$error->getMessage()  );
+                                error_log("dbconfig.php, SQL error=".$error->getMessage()  );
        
                                 //error while inserting :either  email not unique || wrong sql query  .
                                 return " internal error:(update) contact specialist ";
@@ -78,7 +78,7 @@ class Admin extends UserModel {
                      if( $statment->execute( array("email" => $email_or_user_id) ) ){
 
                             if($statment->rowcount() > 0 )
-                                   return "account deleted .".$email_or_user_id;
+                                   return "account deleted .";
                             else
                                    return "failed to delete account .";
                      }
@@ -86,7 +86,7 @@ class Admin extends UserModel {
 
                  }catch(PDOException $error){
                      //putting error message in log for debug 
-                     error_log("configdb.php, SQL error=".$error->getMessage()  );
+                     error_log("dbconfig.php, SQL error=".$error->getMessage()  );
 
                      //error while inserting :either  email not unique || wrong sql query  .
                      return $statment=" internal error:(delete) contact specialist ";
@@ -131,7 +131,7 @@ class Admin extends UserModel {
 
               }catch(PDOException $error){
                      //putting error message in log for debug 
-                     error_log("configdb.php, SQL error=".$error->getMessage()  );
+                     error_log("dbconfig.php, SQL error=".$error->getMessage()  );
 
                      //error while inserting :either  email not unique || wrong sql query  .
                      return $statment=" internal error:(read) contact specialist ";
@@ -171,7 +171,7 @@ class Admin extends UserModel {
                      
               }catch(PDOException $error){
                      //putting error message in log for debug 
-                     error_log("configdb.php, SQL error=".$error->getMessage()  );
+                     error_log("dbconfig.php, SQL error=".$error->getMessage()  );
                      
                      //error while inserting :either  email not unique || wrong sql query  .
                      return " internal error:(update) contact specialist ";

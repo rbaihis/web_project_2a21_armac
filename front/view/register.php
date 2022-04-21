@@ -5,14 +5,14 @@ session_start();
 
  if( isset($_SESSION['account'])  ) 
 {
-	header("Location: ../view/homepage.php"); 
+	header("Location: ../../front/view/homepage.php"); 
 } else{
-	require("../controller/usercontroller.php");
+	require("../../front/controller/usercontroller.php");
     $user =new UserC();
 	$user->createController();
 
-	require("header.php");
-	require "nav.php"; 
+	require("../../front/view/header.php");
+	require "../../front/view/nav.php"; 
 }
 
 ?>
@@ -91,4 +91,4 @@ if( isset($_SESSION['errormsg']) && ! isset($_POST['name'])  )
 
 
     
-<?php require "footer.php"?>
+<?php require "../../front/view/footer.php"?>

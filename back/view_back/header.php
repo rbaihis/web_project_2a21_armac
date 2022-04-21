@@ -20,15 +20,15 @@
     <!-- ===== template original ====================================================================== -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600">
         <!-- https://fonts.google.com/specimen/Open+Sans -->
-        <link rel="stylesheet" href="../assets/css/fontawesome.min.css">
+        <link rel="stylesheet" href="../../back/assets_back/css/fontawesome.min.css">
         <!-- https://fontawesome.com/ -->
-        <link rel="stylesheet" href="../assets/css/fullcalendar.min.css">
+        <link rel="stylesheet" href="../../back/assets_back/css/fullcalendar.min.css">
         <!-- https://fullcalendar.io/ -->
-        <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+        <link rel="stylesheet" href="../../back/assets_back/css/bootstrap.min.css">
         
-        <link rel="stylesheet" href="../assets/css/btnseif.min.css">
+        <link rel="stylesheet" href="../../back/assets_back/css/btnseif.min.css">
         <!-- https://getbootstrap.com/ -->
-        <link rel="stylesheet" href="../assets/css/tooplate.css">
+        <link rel="stylesheet" href="../../back/assets_back/css/tooplate.css">
   
 
 </head>

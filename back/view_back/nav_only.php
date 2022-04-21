@@ -29,7 +29,7 @@
                                 </div>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="products.php">Products</a>
+                                <a class="nav-link" href="../../back/view_back/products.php">Products</a>
                             </li>
 
 
@@ -39,7 +39,7 @@
 
 
                             <li class="nav-item">
-                                <a class="nav-link" href="Service.php">Service</a>
+                                <a class="nav-link" href="../../back/view_back/Service.php">Service</a>
                             </li>
 
 

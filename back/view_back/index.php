@@ -273,7 +273,8 @@ if (!isset($_SESSION['admin_on'])) {
 
 <?php
 
-require "footer_dashboard.php";
+require "../../back/view_back/footer_dashboard.php";
+
 
 }
 ?>

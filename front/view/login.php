@@ -4,13 +4,13 @@ session_start();
 
  if( isset($_SESSION['account'])  ) 
 {
-	header("Location: ../view/homepage.php"); 
+	header("Location: ../../front/view/homepage.php"); 
 } else{
-	require("../controller/usercontroller.php");
+	require("../../front/controller/usercontroller.php");
 	UserC :: login();
 
-	require("header.php");
-	require "nav.php"; 
+	require("../../front/view/header.php");
+	require "../../front/view/nav.php"; 
 }
 
 ?>
@@ -75,7 +75,7 @@ if( isset($_SESSION['errormsg']) && ! isset($_POST['account'])  )
 							Not a member?
 						</span>
 						
-						<a class="txt1 bo1 hov1" href="../view/register.php">
+						<a class="txt1 bo1 hov1" href="../../front/view/register.php">
 							Sign up now							
 						</a>
 					</div>
@@ -85,8 +85,5 @@ if( isset($_SESSION['errormsg']) && ! isset($_POST['account'])  )
 	</div>
 	
 	
-
-
-
 	
-<?php require "footer.php"?>
+<?php require "../../front/view/footer.php"?>

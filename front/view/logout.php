@@ -2,7 +2,7 @@
 session_start();
 if(isset($_SESSION['account']) ){
 
-    include "../controller/usercontroller.php";
+    include "../../front/controller/usercontroller.php";
     UserC::logout();
 }
  else{

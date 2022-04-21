@@ -1,6 +1,6 @@
 <?php
-    require "../model/user.php";
-
+    require "../../front/model/user.php";
+    require "../../front/model/infoconnexion.php";
 
 class UserC{
 
@@ -48,13 +48,12 @@ class UserC{
                 // saving welcome message
                 $_SESSION['successlogin']= "Welcome ".$userdata['name']." enjoy our services";
 
-                //update connection SQL TABLE 
-                require_once "../../dbconfig.php";
-                $pdo=getdbconnection();
-                $pdo->query("UPDATE connexion SET logged_in=logged_in+1 , registred_accounts = (SELECT COUNT(user_id) FROM users) , account_created = (SELECT MAX(user_id) from users ) , last_login= CURRENT_TIMESTAMP() ;");
+                //start: update InfoConnexion table for backend admin use statistics  
+                InfoConnexion::update_status_after_login();
+                //end
                 
                 //succeful log in redirect to the main application page after succesful 
-                header('location: ../view/login.php' ); 
+                header('location: ../../front/view/login.php' ); 
                 
                 return;
             }
@@ -67,7 +66,7 @@ class UserC{
                     
 
                     //redirecting to the same link to avoid  refresh  _post behavior
-                    header('location: ../view/login.php' ); 
+                    header('location: ../../front/view/login.php' ); 
                     return;  
                 }     
         }
@@ -83,13 +82,11 @@ class UserC{
         unset($_SESSION['account']); // this line of code is useless i know i just like to put it in session
         session_destroy();
 
-        // update connection table for backend statistics
-        require_once "../../dbconfig.php";
-        $pdo=getdbconnection();
-        $pdo->query("UPDATE connexion SET logged_in=logged_in-1 , registred_accounts = (SELECT COUNT(user_id) FROM users)  ;");
-        //end
+       //start: update InfoConnexion table for backend admin use statistics  
+       InfoConnexion::update_status_after_logout();
+       //end
 
-        header("Location: ../view/homepage.php ");
+        header("Location: ../../front/view/homepage.php ");
     }
 
 //-------------------create------------------------------------------------------------------
@@ -133,6 +130,10 @@ function createController(){
         {
             //I/ succesfully sql insert
 
+            //start: update InfoConnexion table for backend admin use statistics  
+            InfoConnexion::update_status_after_account_created();
+            //end
+
             //!1/ unset the error  session storage +
             unset($_SESSION['inputsTab']);
             
@@ -142,7 +143,7 @@ function createController(){
             $_SESSION['info_msg']["create_msg"]=true;
             
             //4/ redirect to info page or login page
-            header('Location: ../view/createdmsg.php');
+            header('Location: ../../front/view/createdmsg.php');
             return;
 
         }else{
@@ -162,7 +163,7 @@ function createController(){
             
 
             //4/ redirect to same register page to show the error and put back the input entered in form fields
-            header('Location: ../view/register.php'); 
+            header('Location: ../../front/view/register.php'); 
             return; 
         }
         
@@ -221,7 +222,8 @@ function updateController(){
                 require_once "../../dbconfig.php";
                 
                 // statment if string (error returned) else => pdo->prepare() is  returned .
-                $statment = UserModel::verifyUpdateForm( $_POST['name'], $_POST['address'], $_POST['postalcode'], $_POST['email'], $_POST['password'] ,50,50,8,70,70 );
+                $statment = UserModel::verifyUpdateForm( $_POST['name'], $_POST['address'], $_POST['postalcode'], $_POST['email'], $_POST['password'] ,50,50,8,50,50 );
+
             }else{
                 $statment = "wrong password entred try again with the correct password.";
             }
@@ -244,7 +246,7 @@ function updateController(){
             $_SESSION['successmsg']="successfully updated";
 
             //3/ redirect to info page or login page
-            header('Location: ../view/account.php');
+            header('Location: ../../front/view/account.php');
             return;
 
         }else{
@@ -255,7 +257,7 @@ function updateController(){
 
 
             //4/ redirect to same register page to show the error and put back the input entered in form fields
-            header('Location: ../view/account.php'); 
+            header('Location: ../../front/view/account.php'); 
             return; 
         }
         
@@ -294,8 +296,12 @@ function updateController(){
                         if( is_object($statment) && ($statment->rowCount() > 0) ){
 
                             $_SESSION['info_msg']['delete_msg']=true;
+
+                            //start: update InfoConnexion table for backend admin use statistics  
+                            InfoConnexion::update_status_after_account_deleted_by_user();
+                            //end
                             
-                            header("Location: ../view/deletedmsg.php");
+                            header("Location: ../../front/view/deletedmsg.php");
                             return;
                         }
 
@@ -313,7 +319,7 @@ function updateController(){
             
              // in this stage we re sure that statment it can be string only 
             $_SESSION['errormsg']=$statment;
-            header('Location: ../view/account.php'); 
+            header('Location: ../../front/view/account.php'); 
             return; 
 
 

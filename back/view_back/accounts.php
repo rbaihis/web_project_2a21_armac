@@ -169,7 +169,7 @@ if( isset($_SESSION['aderror_update']) && ! isset($_POST['update'])  )
         
 
 
-<?php include "../../front/view/Footer.php"; 
+<?php require "../../back/view_back/Footer.php"; 
 
  }
 
