@@ -138,7 +138,7 @@ class AdminController{
     }
 
     $_SESSION['aderror_delete']=$msg;
-    header('Location: ../view_back/accounts.php'); 
+    header('Location: ../../back/view_back/accounts.php'); 
     return; 
 
     }
