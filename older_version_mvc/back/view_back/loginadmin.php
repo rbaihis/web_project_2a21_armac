@@ -4,16 +4,17 @@ session_start();
 
  if( isset($_SESSION['admin_on'])  ) 
 {
-	header("Location: ../view_back/accounts.php"); 
+	header("Location: ../../back/view_back/index.php"); 
 } else{
-	require("../controller_back/admincontroller.php");
+	require("../../back/controller_back/admincontroller.php");
 
 	$adminC=new AdminController();
 
 	if( isset($_POST['admin_id']) )
 	$adminC->login( $_POST['admin_id'] , $_POST['admin_password'] );
 
-	include "../view/header.php" ;
+	//using front end assets here 
+	include "../../front/view/header.php" ;
 	
 	
 }
@@ -77,11 +78,11 @@ if( isset($_SESSION['aderror']) && ! isset($_POST['admin_id'])  )
 					
 					<div class="text-center w-full p-t-115">
 						<span class="txt1">
-							Not a member?
+							forgot password?
 						</span>
 						
-						<a class="txt1 bo1 hov1" href="../view/register.php">
-							Sign up now							
+						<a class="txt1 bo1 hov1" href="#">
+							click here							
 						</a>
 					</div>
 				</form>
@@ -97,8 +98,8 @@ if( isset($_SESSION['aderror']) && ! isset($_POST['admin_id'])  )
 <?php 
 
 
-require "../view/footer.php"
-//require "../view_back/Footer.php"
+require "../../front/view/footer.php";
+
 
 
 ?>

@@ -7,9 +7,9 @@
 
 //include required php mailer files 
 
-require "../includeclasses/PHPmailer.php";
-require "../includeclasses/SMTP.php";
-require "../includeclasses/Exception.php";
+require "../../includeclasses/PHPmailer.php";
+require "../../includeclasses/SMTP.php";
+require "../../includeclasses/Exception.php";
 
 //define name spaces 
 use PHPmailer\PHPmailer\PHPmailer;

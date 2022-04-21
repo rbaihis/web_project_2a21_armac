@@ -1,5 +1,6 @@
 <?php
-require "../model/sanitize.php";
+require "../../front/model/sanitize.php";
+
 
 
 class UserModel extends Sanitize{
@@ -69,7 +70,7 @@ class UserModel extends Sanitize{
 
                      }catch(PDOException $error){
                          //putting error message in log for debug 
-                         error_log("configdb.php, SQL error=".$error->getMessage()  );
+                         error_log("dbconfig.php, SQL error=".$error->getMessage()  );
 
                          //error while inserting :either  email not unique || wrong sql query  .
                          return $statment="email already exist";
@@ -111,7 +112,7 @@ class UserModel extends Sanitize{
 
                      }catch(PDOException $error){
                          //putting error message in log for debug 
-                         error_log("configdb.php, SQL error=".$error->getMessage()  );
+                         error_log("dbconfig.php, SQL error=".$error->getMessage()  );
 
                          //error while inserting :either  email not unique || wrong sql query  .
                          return $statment=" internal error:(update) contact specialist ";
@@ -139,7 +140,7 @@ class UserModel extends Sanitize{
 
               }catch(PDOException $error){
                      //putting error message in log for debug 
-                     error_log("configdb.php, SQL error=".$error->getMessage()  );
+                     error_log("dbconfig.php, SQL error=".$error->getMessage()  );
 
                      //error while inserting :either  email not unique || wrong sql query  .
                      return $statment=" internal error:(read) contact specialist ";
@@ -162,7 +163,7 @@ class UserModel extends Sanitize{
 
               }catch(PDOException $error){
                      //putting error message in log for debug 
-                     error_log("configdb.php, SQL error=".$error->getMessage()  );
+                     error_log("dbconfig.php, SQL error=".$error->getMessage()  );
 
                      //error while inserting :either  email not unique || wrong sql query  .
                      return $statment=" internal error:(delete) contact specialist ";
@@ -170,7 +171,9 @@ class UserModel extends Sanitize{
 
         }
 
+
+
+
+        
 }
-
-
 ?>

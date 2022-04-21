@@ -10,26 +10,26 @@
 
 <!--==========*** home **=========================================================-->	
 <!-- CSS -->
-<link href="../assets/css/style.css" rel="stylesheet">
+<link href="../../front/assets/css/style.css" rel="stylesheet">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 <link href='https://fonts.googleapis.com/css?family=Great+Vibes' rel='stylesheet' type='text/css'>
 <link href='https://fonts.googleapis.com/css?family=Oswald:400,700,300' rel='stylesheet' type='text/css'>
-<link href='https://fonts.googleapis.com/css?family=Roboto+Condensed:400,400italic,300italic,300,700,700italic' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Roboto+Condensed:400,400italic,300italic,300,700,700italic' rel='stylesheet' type='text/css'>     
 <!--==========*** end home **=========================================================-->	
 
 <!-- ------------------------------------------------------------------------------------------------------------- -->
 
 <!--==========**********login*************=========================================================-->	
-<link rel="icon" type="image/png" href="../assets/img/icons/favicon.ico"/>
+<link rel="icon" type="image/png" href="../../front/assets/img/icons/favicon.ico"/>
 <!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="../assets/fontsseif/font-awesome-4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="../../front/assets/fontsseif/font-awesome-4.7.0/css/font-awesome.min.css">
 <!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="../assets/fontsseif/Linearicons-Free-v1.0.0/icon-font.min.css">
+	<link rel="stylesheet" type="text/css" href="../../front/assets/fontsseif/Linearicons-Free-v1.0.0/icon-font.min.css">
 <!--===============================================================================================-->
 <!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="../assets/css/utilseif.css">
+	<link rel="stylesheet" type="text/css" href="../../front/assets/css/utilseif.css">
 <!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="../assets/css/mainseif.css">
+	<link rel="stylesheet" type="text/css" href="../../front/assets/css/mainseif.css">
 <!--===============================================================================================-->
 <!--====================== end  login sources=====================================================-->
 
@@ -37,7 +37,7 @@
 
 <!--==========**********Register *************=========================================================-->
     <!-- Main CSS-->
-    <link href="../assets/css/mainseif2.css" rel="stylesheet" media="all">	
+    <link href="../../front/assets/css/mainseif2.css" rel="stylesheet" media="all">	
 <!--===============================================================================================-->
 <!--====================== end register sources =====================================================-->
 
@@ -47,7 +47,7 @@
 
 <!--==========********** UpdateRead *************=========================================================-->
     <!-- Main CSS-->
-    <link href="../assets/css/updateseif.css" rel="stylesheet" media="all">	
+    <link href="../../front/assets/css/updateseif.css" rel="stylesheet" media="all">	
 <!--===============================================================================================-->
 <!--====================== end updateread =====================================================-->
 

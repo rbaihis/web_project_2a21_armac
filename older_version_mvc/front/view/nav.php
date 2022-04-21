@@ -12,8 +12,8 @@
    <!-- ==== LOGIN & register seif ===== -->
 
 <div class="fixedcallicon">
-<i class="fa fa-text"><a href="../view/login.php"><h3 style=" font-size: 20px;  margin: 15px 0px 0px 2px; "> <b> LogIn </b> </h3></a></i>
- <span class="hide"> <a href="../view/register.php" style=" font-size: 20px;  margin: 15px 0px 0px 2px; ">  <b> Register </b> </a></span>
+<i class="fa fa-text"><a href="../../front/view/login.php"><h3 style=" font-size: 20px;  margin: 15px 0px 0px 2px; "> <b> LogIn </b> </h3></a></i>
+ <span class="hide"> <a href="../../front/view/register.php" style=" font-size: 20px;  margin: 15px 0px 0px 2px; ">  <b> Register </b> </a></span>
 </div>
     <!-- ========================== -->
 
@@ -27,9 +27,9 @@
     <nav>
         <ul>
 <!-- ==========   add links here "also add the same on navloggedin.php"  ========== -->
-           <li><a href="../view/homepage.php">Home</a></li>
-           <li><a href="../view/blog.php">Offre et promo</a></li>
-           <li><a href="debugsession.php">Debug seif</a></li>
+           <li><a href="../../front/view/homepage.php">Home</a></li>
+           <li><a href="../../front/view/blog.php">Offre et promo</a></li>
+           <li><a href="../../front/view/debugsession.php">Debug seif</a></li>
 <!-- ============================================================================= -->
         </ul>
    </nav>

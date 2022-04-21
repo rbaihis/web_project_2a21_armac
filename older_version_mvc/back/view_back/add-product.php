@@ -1,4 +1,4 @@
-<?php include "nav-bar.php" ?>
+<?php include "../../back/view_back/nav-bar.php"; ?>
 
         <!-- row -->
         <div class="row tm-mt-big">
@@ -67,4 +67,4 @@
             </div>
         </div>
 
-<?php include "Footer.php" ?>
+<?php include "../../back/view_back/Footer.php" ?>

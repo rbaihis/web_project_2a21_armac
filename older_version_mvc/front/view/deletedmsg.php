@@ -23,7 +23,7 @@ if( $_SESSION['info_msg']["delete_msg"]===true  )
     	<div class="fof">
         		<h1> ACCOUNT DELETED </h1>
                 <h3> You re welcome anytime our dear cusomer  </h3>
-    	         <h4>click <a href="../view/homepage.php" > HOME</a>  to go back to homepage </h4>
+    	         <h4>click <a href="../../front/view/homepage.php" > HOME</a>  to go back to homepage </h4>
         
     </body>
 </html>
@@ -35,7 +35,7 @@ session_destroy();
 
 }else{
 
-    header('location: ../view/404.php');
+    header('location: ../../front/view/404.php');
 
 }
 

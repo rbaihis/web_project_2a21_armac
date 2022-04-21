@@ -8,7 +8,7 @@ if( isset($_SESSION['account']) )
 {
 
 
-        require("../controller/usercontroller.php");
+        require("../../front/controller/usercontroller.php");
         $user =new UserC();
 
          
@@ -21,12 +21,12 @@ if( isset($_SESSION['account']) )
             $user->deleteController();
         }
         
-        require "../view/header.php" ;
-        require "navloggedin.php"; 
+        require "../../front/view/header.php" ;
+        require "../../front/view/navloggedin.php";
     
     
 } else{ 
-	header("Location:  ../view/homepage.php"); 
+	header("Location:  ../../front/view/homepage.php"); 
 }
 
 // copy the last line as well " require "footer.php"; (e5er star )
@@ -278,4 +278,4 @@ function showSubmitDeleteBtn()
 </script>
 
 
-<?php include '../view/footer.php'; ?>
+<?php include '../../front/view/footer.php'; ?>

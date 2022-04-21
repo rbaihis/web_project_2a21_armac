@@ -2,13 +2,13 @@
 // add this to every page you create
 // -------------------------------------
 session_start();
- require "header.php";
+ require "../../front/view/header.php";
 
  if( isset($_SESSION['account']) ) 
 {
-	require "navloggedin.php"; 
+	require "../../front/view/navloggedin.php"; 
 } else{
-	require "nav.php"; 
+	require "../../front/view/nav.php"; 
 }
 // copy the last line as well " require "footer.php"; (e5er star )
 // -------------------------------------
@@ -51,7 +51,7 @@ session_start();
 </div>
 </footer>	
 <!-- Scripts -->
-<script src="../assets/js/nicescroll.js"></script>
+<script src="../../front/assets/js/nicescroll.js"></script>
 
 
 
@@ -61,6 +61,6 @@ session_start();
 <?php
 // add this to every page you create
 // -------------------------------------
- require "footer.php" 
+ require "../../front/view/footer.php";
  // -----------------------------------
  ?>

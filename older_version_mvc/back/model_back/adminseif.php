@@ -1,6 +1,6 @@
 <?php
-require "../model/user.php";
-require "../dbconfig.php";
+require "../../front/model/user.php";
+require "../../dbconfig.php";
 
 class Admin extends UserModel {
        public $admin_id;
@@ -22,10 +22,12 @@ class Admin extends UserModel {
 
               $pdo=getdbconnection();
 
-              $updatequery = "UPDATE users SET name= :name, address= :address, postalcode= :postalcode, email= :email  WHERE email= ".parent::sanitizeinput($_POST['email'])." ;";
+              $updatequery = "UPDATE users SET name= :name, address= :address, postalcode= :postalcode, email= :email  WHERE email=:email ";
               $statment = $pdo->prepare($updatequery);
               
               $updateInput=[ parent::sanitizeinput( $name) , parent::sanitizeinput( $address ) , parent::sanitizeinput( $postalcode) , parent::sanitizeinput( $email) ] ;
+
+              
 
                             try{
        
@@ -34,7 +36,8 @@ class Admin extends UserModel {
                                           'name' => $updateInput[0],
                                           'address' => $updateInput[1],
                                           'postalcode' => $updateInput[2],
-                                          'email' => $updateInput[3] ) ;
+                                          'email' => $updateInput[3],
+                                          'email' => $updateInput[3]  ) ;
                                           
                                           if ( $statment->execute( $arrayPrepared) ){
 
@@ -47,7 +50,7 @@ class Admin extends UserModel {
                                           
                             }catch(PDOException $error){
                                 //putting error message in log for debug 
-                                error_log("configdb.php, SQL error=".$error->getMessage()  );
+                                error_log("dbconfig.php, SQL error=".$error->getMessage()  );
        
                                 //error while inserting :either  email not unique || wrong sql query  .
                                 return " internal error:(update) contact specialist ";
@@ -60,30 +63,30 @@ class Admin extends UserModel {
 
 
 
-       function delete_user_admin_side($email_or_user_id){
+       static function delete_user_admin_side($email_or_user_id){
 
               $pdo=getdbconnection(); 
 
               try{
                      //flexibility   
-                     if(  parent::legitemail($email_or_user_id)   )
-                            $statment=$pdo->prepare( " DELETE FROM users WHERE email = ".$email_or_user_id );
+                     if(  parent::legitemail($email_or_user_id)  )
+                            $statment=$pdo->prepare( " DELETE FROM users WHERE email =:email ;");
                      else
-                            $statment=$pdo->prepare( " DELETE FROM users WHERE user_id = ".$email_or_user_id );
+                            $statment=$pdo->prepare( " DELETE FROM users WHERE user_id =:email ;" );
 
-
-                     if( $statment->execute()){
+                     
+                     if( $statment->execute( array("email" => $email_or_user_id) ) ){
 
                             if($statment->rowcount() > 0 )
-                                   return "account deleted";
+                                   return "account deleted .";
                             else
-                                   return "failed to delete account ";
+                                   return "failed to delete account .";
                      }
 
 
                  }catch(PDOException $error){
                      //putting error message in log for debug 
-                     error_log("configdb.php, SQL error=".$error->getMessage()  );
+                     error_log("dbconfig.php, SQL error=".$error->getMessage()  );
 
                      //error while inserting :either  email not unique || wrong sql query  .
                      return $statment=" internal error:(delete) contact specialist ";
@@ -128,7 +131,7 @@ class Admin extends UserModel {
 
               }catch(PDOException $error){
                      //putting error message in log for debug 
-                     error_log("configdb.php, SQL error=".$error->getMessage()  );
+                     error_log("dbconfig.php, SQL error=".$error->getMessage()  );
 
                      //error while inserting :either  email not unique || wrong sql query  .
                      return $statment=" internal error:(read) contact specialist ";
@@ -168,7 +171,7 @@ class Admin extends UserModel {
                      
               }catch(PDOException $error){
                      //putting error message in log for debug 
-                     error_log("configdb.php, SQL error=".$error->getMessage()  );
+                     error_log("dbconfig.php, SQL error=".$error->getMessage()  );
                      
                      //error while inserting :either  email not unique || wrong sql query  .
                      return " internal error:(update) contact specialist ";
