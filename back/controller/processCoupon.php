@@ -47,5 +47,6 @@ if (isset($_POST['updateC']))
     $_SESSION['msg_type']="warning";
     header('location: ../views/ajout.php');
 }
-
+// etablissement coupon
+if (isset($_POST['valider']))
 ?>
