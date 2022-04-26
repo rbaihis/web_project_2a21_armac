@@ -1,36 +1,33 @@
 <?php
-include_once '../../Model/commande.php';
-include_once '../../Controller/commandeC.php';
+include_once '../../Model/panier.php';
+include_once '../../Controller/panierC.php';
 
         $error = "";
     // create
- $commande = null;
+ $panier = null;
     // create an instance of the controller
-    $commandeC = new commandeC();
+    $panierC = new panierC();
     if (
-        isset($_POST["date_cmd"]) &&
-		isset($_POST["adresse"]) &&		
-        isset($_POST["prix"])  &&
-        isset($_POST["idClient"])
+        isset($_POST["idClient"]) &&
+		isset($_POST["refProduit"]) &&		
+        isset($_POST["quantite"])  
 		 )
         {
         if (
-            !empty($_POST["date_cmd"]) && 
-			!empty($_POST["adresse"]) &&
-            !empty($_POST["prix"]) &&
-            !empty($_POST["idClient"]) 
+            !empty($_POST["idClient"]) && 
+			!empty($_POST["refProduit"]) &&
+            !empty($_POST["quantite"]) 
 
         ) {
-            $commande = new commande(
-                $_POST['date_cmd'],
-                $_POST['adresse'],
-                $_POST['prix'],
-                $_POST['idClient']
+            $panier = new panier(
+                $_POST['idClient'],
+                $_POST['refProduit'],
+                $_POST['quantite']
 			
             );
-            $commandeC->modifierCommande($commande,$_POST['id']);
+            $panierC->modifierPanier($panier,$_POST['id']);
         
-            header('Location:affichageCommande.php');
+            header('Location:affichagePanier.php');
         }
         else
             $error = "Missing information";
@@ -112,7 +109,7 @@ include_once '../../Controller/commandeC.php';
                 <div class="bg-white tm-block">
                     <div class="row">
                         <div class="col-12">
-                            <h2 class="tm-block-title d-inline-block">Modifier Commande</h2>
+                            <h2 class="tm-block-title d-inline-block">Modifier panier</h2>
                         </div>
                     </div>
                     <div class="row mt-4 tm-edit-product-row">
@@ -120,39 +117,41 @@ include_once '../../Controller/commandeC.php';
                        
         
                 <div id="error">
-            <?php echo $error; ?>        			
-            <?php
+                <?php
                 if (isset($_POST["id"])){
-				$commande = $commandeC->recupererCommande($_POST["id"]);
+				$panier = $panierC->recupererPanier($_POST["id"]);
                 ?>
                 </div>
+            <?php echo $error; ?>        			
+           
         
                 <form action="" method='POST'>
-                
-                    <input type="hidden" id="id" name="id" value="<?php echo $commande["id"];?> " 
+               
+            
+                    <input type="hidden" id="id" name="id" value="<?php echo $panier["id"];?> " 
                     minlength="3" maxlength="20" size="10" >
                     <br><br>
-                <label for="adresse">adresse:
+                   
+                    <label for="idClient">idClient :
                     </label>
-                    <input type="adresse" id="adresse" name="adresse" value="<?php echo $commande["adresse"];?>"
+                    <input type="text" id="idClient" name="idClient"   value="<?php echo $panier["idClient"];?>"
                     minlength="3" maxlength="20" size="10" >
                     <br><br>
-             
 
-                    <label for="date_cmd">date commande:
+                    <label for="refProduit">reference Produit :
                     </label>
-                    <input type="text" id="date_cmd" name="date_cmd" value="<?php echo $commande["date_cmd"];?>"
+                    <input type="text" id="refProduit" name="refProduit"  value="<?php echo $panier["refProduit"];?>"
                     minlength="3" maxlength="20" size="10" >
                     <br><br>
-                    <label for="prix">prix:
+
+                    <label for="quantite">quantite :
                     </label>
-                    <input type="text" id="prix" name="prix" value="<?php echo $commande["prix"];?>"
+                    <input type="text" id="quantite" name="quantite" value="<?php echo $panier["quantite"];?>"
                     minlength="3" maxlength="20" size="10" >
                     <br><br>
          
                   
-                    <input type="hidden" id="idClient" name="idClient" value="<?php echo $commande["idClient"];?> " 
-                    minlength="3" maxlength="20" size="10" >
+                   
                     <br><br>
               <div class="buttons">
                 <input type="Reset" class="button" value="Reset" />

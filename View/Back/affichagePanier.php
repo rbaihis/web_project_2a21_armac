@@ -1,9 +1,9 @@
 <?php
 
-include_once '../../Model/commande.php';
-include_once 'C:\xampp\htdocs\Gestion_Commande\Controller\commandeC.php';
-$commandeC = new commandeC();
-$listeC =$commandeC->afficherCommande();?>
+include_once '../../Model/panier.php';
+include_once 'C:\xampp\htdocs\Gestion_Commande\Controller\panierC.php';
+$panierC = new panierC();
+$listeC =$panierC->afficherpanier();?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -43,9 +43,15 @@ $listeC =$commandeC->afficherCommande();?>
                         <li class="nav-item">
                             <a class="nav-link" href="acceuil.html">acceuil</a>
                         </li>
+
+                           
+                            
+
                             <li class="nav-item">
                                 <a class="nav-link" href="accounts.html">gestion produit</a>
                             </li>
+
+                     
                         </div>
                 </nav>
             </div>
@@ -61,7 +67,7 @@ $listeC =$commandeC->afficherCommande();?>
                     <div class="bg-white tm-block h-100">
                         <div class="row">
                             <div class="col-md-8 col-sm-12">
-                                <h2 class="tm-block-title d-inline-block">Commandes</h2>
+                                <h2 class="tm-block-title d-inline-block">Panier</h2>
 
                             </div>
                             <div class="col-md-4 col-sm-12 text-right">
@@ -71,20 +77,30 @@ $listeC =$commandeC->afficherCommande();?>
                             <table class="table table-hover table-striped tm-table-striped-even mt-3">
                                 <thead>
                                     <tr class="tm-bg-gray">
-                                        <th scope="col">Date Commande</th>
-                                    
+                                        <th scope="col">id client</th>
+                                        <th scope="col" class="text-center">reference produit</th>
+                                        <th scope="col" class="text-center">quantite</th>
+                                 
+
                                         <th scope="col">&nbsp;</th>
                                     </tr>
                                     <?php
-    foreach($listeC as $commande){
+    foreach($listeC as $panier){
         ?>
 
 
               <tr>
-                <td><?php echo $commande['date_cmd']; ?></td>
-      
-                 
-        
+                <td><?php echo $panier['idClient']; ?></td>
+                <td><?php echo $panier['refProduit']; ?></td>
+                <td><?php echo $panier['quantite']; ?></td>
+             
+                <td>
+            <form method="POST" action="modifierPanier.php">
+                      <input type="submit" name="ico edit" value="Edit" style="border:none; color:#007bff; background:transparent;"  >
+                        <input type="hidden" value=<?php echo $panier['id']; ?> name="id">
+                    </form>
+             </td>
+             <td><a href="supprimerPanier.php?id=<?php echo $panier['id']; ?>" >Delete</a> </td></button>
 
               
 </td>

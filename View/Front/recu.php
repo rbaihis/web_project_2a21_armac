@@ -1,4 +1,4 @@
-<?php
+<!-- <?php
 
 
 include_once '../../Model/commande.php';
@@ -7,7 +7,7 @@ $commandeC=new commandeC();
 $liste=$commandeC->afficherCommnadeDer();
 
 
-?>
+?> -->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -25,18 +25,18 @@ $liste=$commandeC->afficherCommnadeDer();
 </head>
 
 <body>
-  <?php foreach($liste as $c)
-{ ?>
+  <!-- <?php foreach($liste as $c)
+{ ?> -->
   <div class="row1-container">
     <div class="box box-down cyan">
       <h2>Recu</h2>
-      <p>Prix: <?php echo $c['prix']; ?> DT</p>
+      <!-- <p>Prix: <?php echo $c['prix']; ?> DT</p>
       <p>adresse: <?php echo $c['adresse']; ?> </p>
-      <p>Date: <?php echo $c['date_cmd']; ?></p>
+      <p>Date: <?php echo $c['date_cmd']; ?></p> -->
     <a href="index.php">  <img width=50% src="https://i0.wp.com/muusculationvitale.com/wp-content/uploads/2016/10/valide.png?fit=256%2C256" alt=""></a>
     
 </div>
-<?php } ?>
+<!-- <?php } ?> -->
     
 
     
