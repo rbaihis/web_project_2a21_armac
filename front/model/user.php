@@ -173,7 +173,65 @@ class UserModel extends Sanitize{
 
 
 
-
         
+
+        static function test_email_exist_in_users_table_return_bool_or_string_if_crashed( $email){
+              
+              $pdo=getdbconnection();   
+              
+              try{
+                     $statment=$pdo->prepare( " SELECT * FROM users WHERE email = :email" );
+                     $statment->execute([":email"=>$email] );
+
+                     if($statment->rowCount() )
+                            return true;
+                     else
+                            return false;
+
+
+              }catch(PDOException $error){
+                     //putting error message in log for debug 
+                     error_log("dbconfig.php, SQL error=".$error->getMessage()  );
+
+                     //error while inserting :either  email not unique || wrong sql query  .
+                     return $statment=" internal error:(read) contact specialist ";
+              }
+       }
+
+
+       
+       static function update_password( $password , $email ){
+              
+              
+              $updateInput = self::sanitizeinput($password);
+              
+              $pdo=getdbconnection();
+              $updatequery = "UPDATE users SET password= :password  WHERE email= :email ;" ;
+              $statment = $pdo->prepare($updatequery);
+              
+              
+              try{
+                                    
+                     $statment->execute( [":password" => $updateInput , ":email" => $email ] );
+                     if( $statment->rowCount() > 0 )
+                            return true;
+                     else
+                            return false;
+                                                        
+              }catch(PDOException $error){
+                     
+                     error_log("update_pasword, SQL error=".$error->getMessage()  );
+                                   
+                            
+                     return $statment=" internal error:(update) contact specialist ";
+              }
+                            
+                            
+                            
+                            
+       }
+                     
+                     
+                     
 }
 ?>

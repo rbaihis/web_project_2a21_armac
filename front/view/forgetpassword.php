@@ -1,16 +1,13 @@
 <?php
 session_start();
 
+require("../../front/view/header.php");
 
- if( isset($_SESSION['account'])  ) 
+
+ if( isset($_POST['submit'])  ) 
 {
-	header("Location: ../../front/view/homepage.php"); 
-} else{
 	require("../../front/controller/usercontroller.php");
-	UserC :: login();
-
-	require("../../front/view/header.php");
-	require "../../front/view/nav.php"; 
+	UserC ::send_reset_email_with_url_to_existing_users($_POST['email_account']);	
 }
 
 ?>
@@ -20,7 +17,7 @@ session_start();
 			<div class="wrap-login100 p-l-50 p-r-50 p-t-77 p-b-30">
 				<form class="login100-form validate-form"  method="post" >
 					<span class="login100-form-title p-b-55">
-						Login <br>
+					Reset Password <br>
 					</span>
 
 	
@@ -42,40 +39,29 @@ if( isset($_SESSION['errormsg']) && ! isset($_POST['account'])  )
 
 ?>			
 					<div class="wrap-input100 validate-input m-b-16" data-validate = "Valid email is required: ex@abc.xyz">
-						<input class="input100" type="text" name="account" placeholder="Email" value="<?=  htmlentities( $_SESSION['inputsTab'][0] ) ?>">
+						<input class="input100" type="text" name="email_account" placeholder="Enter ur current email" >
 						<span class="focus-input100"></span>
 						<span class="symbol-input100">
 							<span class="lnr lnr-envelope"></span>
 						</span>
 					</div>
 					
-					<div class="wrap-input100 validate-input m-b-16" data-validate = "Password is required">
-						<input class="input100" type="password" name="pw" placeholder="Password"  value="<?=  htmlentities( $_SESSION['inputsTab'][1] ) ?>" >
-						<span class="focus-input100"></span>
-						<span class="symbol-input100">
-							<span class="lnr lnr-lock"></span>
-						</span>
-					</div>
 					
-					<div class="contact100-form-checkbox m-l-4">
-						<label >
-							<a href="../../front/view/forgetpassword.php">forget password ? </a>
-						</label>
-					</div>
+			
 					
 					<div class="container-login100-form-btn p-t-25">
-						<input type="submit" class="login100-form-btn" name="submit" value="Login" >
+						<input type="submit" class="login100-form-btn" name="submit" value="rest_password" >
 						
 						
 					</div>
 					
 					<div class="text-center w-full p-t-115">
 						<span class="txt1">
-							Not a member?
+							is it a mistake ?
 						</span>
 						
-						<a class="txt1 bo1 hov1" href="../../front/view/register.php">
-							Sign up now							
+						<a class="txt1 bo1 hov1" href="../../front/view/login.php">
+							Log in 							
 						</a>
 					</div>
 				</form>

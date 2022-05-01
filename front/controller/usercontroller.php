@@ -337,16 +337,155 @@ function updateController(){
 
 
 
+    
+    
+    
+    // ******************************************************************************************************************
+    // ******************************************************************************************************************
+    // ******************************************************************************************************************
+    // ******************************************************************************************************************
+    //! _-_-_-_-_-Reset password via url-_-_-_-_-_-_-_-_-_-_-_
+    
+    static function return_path_generated_token_and_update_db_with_token_if_email_exist_else_return_false($emailTo ,$pagephp ){
+        require "../../dbconfig.php";
+        $statment=UserModel:: test_email_exist_in_users_table_return_bool_or_string_if_crashed( $emailTo );
+        
+        $flag_allow_send=false;
+
+        if( (! is_string( $statment)) && $statment===true ){
+
+            $token=uniqid(true);// generate unique token
+            
+            require_once "../../front/model/resetpassword.php";
+            
+            $_SESSION['debug_result']=$already_asked=Resetpassword::test_email_exist_in_table($emailTo);
+
+            if(  $already_asked === false){
+                
+                try{    
+                    Resetpassword::insert_in_resetpassword_token_and_email($token,$emailTo);
+                    $flag_allow_send=true;
+
+                }catch(PDOException $error){
+                    //putting error message in log for debug 
+                    error_log("dbconfig.php, SQL error=".$error->getMessage()  );
+                }
+                
+            }
+             else{  
+                
+                try{    
+                    Resetpassword::update_in_resetpassword_token_value($token,$emailTo);
+                    $flag_allow_send=true;
+                }catch(PDOException $error){
+                    //putting error message in log for debug 
+                    error_log("dbconfig.php, SQL error=".$error->getMessage()  );
+                }
+                
+            }
+            
+            if($statment===true && $flag_allow_send ===true  )
+                return "http://".$_SERVER["HTTP_HOST"].dirname($_SERVER["PHP_SELF"])."/".$pagephp."?token=".$token."&email=".$emailTo;
+            else
+                return false;
+            
+        }else
+            return false;
+        
+        
+    }
+    
+    //-------------
+    static function send_reset_email_with_url_to_existing_users( $email ){
+        require_once "../../front/model/emailclass.php";
+        
+        $url=self::return_path_generated_token_and_update_db_with_token_if_email_exist_else_return_false($email,"passwordupdate.php");
+
+        if( is_string($url) ){
+            $objmail=new MailModel();
+            $body=MailModel::body_forget_password_email_body_html_style($email,$url,$objmail->sender_Email,"To reset ur email");
+            $objmail->send_email( $objmail->sender_Email , $objmail->password_email,$email,"Request reset password", $body ,$objmail->reply_to_email);
+        }
+
+
+        header ("Location: ../../front/view/reset_msg.php");
+        return;
+
+    }
+ 
+
+    function verify_token_exist_set_flag_for_update_redirect_to_password_update_page($token_in_url,$email_in_url){
+        require_once "../../front/model/resetpassword.php"; 
+        
+        $test_if_token_matchs=Resetpassword::test_token_exist_in_table($token_in_url);
+       
+
+        if( $test_if_token_matchs === true )
+        {
+            $_SESSION["update_password"]["good_to_go"]=true;
+            $_SESSION["update_password"]["email_to"]=$email_in_url;
+
+            header('Location: ../../front/view/passwordupdate.php');
+        }
+        else{
+            unset($_SESSION["update_password"]); // zeyda just 3la mayeti
+            header('Location: ../../front/view/404expired_token.php');
+        }
+
+    } 
+
+
+    function allow_update_password($pw ,$pwverif , $email){
+
+        
+        $condition= ( (isset($pw) && (!empty($pw)) ) ) &&  ( (isset($pwverif) && (!empty($pwverif)) ) ) && ( $pw===$pwverif ) ;
+
+        if( $condition === true ){
+            require_once "../../front/model/user.php"; 
+            require "../../dbconfig.php";
+            $pwupdate=UserModel::update_password($pw, $email );
+
+            if(  $pwupdate=== true)
+            {
+                require_once "../../front/model/resetpassword.php";
+                $deleted=Resetpassword::delete_row_via_email($email);
+
+                unset($_SESSION["update_password"]["good_to_go"]); // unnecessary
+                unset($_SESSION["update_password"]["email_to"]); // unnecessary 
+                unset($_SESSION["update_password"]); // necessary if both above not mentioned
+                
+
+                if($deleted===true)
+                    header("Location: ../../front/view/msg_update_pw.php");
+                else
+                    header("Location: ../../front/view/404technical.php");
+
+            }else{
+
+                header("Location: ../../front/view/passwordupdate.php?error_msg=bad_input");
+                }
+
+        }
+         else
+            header("Location: ../../front/view/passwordupdate.php");
+    }
 
 
 
-// ******************************************************************************************************************
-// ******************************************************************************************************************
-// ******************************************************************************************************************
-// ******************************************************************************************************************
+    
+   //! _-_-_--_-END_reset_password_via_url_-_-_-_-_-_-_-_-_--_ 
+
 
 }
-        
+ 
+
+
+//$user =new UserC();
+
+//echo($user->return_path_generated_token_and_update_db_with_token_if_email_exist_else_return_false("seif@gmail.com","passwordupdate.php") );
+
+//$user->allow_update_password("2235h","2235h","sei@gmail.com");
+
 ?>
 
 
