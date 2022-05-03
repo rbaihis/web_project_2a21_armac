@@ -1,7 +1,7 @@
 <?php
-require "../../includeclasses/PHPmailer.php";
-require "../../includeclasses/SMTP.php";
-require "../../includeclasses/Exception.php";
+require "../../includeclasses/mailer/PHPmailer.php";
+require "../../includeclasses/mailer/SMTP.php";
+require "../../includeclasses/mailer/Exception.php";
 
 //define name spaces 
 use PHPmailer\PHPmailer\PHPmailer;

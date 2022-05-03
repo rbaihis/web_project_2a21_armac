@@ -75,6 +75,23 @@ echo ("</pre>");
 
 
  
+var_dump($_SESSION['access_token'] ."\n");
+var_dump($_SESSION['user_first_name']."\n"); 
+
+
+
+var_dump($_SESSION['user_last_name']."\n");
+
+
+var_dump($_SESSION['user_email_address']."\n");
+
+
+
+
+var_dump($_SESSION['user_image'] ."\n");
+
+
+
 
 ?>
 

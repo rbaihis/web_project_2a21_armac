@@ -8,106 +8,6 @@ class InfoConnexion{
     public $last_login;
 
 
-    /**
-     * Get the value of id
-     */ 
-    public function getId()
-    {
-        return $this->id;
-    }
-
-    /**
-     * Set the value of id
-     *
-     * @return  self
-     */ 
-    public function setId($id)
-    {
-        $this->id = $id;
-
-        return $this;
-    }
-
-    /**
-     * Get the value of logged_in
-     */ 
-    public function getLogged_in()
-    {
-        return $this->logged_in;
-    }
-
-    /**
-     * Set the value of logged_in
-     *
-     * @return  self
-     */ 
-    public function setLogged_in($logged_in)
-    {
-        $this->logged_in = $logged_in;
-
-        return $this;
-    }
-
-    /**
-     * Get the value of account_created
-     */ 
-    public function getAccount_created()
-    {
-        return $this->account_created;
-    }
-
-    /**
-     * Set the value of account_created
-     *
-     * @return  self
-     */ 
-    public function setAccount_created($account_created)
-    {
-        $this->account_created = $account_created;
-
-        return $this;
-    }
-
-    /**
-     * Get the value of registred_accounts
-     */ 
-    public function getRegistred_accounts()
-    {
-        return $this->registred_accounts;
-    }
-
-    /**
-     * Set the value of registred_accounts
-     *
-     * @return  self
-     */ 
-    public function setRegistred_accounts($registred_accounts)
-    {
-        $this->registred_accounts = $registred_accounts;
-
-        return $this;
-    }
-
-    /**
-     * Get the value of last_login
-     */ 
-    public function getLast_login()
-    {
-        return $this->last_login;
-    }
-
-    /**
-     * Set the value of last_login
-     *
-     * @return  self
-     */ 
-    public function setLast_login($last_login)
-    {
-        $this->last_login = $last_login;
-
-        return $this;
-    }
-
 
     //============================================================
     //============================================================
@@ -116,7 +16,7 @@ class InfoConnexion{
         //update connection SQL TABLE 
         require_once "../../dbconfig.php";
         $pdo=getdbconnection();
-        $pdo->query("UPDATE connexion SET logged_in=logged_in+1 , registred_accounts = (SELECT COUNT(user_id) FROM users) , account_created = (SELECT MAX(user_id) from users ) , last_login= CURRENT_TIMESTAMP() ;");
+        $pdo->query("UPDATE connexion SET logged_in=logged_in+1 , registred_accounts = (SELECT COUNT(user_id) FROM users)  , last_login= CURRENT_TIMESTAMP() ;");
         
     }
     
@@ -125,7 +25,7 @@ class InfoConnexion{
         // update connection table for backend statistics decrement after logout
         require_once "../../dbconfig.php";
         $pdo=getdbconnection();
-        $pdo->query("UPDATE connexion SET logged_in=logged_in-1 , registred_accounts = (SELECT COUNT(user_id) FROM users) , account_created = (SELECT MAX(user_id) from users ) ;");
+        $pdo->query("UPDATE connexion SET logged_in=logged_in-1 , registred_accounts = (SELECT COUNT(user_id) FROM users) ;");
         //end
     }
     //--------------------------------------------------------------
@@ -133,7 +33,7 @@ class InfoConnexion{
         // update connection table for backend statistics decrement after logout
         require_once "../../dbconfig.php";
         $pdo=getdbconnection();
-        $pdo->query("UPDATE connexion SET  registred_accounts = (SELECT COUNT(user_id) FROM users) , account_created = (SELECT MAX(user_id) from users ) ;");
+        $pdo->query("UPDATE connexion SET  registred_accounts = (SELECT COUNT(user_id) FROM users) , account_created = account_created+1 ;");
         //end
 
     }
@@ -150,7 +50,7 @@ class InfoConnexion{
         // update connection table for backend statistics decrement after logout
         require_once "../../dbconfig.php";
         $pdo=getdbconnection();
-        $pdo->query("UPDATE connexion SET  registred_accounts = (SELECT COUNT(user_id) FROM users) , account_created = (SELECT MAX(user_id) from users ) ;");
+        $pdo->query("UPDATE connexion SET  registred_accounts = (SELECT COUNT(user_id) FROM users)  ;");
         //end
     }
   
@@ -158,5 +58,20 @@ class InfoConnexion{
 
 
 
+//--------read data for statistics ------------------------------------------------------
+static function getDataInJason_logged_in__account_created__registred_accounts__last_login(){
+
+    require_once "../../dbconfig.php";
+    $pdo=getdbconnection();
+    $statment=$pdo->query("SELECT * from connexion where id =1");
+    
+    return json_encode($statment->fetch( PDO::FETCH_ASSOC ) );
 }
+
+}
+
+
+
+
+
 ?>

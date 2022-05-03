@@ -476,17 +476,68 @@ function updateController(){
    //! _-_-_--_-END_reset_password_via_url_-_-_-_-_-_-_-_-_--_ 
 
 
-}
+   function google_api_auth($name,$email){
+
+
+        $statment=UserModel:: google_create_account_or_login( $name,$email );
+
+        if(is_object($statment) && $statment->rowCount()>0 ){
+            $userdata=$statment->fetch( PDO::FETCH_ASSOC ); 
+            $_SESSION['userdatatab']=$userdata;
+            $_SESSION['account']= $email; 
+            //start: update InfoConnexion table for backend admin use statistics  
+            InfoConnexion::update_status_after_login();
+            header("Location: ../../front/view/homepage.php");
+            return;
+        }
+
+    }
+    
+
+    function api_google_fetch_data_and_set_sessions( & $google_client){
+  
  
+  
+        //This $_GET["code"] variable value received after user has login into their Google Account redirct to PHP script then this variable value has been received
+        if(isset($_GET["code"]))
+        {
+          //It will Attempt to exchange a code for an valid authentication token.
+          $token = $google_client->fetchAccessTokenWithAuthCode($_GET["code"]);
+          
+          //This condition will check there is any error occur during geting authentication token. If there is no any error occur then it will execute if block of code/
+          if(!isset($token['error']))
+          {
+            //Set the access token used for requests
+            $google_client->setAccessToken($token['access_token']);
+            
+            //Store "access_token" value in $_SESSION variable for future use.
+            $_SESSION['access_token'] = $token['access_token'];
+            
+            //Create Object of Google Service OAuth 2 class
+            $google_service = new Google\Service\Oauth2($google_client);
+            
+            //Get user profile data from google
+            $data = $google_service->userinfo->get();
+            
+            
+            $_SESSION['set']=$data;
+            //Below you can find Get profile data and store into $_SESSION variable
+            if(!empty($data['given_name']))
+            {
+              $_SESSION['user_first_name'] = $data['name'];
+            }
+            
+            
+            if(!empty($data['email']))
+            {
+              $_SESSION['user_email_address'] = $data['email'];
+            }
+            
+          }
+        } 
+      
+    }
 
-
-//$user =new UserC();
-
-//echo($user->return_path_generated_token_and_update_db_with_token_if_email_exist_else_return_false("seif@gmail.com","passwordupdate.php") );
-
-//$user->allow_update_password("2235h","2235h","sei@gmail.com");
-
+}
 ?>
-
-
 

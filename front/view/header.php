@@ -8,6 +8,8 @@
 <link rel="icon" href="#">
 <title>Bioté center</title>
 
+
+
 <!--==========*** home **=========================================================-->	
 <!-- CSS -->
 <link href="../../front/assets/css/style.css" rel="stylesheet">

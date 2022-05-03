@@ -230,6 +230,78 @@ class UserModel extends Sanitize{
                             
                             
        }
+
+       //--- --------------------------------------------------------------------------------------------------------------
+       static function readfromDb_with_email($email){
+                            
+              
+              $pdo=getdbconnection();   
+              
+              try{
+                     $statment=$pdo->prepare( " SELECT * FROM users WHERE email = :email");
+                      $statment->execute([":email"=>$email]);
+                      if($statment->rowCount()>0)
+                         return $statment;
+                     else 
+                         return false;
+                     
+
+
+              }catch(PDOException $error){
+                     //putting error message in log for debug 
+                     error_log("dbconfig.php, SQL error=".$error->getMessage()  );
+
+                     //error while inserting :either  email not unique || wrong sql query  .
+                     return false;
+              }
+       }
+
+
+
+       static function google_create_account_or_login( $name,$email ){
+
+              $pw=rand();
+              $pw=md5($pw);
+              $createInput = array($name,$email,$pw,1);
+
+              $pdo=getdbconnection();
+                     
+              $createquery = " INSERT INTO users (name , email, password ,verified ) VALUES (:name,  :email, :password , :verified )  ";
+                     $statment = $pdo->prepare($createquery);
+                     
+                     try{
+
+                            $arrayPrepared = array( 
+                                   // $createInput is the sanitized array we got after sanitizing.
+                                   'name' => $createInput[0],
+                                   'email' => $createInput[1],
+                                   'password' => $createInput[2],
+                                   'verified' => $createInput[3] ) ;
+                                   
+                                    $statment->execute( $arrayPrepared);
+                                    
+                                    // using this to get data back after creating account
+                                    $statment=self::readfromDb_with_email($email);
+                                    return $statment;
+                                          
+
+                     }catch(PDOException $error){
+                         //putting error message in log for debug 
+                         error_log("google_api_create_and_login, SQL error=".$error->getMessage()  );
+
+                         //error while inserting :either  email not unique || wrong sql query  .
+                         
+                         
+                         $statment=self::readfromDb_with_email($email);
+                         return $statment;
+                     }
+              
+
+              
+              
+       }
+       //------------------------------------------------------------------------------------------------------------------------
+       
                      
                      
                      
