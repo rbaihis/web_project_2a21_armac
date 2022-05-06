@@ -4,7 +4,29 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e364f300-6249-4049-af1c-80bc915cdc38" name="Changes" comment="" />
+    <list default="true" id="e364f300-6249-4049-af1c-80bc915cdc38" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/back/core/deleteCategorie.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/back/core/updateCategorie.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/back/view_back/categorie.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/back/view_back/reservation.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/back/view_back/updateCategorie.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/css/utilseif.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/utilseif.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/back/controller_back/categC.php" beforeDir="false" afterPath="$PROJECT_DIR$/back/controller_back/categC.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/back/core/addCateg.php" beforeDir="false" afterPath="$PROJECT_DIR$/back/core/addCateg.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/back/core/updateService.php" beforeDir="false" afterPath="$PROJECT_DIR$/back/core/updateService.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/back/view_back/Footer.php" beforeDir="false" afterPath="$PROJECT_DIR$/back/view_back/Footer.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/back/view_back/Service.php" beforeDir="false" afterPath="$PROJECT_DIR$/back/view_back/Service.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/back/view_back/nav-bar.php" beforeDir="false" afterPath="$PROJECT_DIR$/back/view_back/nav-bar.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/controller/reservationC.php" beforeDir="false" afterPath="$PROJECT_DIR$/front/controller/reservationC.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/controller/service_C.php" beforeDir="false" afterPath="$PROJECT_DIR$/front/controller/service_C.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/core/addRes.php" beforeDir="false" afterPath="$PROJECT_DIR$/front/core/addRes.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/model/reservation.php" beforeDir="false" afterPath="$PROJECT_DIR$/front/model/reservation.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/view/categ.php" beforeDir="false" afterPath="$PROJECT_DIR$/front/view/categ.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/view/reservation.php" beforeDir="false" afterPath="$PROJECT_DIR$/front/view/reservation.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/view/service.php" beforeDir="false" afterPath="$PROJECT_DIR$/front/view/service.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/view/updateRes.php" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -20,10 +42,22 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="288WdGCjMV6hqNswgudASSeH6Wl" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="autoscrollToSource" value="true" />
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -33,7 +67,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/front/core" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../stripe" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -43,11 +77,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\Service_G\back\view_back" />
+      <recent name="C:\xampp\htdocs\Service_G\back\core" />
       <recent name="C:\xampp\htdocs\Service_G\front\core" />
       <recent name="C:\xampp\htdocs\Service_G\front" />
       <recent name="C:\xampp\htdocs\Service_G\front\controller" />
-      <recent name="C:\xampp\htdocs\Service_G\front\model" />
-      <recent name="C:\xampp\htdocs\Service_G\front\view" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\xampp\htdocs\Service_G\front" />
@@ -67,7 +101,13 @@
       <workItem from="1650761301517" duration="169000" />
       <workItem from="1650767368777" duration="820000" />
       <workItem from="1650768298880" duration="18863000" />
-      <workItem from="1650852488384" duration="31216000" />
+      <workItem from="1650852488384" duration="34193000" />
+      <workItem from="1651058360937" duration="1880000" />
+      <workItem from="1651119532523" duration="2751000" />
+      <workItem from="1651487237452" duration="956000" />
+      <workItem from="1651537792955" duration="1185000" />
+      <workItem from="1651700364039" duration="14888000" />
+      <workItem from="1651763378180" duration="24130000" />
     </task>
     <servers />
   </component>

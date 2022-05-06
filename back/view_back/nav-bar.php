@@ -21,6 +21,9 @@
     <link rel="stylesheet" href="../../assets/css/bootstrap.min.css">
     <!-- https://getbootstrap.com/ -->
     <link rel="stylesheet" href="../../assets/css/tooplate.css">
+
+
+
 </head>
 
 <body class="bg03">
@@ -39,11 +42,7 @@
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mx-auto">
-                    <li class="nav-item">
-                        <a class="nav-link " href="#">Dashboard
-                            <span class="sr-only">(current)</span>
-                        </a>
-                    </li>
+
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
                            aria-expanded="false">
@@ -55,10 +54,6 @@
                             <a class="dropdown-item" href="#">Yearly Report</a>
                         </div>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="products.php">Products</a>
-                    </li>
-
 
                     <li class="nav-item">
                         <a class="nav-link" href="accounts.php">Accounts</a>
@@ -69,6 +64,13 @@
                         <a class="nav-link" href="Service.php">Service</a>
                     </li>
 
+                    <li class="nav-item">
+                        <a class="nav-link" href="categorie.php">Categorie</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="reservation.php">Reservation</a>
+                    </li>
 
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"

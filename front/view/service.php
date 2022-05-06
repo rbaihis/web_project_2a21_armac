@@ -35,21 +35,65 @@ $response = $serviceC->getServiceByType($_GET['id'],$serviceC->conn);
             <i class="iconstartitle textmagenta fa fa-star"></i>
 
 
+            <style>
 
 
+
+                .cardC {
+                    color: #fff;
+                    font-size: 110px;
+                    margin: 30px;
+                    text-align: center;
+                    background: #751241;
+                    width: 200px;
+                    height: 270px;
+                    transition: all 1.5s ease;
+                    transition-style: preserve-3d;
+                }
+
+                .cardC:hover {
+                    transform: rotatez(360deg);
+                }
+
+
+
+
+            </style>
+            <body>
 
             <form action="../core/addRes.php" method="post">
-                <label> choose date </label>
-                <input type="date" name="date" >
-                <?php while ($serviceC = $response->fetch()) { ?>
+            <div class="container" >
 
+                <div class="row" >
+                    <label> Mail </label>
+                    <input type="email" name="email" >
+                    <label> choose date </label>
+                    <input type="date" name="date" >
 
-                    <input type="checkbox"  name="id" id="id" value="<?php echo $serviceC['id'] ?>" >
-                    <label ><?php  echo $serviceC['nom']; ?> <br></label>
-                <?php } ?>
-         <br>
-                <button style="color: #A50965" type="submit"   name="reserver" value="reserver"  href="../view/reservation.php"  > reserver </button>
+                    <?php while ($serviceC = $response->fetch()) { ?>
+                        <div class="col-6">
+                            <div class="cardC">
+                                <label style="font-size: 20px "><?php  echo $serviceC['nom']; ?> </label>
+                                <input type="checkbox"  name="id" id="id" value="<?php echo $serviceC['id'] ?>" >
+
+                            </div>
+
+                        </div>
+
+                    <?php } ?>
+                </div>
+
+            </div>
+
+<br>
+                <br>
+                <button style="background: #A50965"  type="submit"   name="reserver" value="reserver"  class="btn btn-danger" href="../view/reservation.php"  >
+                    reserver
+                </button>
+
             </form>
+            </body>
+
 
 
         </div>

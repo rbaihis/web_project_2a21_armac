@@ -36,13 +36,52 @@ $response = $categC->afficherCateg($categC->conn);
 		<div class="pagearea">
 		<h1 class="page-headline">Service</h1>
 		<i class="iconstartitle textmagenta fa fa-star"></i>
+           <style>
 
 
-<form>
-    <?php while ($categ = $response->fetch()) { ?>
-        <br> <h2> <a href="service.php?id=<?php echo $categ['type'] ?>"> <?php echo $categ['type'] ?></a>  </h2>  <br>
-    <?php } ?>
- </form>
+
+               .cardC {
+                   color: #fff;
+                   font-size: 110px;
+                   margin: 30px;
+                   text-align: center;
+                   background: #751241;
+                   width: 200px;
+                   height: 270px;
+                   transition: all 1.5s ease;
+                   transition-style: preserve-3d;
+               }
+
+               .cardC:hover {
+                   transform: rotatez(360deg);
+               }
+
+
+
+
+           </style>
+            <body>
+
+
+            <div class="container" >
+
+                <div class="row" >
+                    <?php while ($categ = $response->fetch()) { ?>
+                    <div class="col-6">
+                        <div class="cardC">
+                            <a style="font-size: 50px "  href="service.php?id=<?php echo $categ['type'] ?>"> <?php echo $categ['type'] ?></a>
+                        </div>
+
+                    </div>
+
+                    <?php } ?>
+                </div>
+
+            </div>
+
+
+            </body>
+
 
 
 		</div>

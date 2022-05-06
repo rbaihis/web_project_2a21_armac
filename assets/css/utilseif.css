@@ -2986,7 +2986,25 @@
 /*tab res */
 
 
+*{
+    border-radius: 12px;
+}
+section{
+    height: 250px;
+    width: 300px;
+    background-color: white;
+    margin: 200px auto 10px auto;
+    position: relative;
+    transition: all .5s;
+}
 
+section:hover{
+    height: 200px;
+}
+
+section:hover div{
+    opacity: 1;
+}
 
 
 
