@@ -1,5 +1,11 @@
 
 <?php
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+
+require '../../PHPMailer/src/Exception.php';
+require '../../PHPMailer/src/PHPMailer.php';
+require '../../PHPMailer/src/SMTP.php';
 
 include_once '../../Model/produit.php';
 include_once '../..\Controller\panier.php';
@@ -11,16 +17,107 @@ $current_panier = $panier->getCurrentPanier();
 
 if( $_SERVER['REQUEST_METHOD']=="GET" && isset($_GET["id_produit"])){
     return $panier->supprimerDuPanier($_GET["id_produit"],$_GET["id_panier"]);
+}else if( isset($_POST['filter']) )
+{
+    $listeP = $panier->afficherProduitsSorted($current_panier);
+}else if (isset($_POST['keyword'])){
+    $listeP = $panier->afficherProduitsSearch($current_panier);
 }
 else if( $_SERVER['REQUEST_METHOD']=="POST") {
+    $listeP = $panier->afficherPanier($current_panier);
     $panier->confirmePanier($current_panier);
     $commande->confirmerCommande($current_panier);
+    //Pdf
+    $message = '';
+    $output = '
+    <h1 style="text-align:center;color:Green">Details De votre commande</h1>
+    <table style="width:80%;font-size:18px;color:black">
+        <tr style="color:blue">
+            <td style="padding:10px">
+                <h5 class="text-grey mt-1 mr-1 ml-5">Produit</h5>
+            </td>
+            <td style="padding:10px">
+                <h5 >Quantité</h5> 
+            </td style="padding:10px">
+            <td style="padding:10px">
+                <h5 >Prix</h5> 
+            </td>
+        </tr>
+    ';
+    $sum=0;
+    foreach($listeP as $p)
+    {
+    $sum+=$p["prix"]*$p["quatite"];
+     $output .= '
+     <tr style="color:grey">
+        <td style="padding:10px">
+            <h5 class="font-weight-bold">'.$p["nom"].'</h5>
+        </td>
+        <td style="padding:10px">
+            <h5 >'. $p["quatite"].'</h5>
+        </td style="padding:10px">
+        <td style="padding:10px">
+            <h5 >'. $p["quatite"] * $p["prix"].'DT.</h5> 
+        </td>
+     </tr>';
+    }
+    $output .= '
+    </table>
+    <h2  style="margin-left:120px;font-size:21px;color:green">Totale : '. $sum .'DT</h2></div>
+    ';
+
+
+    try{
+    include('pdf.php');
+    $file_name = md5(rand()) . '.pdf';
+    $html_code = '<link rel="stylesheet" href="pdfstyles.css">';
+    $html_code .= $output;
+    $pdf = new Pdf();
+    $pdf->set_base_path("C:\xampp\htdocs\View\Front\pdfstyles.css");
+    $pdf->load_html($html_code);
+    $pdf->render();
+    $file = $pdf->output();
+    file_put_contents($file_name, $file);
+    }catch(Error $e){
+        die ($e);
+    }
+
+
+    try{
+
+
+        $mail = new PHPMailer;
+    
+        $mail->IsSMTP();        //Sets Mailer to send message using SMTP
+        $mail->Host = 'smtp.gmail.com';  //Sets the SMTP hosts of your Email hosting, this for Godaddy
+        $mail->Port = '587';        //Sets the default SMTP server port
+        $mail->SMTPAuth = true;       //Sets SMTP authentication. Utilizes the Username and Password variables
+        $mail->Username = 'transportz.project@gmail.com';     //Sets SMTP username
+        $mail->Password = 'yourpassword';     //Sets SMTP password
+        $mail->SMTPSecure = '';       //Sets connection prefix. Options are "", "ssl" or "tls"
+        $mail->From = 'Biote-center@gmail.com';   //Sets the From email address for the message
+        $mail->FromName = 'Biote-center';   //Sets the From name of the message
+        $mail->AddAddress($_POST["email"], 'Name');  //Adds a "To" address
+        $mail->WordWrap = 50;       //Sets word wrapping on the body of the message to a given number of characters
+        $mail->IsHTML(true);       //Sets message type to HTML    
+        $mail->AddAttachment($file_name);         //Adds an attachment from a path on the filesystem
+        $mail->Subject = 'Details de la commande';   //Sets the Subject of the message
+        $mail->Body = 'Trouver les details de votre commande dans le fichier';    //An HTML or plain text message body
+        if($mail->Send())        //Send an Email. Return true on success or false on error
+        {
+         $message = '<label class="text-success">Customer Details has been send successfully...</label>';
+        }
+        unlink($file_name);
+    }catch(Error $e){
+        die ($e);
+    }
 }else{
     $listeP = $panier->afficherPanier($current_panier);
 }
 
-
 ?>
+
+
 
 
 
@@ -52,7 +149,20 @@ else if( $_SERVER['REQUEST_METHOD']=="POST") {
 <div class="loader-section section-right"></div>
 </div>
 
-
+<nav class="navbar navbar-light  mb-5">
+  <form class="form-inline" method="post">
+    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="keyword" value="<?php if(isset($_POST['keyword'])){ echo $_POST['keyword'];}else{echo "";} ?>"   >
+    <button class="btn btn-danger my-2 my-sm-0" type="submit">Search</button>
+  </form>
+  <form style="margin-right:100px" method="post">
+    <select class="form-select" aria-label="Default select example" name="filter" onchange="this.form.submit()" value="prix">
+    <option value="ref">Filtrer avec</option>
+    <option value="prix" <?php if(isset($_POST['filter'])){ if($_POST['filter'] == "prix") echo "selected";}?> >Prix</option>
+    <option value="nom"  <?php if(isset($_POST['filter'])){ if($_POST['filter'] == "nom") echo "selected";}?> >Nom</option>
+    <option value="type" <?php if(isset($_POST['filter'])){ if($_POST['filter'] == "type") echo "selected";}?> >Type</option>
+    </select>
+ </form>
+</nav>
 <div class="menu-outer">
     <div class="menu-icon">
         <div class="bar"></div>
@@ -74,8 +184,8 @@ else if( $_SERVER['REQUEST_METHOD']=="POST") {
         <div class="bar"></div>
     </div>
 </a>
-<div class="m-5 alert alert-success" <?php if ($_SERVER['REQUEST_METHOD']=="POST"){?>style="display:block"<?php }else{?>style="display:none"<?php }?>>Votre Commande est confirmée</div>
-<div class="container mt-5 mb-5" <?php if ($_SERVER['REQUEST_METHOD']=="POST"){?>style="display:none"<?php } ?>>
+<div class="m-5 alert alert-success" <?php if ($_SERVER['REQUEST_METHOD']=="POST" && !(isset($_POST['filter']) || isset($_POST['keyword']))){?>style="display:block"<?php }else{?>style="display:none"<?php }?>>Votre Commande est confirmée</div>
+<div class="container mt-5 mb-5" <?php if ($_SERVER['REQUEST_METHOD']=="POST" && !(isset($_POST['filter']) || isset($_POST['keyword']))){?>style="display:none"<?php } ?>>
     <div class="d-flex justify-content-center row">
         <div class="col-md-8">
             <div class="p-2">
@@ -108,7 +218,9 @@ else if( $_SERVER['REQUEST_METHOD']=="POST") {
                 <div class="d-flex align-items-center"><i type="submit" onclick="deleteProduct(<?php echo $p['ref'].','.$current_panier ?>)" class="fa fa-trash mb-1 text-danger"></i></div>
             </div>
             <?php } ?>
-            <div class="d-flex flex-row align-items-center mt-3 p-2 mb-5 bg-white rounded"><form method="post" style="width: 50%;"><button class="btn btn-success btn-block btn-lg ml-2 pay-button" type="submit" <?php if ($listeP==[]){?>disabled<?php } ?>>Confirmer La commande</button></form><p class="badge badge-info" style="margin-left:120px;font-size:21px">Totale : <?php echo $sum ?>DT</p</div>
+            <div  class="d-flex flex-row align-items-center mt-3 p-2 mb-5 bg-white rounded"><form class="row ml-5" method="post" <?php if (isset($_POST['keyword'])){?> style="display:none"<?php } ?>><input type="text" name="email" class="col" required placeholder="your email"></input><button class="btn btn-success col btn-block btn-lg ml-2 pay-button" type="submit" <?php if ($listeP==[]){?>disabled<?php } ?>>Confirmer La commande</button></form>
+            <p <?php if (isset($_POST['keyword'])){?> style="display:none"<?php } ?>   class="badge badge-info" style="margin-left:120px;font-size:21px">Totale : <?php echo $sum ?>DT</p>
+        </div>
         </div>
     </div>
 </div>

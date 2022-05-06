@@ -1,12 +1,12 @@
 <?php
 
-include_once '../../Model/commande.php';
-include_once 'C:\xampp\htdocs\Gestion_Commande\Controller\commandeC.php';
-$commandeC = new commandeC();
-$listeC =$commandeC->afficherCommande();?>
+include_once '..\..\Controller\commande.php';
+$commande = new commandes();
+
+$listeC =$commande->getListeCommandes()?>
+
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -72,7 +72,10 @@ $listeC =$commandeC->afficherCommande();?>
                                 <thead>
                                     <tr class="tm-bg-gray">
                                         <th scope="col">Date Commande</th>
-                                    
+                                        <th scope="col" class="text-center">Adresse</th>
+                                        <th scope="col" class="text-center">Prix Totale</th>
+                                        <th scope="col">Id Client</th>
+
                                         <th scope="col">&nbsp;</th>
                                     </tr>
                                     <?php
@@ -82,9 +85,10 @@ $listeC =$commandeC->afficherCommande();?>
 
               <tr>
                 <td><?php echo $commande['date_cmd']; ?></td>
-      
-                 
-        
+                <td><?php echo $commande['adresse']; ?></td>
+                <td><?php echo $commande['totale']; ?></td>
+                <td><?php echo $commande['id']; ?></td>
+                <td><a href="supprimerCommande.php?id=<?php echo $commande['comm_id']; ?>" ><button class="btn btn-danger"> Delete</button></a> </td></button>
 
               
 </td>

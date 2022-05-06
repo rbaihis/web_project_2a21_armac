@@ -61,7 +61,7 @@ function OpenProduct(i){
       $(".popup-overlay").toggle();
     }, 100);
 
-    $.post('http://localhost/Gestion_Commande/View/Front/produits.php', {id_produit:curr_product, id_panier:curr_panier,quantite:qty},function(res){ 
+    $.post('http://localhost/View/Front/produits.php', {id_produit:curr_product, id_panier:curr_panier,quantite:qty},function(res){ 
       console.log(res)
     if(res!=="error"){
       setTimeout(function(){ 
