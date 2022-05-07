@@ -4,6 +4,7 @@
 <?php
     class config {
         private static $x = NULL ;
+        public  z=null;
         private static $y = NULL ;
         private static $pdo = NULL ;
         public static function getConnexion() {
