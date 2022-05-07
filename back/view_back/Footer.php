@@ -1,7 +1,7 @@
 
-<script src="../assets/js/jquery-3.3.1.min.js"></script>
+<script src="../assets_back/js/jquery-3.3.1.min.js"></script>
 <!-- https://jquery.com/download/ -->
-<script src="../assets/js/bootstrap.min.js"></script>
+<script src="../assets_back/js/bootstrap.min.js"></script>
 <!-- https://getbootstrap.com/ -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>

@@ -20,7 +20,9 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </head>
 <body style="background-color: #FDF1F3;">
-    
+
+<?php require "nav.php"; ?>
+<!--     
 <div class="menu-outer">
 		<div class="menu-icon">
 			<div class="bar"></div>
@@ -53,10 +55,10 @@
 		</div>
 	</a>
 
-</div>
-<div class="fixedcallicon">
+</div> -->
+<!-- <div class="fixedcallicon">
 	<i class="fa fa-phone"></i><span class="hide">Réserver - 00 123 000</span>
-</div>
+</div> -->
 
 
 

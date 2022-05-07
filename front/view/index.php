@@ -77,13 +77,21 @@
             <br>
             <br>
             <br>
+            <br>
+            <br>
 			<ul>
           
-				<li><a href="index.html">Home</a></li>
-				<li><a href="index.php">Offre et promo</a></li>
-				<li><a href="store.php">Produits</a></li>
-                <li><a href="etoile.php">Avis</a></li>
-
+            <li><a href="../view/homepage.php">Home</a></li>
+           <!-- moh cy -->
+			<li><a href="index.php">Offre et promo</a></li>
+			<li><a href="store.php">Produits</a></li>
+            <li><a href="etoile.php">Avis</a></li>
+            <!-- end moh cy  -->
+           <li><a href="../view/blog.php">Offre et promo</a></li>
+           <!-- med -->
+           <li><a href="categ.php">Service</a></li>
+           <li><a href="reservation.php">Reservaion</a></li>
+           <!-- end med -->
 			</ul>
 		</nav>
 	</div>
@@ -95,9 +103,9 @@
 	</a>
 
 </div>
-<div class="fixedcallicon">
+<!-- <div class="fixedcallicon">
 	<i class="fa fa-phone"></i><span class="hide">Réserver - 00 123 000</span>
-</div>
+</div> -->
 <?php require_once 'submit_rating.php'; ?> 
     <?php require_once '../controller/process.php'; ?> 
     <?php require_once '../controller/process3.php'; ?> 

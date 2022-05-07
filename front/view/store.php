@@ -74,9 +74,9 @@ $con = mysqli_connect('localhost','root','','gestionoffre');
 
 <body style="background-color: #FDF1F3;">
 
+<?php require "nav.php"; ?>
 
-
-	<div class="menu-outer">
+	<!-- <div class="menu-outer">
 		<div class="menu-icon">
 			<div class="bar"></div>
 			<div class="bar"></div>
@@ -107,7 +107,7 @@ $con = mysqli_connect('localhost','root','','gestionoffre');
 			<div class="bar"></div>
 			<div class="bar"></div>
 		</div>
-	</a>
+	</a> -->
 
 	<div class="wrapper">
 		<div class="d-md-flex align-items-md-center">

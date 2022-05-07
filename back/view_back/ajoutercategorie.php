@@ -1,7 +1,7 @@
 <?php
    
-    include_once '../controller/categorie_c.php';
-    include_once '../model/categorie.php';
+    include_once '../controller_back/categorie_c.php';
+    include_once '../model_back/categorie.php';
 
         $error = "";
   

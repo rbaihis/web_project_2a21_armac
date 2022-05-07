@@ -2,7 +2,7 @@ function addCategory(info) {
     let title = info.title;
     $.ajax({
         type: "POST",
-        url: "../controller/categoryController.php",
+        url: "../controller_back/categoryController.php",
         data: {
             add: true,
             title: title
@@ -23,7 +23,7 @@ function editCategory(id, info) {
     let title = info.title;
     $.ajax({
         type: "POST",
-        url: "../controller/categoryController.php",
+        url: "../controller_back/categoryController.php",
         data: {
             edit: true,
             id: id,
@@ -39,7 +39,7 @@ function editCategory(id, info) {
 function deleteCategory(id) {
     $.ajax({
         type: "POST",
-        url: "../controller/categoryController.php",
+        url: "../controller_back/categoryController.php",
         data: {
             delete: true,
             id: id

@@ -1,5 +1,5 @@
 <?php
-include '../controller/categorie_c.php';
+include '../controller_back/categorie_c.php';
 $categorieC = new categorieC();
 $listec = $categorieC->afficherCategorie();
 ?>
@@ -34,7 +34,10 @@ $listec = $categorieC->afficherCategorie();
         <div class="container">
             <div class="row">
                 <div class="col-12">
-                    <nav class="navbar navbar-expand-xl navbar-light bg-light">
+
+
+                <?php include "nav-bar_moh_cy.php" ?>
+                    <!-- <nav class="navbar navbar-expand-xl navbar-light bg-light">
                         <a class="navbar-brand" href="index.html">
                             <i class="fas fa-3x fa-tachometer-alt tm-site-icon"></i>
                             <h1 class="tm-site-title mb-0">Dashboard</h1>
@@ -77,7 +80,7 @@ $listec = $categorieC->afficherCategorie();
         
                               
                         </div>
-                    </nav>
+                    </nav> -->
                 </div>
             </div>
             <!-- row -->
@@ -93,7 +96,7 @@ $listec = $categorieC->afficherCategorie();
                                 <a href="ajoutercategorie.php" class="btn btn-small btn-primary">Add New categorie</a>
                             </div>
                         </div>
-                        <div class="table-responsive">
+                        <div class="table-responsive" >
                             <table class="table table-hover table-striped tm-table-striped-even mt-3">
                                 <thead>
                                     <tr class="tm-bg-gray">
@@ -116,7 +119,7 @@ $listec = $categorieC->afficherCategorie();
                                         </td>
                                     </tr>
                                 <?php } ?>
-                                < </tr>
+                                </tr>
 
 
 
@@ -151,14 +154,16 @@ $listec = $categorieC->afficherCategorie();
 
                 <div class="col-xl-4 col-lg-12 tm-md-12 tm-sm-12 tm-col">
                     <div class="bg-white tm-block h-100">
-                        <h2 class="tm-block-title d-inline-block">Product Categories</h2>
+                        <h2 class="tm-block-title d-inline-block"> 
+                             <!-- Product Categories -->
+                            </h2>
                         <table class="table table-hover table-striped mt-3">
                             <tbody>
 
                             </tbody>
                         </table>
 
-                        <a href="add-category.html" class="btn btn-primary tm-table-mt">Add New Category</a>
+                        <!-- <a href="add-category.html" class="btn btn-primary tm-table-mt">Add New Category</a>  -->
                     </div>
                 </div>
             </div>

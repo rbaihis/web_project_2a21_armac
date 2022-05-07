@@ -22,8 +22,8 @@
 
 <body class="">
     <?php 
-        require_once '../Controller/processOffre.php'; 
-        require_once '../Controller/processCoupon.php'; 
+        require_once '../controller_back/processOffre.php'; 
+        require_once '../controller_back/processCoupon.php'; 
         error_reporting(E_ERROR | E_PARSE);
         error_reporting(E_ALL ^ E_NOTICE);  
     ?> 
@@ -42,7 +42,10 @@
     <div class="container">
         <div class="row">
             <div class="col-12">
-                <nav class="navbar navbar-expand-xl navbar-light bg-light">
+
+            <?php include "nav-bar.php" ?>
+
+                <!-- <nav class="navbar navbar-expand-xl navbar-light bg-light">
                     <a class="navbar-brand" href="index.html">
                         <i class="fas fa-3x fa-tachometer-alt tm-site-icon"></i>
                         <h1 class="tm-site-title mb-0">Bioté center</h1>
@@ -84,7 +87,7 @@
                            
                      
                         </div>
-                </nav>
+                </nav> -->
             </div>
         </div>
     

@@ -1,10 +1,13 @@
 <?php
-include '../controller/produitC.php';
+include '../controller_back/produitC.php';
 $ProduitC = new produitC();
 $listep = $ProduitC->afficherproduit();
 $con = mysqli_connect("localhost","root","","gestionoffre");
  
-
+if(isset($_GET['trie']))
+      {
+           $listep = $ProduitC->triclub($_GET["tri1"], $_GET["tri2"]);
+      }
 ?>
 
 
@@ -66,7 +69,11 @@ $con = mysqli_connect("localhost","root","","gestionoffre");
         <div class="container">
             <div class="row">
                 <div class="col-12">
-                    <nav class="navbar navbar-expand-xl navbar-light bg-light">
+
+                <?php include "nav-bar_moh_cy.php" ?>
+
+
+                    <!-- <nav class="navbar navbar-expand-xl navbar-light bg-light">
                         <a class="navbar-brand" href="index.html">
                             <i class="fas fa-3x fa-tachometer-alt tm-site-icon"></i>
                             <h1 class="tm-site-title mb-0">Dashboard</h1>
@@ -109,7 +116,7 @@ $con = mysqli_connect("localhost","root","","gestionoffre");
             
                               
                         </div>
-                    </nav>
+                    </nav> -->
                 </div>
             </div>
             <!-- row -->
@@ -190,8 +197,34 @@ $con = mysqli_connect("localhost","root","","gestionoffre");
                 <div class="col-xl-4 col-lg-12 tm-md-12 tm-sm-12 tm-col"   >
                     <div class="bg-white tm-block h-100"  >
                         <h2 class="tm-block-title d-inline-block">options</h2>
+                        <form method="get" action="afficherproduit.php">
+
+<select class="btn btn-outline-primary" style="width: 300px; " name="tri1" id="tri1" class"form-control">
+
+
+       
+    <option value = id> id  </option>
+    <option value = libelle> nom  </option>
+    <option value = prix> prix </option>
+ 
+
+</select>
+
+<select class="btn btn-outline-primary" style="width: 300px; " name="tri2" id="tri2" class"form-control">
+
+
+
+       <option  value = ASC> Ascendant </option>
+       <option value = DESC> Descendant </option>
+
+</select>
+
+    <button type="submit" class="btn btn-danger" name="trie">Trie</button>
+</form>
+
+
                         <table class="table table-hover table-striped mt-3">
-                        <div id="piechart" style="width: 300px; "></div>    
+                        <div id="piechart" style="width: 250px; "></div>    
                         </table>
                         
                         <div class="tm-table-actions-col-left">
@@ -225,3 +258,210 @@ $con = mysqli_connect("localhost","root","","gestionoffre");
 </body>
 
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<?php
+
+$con = mysqli_connect("localhost","root","","gestionoffre");
+ 
+
+?>

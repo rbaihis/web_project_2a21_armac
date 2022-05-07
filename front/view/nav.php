@@ -27,11 +27,21 @@
     <nav>
         <ul>
 <!-- ==========   add links here "also add the same on navloggedin.php"  ========== -->
+
            <li><a href="../view/homepage.php">Home</a></li>
+           <!-- moh cy -->
+			<li><a href="index.php">Offre et promo</a></li>
+			<li><a href="store.php">Produits</a></li>
+            <li><a href="etoile.php">Avis</a></li>
+            <!-- end moh cy  -->
            <li><a href="../view/blog.php">Offre et promo</a></li>
+           <!-- med -->
            <li><a href="categ.php">Service</a></li>
            <li><a href="reservation.php">Reservaion</a></li>
-           <li><a href="debugsession.php">Debug seif</a></li>
+           <!-- end med -->
+
+           
+           <!-- <li><a href="debugsession.php">Debug seif</a></li>   -->
 <!-- ============================================================================= -->
         </ul>
    </nav>

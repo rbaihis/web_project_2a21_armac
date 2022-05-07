@@ -22,8 +22,8 @@
 
 <body class="">
     <?php 
-        require_once '../Controller/processOffre.php'; 
-        require_once '../Controller/processCoupon.php'; 
+        require_once '../controller_back/processOffre.php'; 
+        require_once '../controller_back/processCoupon.php'; 
         error_reporting(E_ERROR | E_PARSE);
         error_reporting(E_ALL ^ E_NOTICE);  
     ?> 
@@ -42,7 +42,11 @@
     <div class="container">
         <div class="row">
             <div class="col-12">
-                <nav class="navbar navbar-expand-xl navbar-light bg-light">
+
+            <?php include "nav-bar.php" ?>
+
+
+                <!-- <nav class="navbar navbar-expand-xl navbar-light bg-light">
                     <a class="navbar-brand" href="index.html">
                         <i class="fas fa-3x fa-tachometer-alt tm-site-icon"></i>
                         <h1 class="tm-site-title mb-0">Bioté center</h1>
@@ -84,7 +88,7 @@
                            
                      
                         </div>
-                </nav>
+                </nav> -->
             </div>
         </div>
     
@@ -100,7 +104,7 @@
      
         <div class="justify-content-center container border border-primary border-2 rounded bg-light">
      
-            <form class="mt-3" action="../controller/processOffre.php" method="post">
+            <form class="mt-3" action="../controller_back/processOffre.php" method="post">
                 <input type="hidden" name="id" value="<?php echo $id; ?>">
                 <div class="row align-items-center">
                     <div class="col-auto">
@@ -198,7 +202,7 @@
                         <td><?php echo $row['price']; ?></td>
                         <td>
                             <a class="btn btn-info" href="ajout.php?edit=<?php echo $row['id']; ?>">Edit</a>
-                            <a class="btn btn-danger" href="../controller/processOffre.php?delete=<?php echo $row['id']; ?>">Delete</a>
+                            <a class="btn btn-danger" href="../controller_back/processOffre.php?delete=<?php echo $row['id']; ?>">Delete</a>
                         </td>
                     </tr>
                     <?php endwhile; ?>
@@ -223,7 +227,7 @@
     <div class="container py-2 border border-dark border-3 rounded mt-3  bg-light">
         <h1 class="text-center display-2 fw-bold text-dark">Gestion des coupons</h1>
         <div class="justify-content-center container border border-primary border-2 rounded mt-1">
-            <form class="mt-3" action="../controller/processCoupon.php" method="post">
+            <form class="mt-3" action="../controller_back/processCoupon.php" method="post">
                 <input type="hidden" name="idC" value="<?php echo $idC; ?>">
                 <div class="row align-items-center">
                     <div class="col-auto">
@@ -315,7 +319,7 @@
                         <td><?php echo $rowCo['priceDiscount']; ?></td>
                         <td>
                             <a class="btn btn-info" href="ajout.php?editC=<?php echo $rowCo['id']; ?>">Edit</a>
-                            <a class="btn btn-danger" href="../controller/processCoupon.php?deleteC=<?php echo $rowCo['id']; ?>">Delete</a>
+                            <a class="btn btn-danger" href="../controller_back/processCoupon.php?deleteC=<?php echo $rowCo['id']; ?>">Delete</a>
                         </td>
                     </tr>
                     <?php endwhile; ?>
@@ -324,7 +328,7 @@
         </div>
     </div>
     <div class="container py-2 border border-warning border-5 rounded mt-3  bg-light">
-        <form action="../controller/processEtablir.php" method="post">
+        <form action="../controller_back/processEtablir.php" method="post">
             <h1 class="text-center display-2 fw-bold text-dark">Etablissement des coupons</h1>
             <div class=" container d-flex justify-content">
                 <div class="input-group ">

@@ -1,8 +1,8 @@
 <?PHP
                                                   ob_start();
-                                                  include_once '../Controller/produitC.php';
+                                                  include_once '../controller_back/produitC.php';
 
-                                                  include_once '../Model/produit.php';
+                                                  include_once '../model_back/produit.php';
 
                                                   if (isset($_GET['id'])) {
                                                     $produitController = new produitC();

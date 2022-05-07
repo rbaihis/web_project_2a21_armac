@@ -32,7 +32,9 @@
     <div class="container">
         <div class="row">
             <div class="col-12">
-                <nav class="navbar navbar-expand-xl navbar-light bg-light">
+
+            <?php include "nav-bar.php" ?>
+                <!-- <nav class="navbar navbar-expand-xl navbar-light bg-light">
                     <a class="navbar-brand" href="index.html">
                         <i class="fas fa-3x fa-tachometer-alt tm-site-icon"></i>
                         <h1 class="tm-site-title mb-0">Bioté center</h1>
@@ -73,7 +75,7 @@
                            
                      
                         </div>
-                </nav>
+                </nav> -->
             </div>
         </div>
     

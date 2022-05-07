@@ -1,8 +1,8 @@
 <?php
-include '../controller/categorie_c.php';
-include_once '../controller/produitC.php';
-include_once '../model/produit.php';
-include_once '../model/categorie.php';
+include '../controller_back/categorie_c.php';
+include_once '../controller_back/produitC.php';
+include_once '../model_back/produit.php';
+include_once '../model_back/categorie.php';
 $categorieC = new categorieC();
 $listec = $categorieC->afficherCategorie();
 $error = "";

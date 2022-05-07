@@ -1,6 +1,6 @@
 <?php include "nav-bar.php" ?>
 <?php
-include('../../front/controller/reservationC.php');
+include('../../front/controller_back/reservationC.php');
 $reservationC = new reservationC();
 $response = $reservationC->afficherRes($reservationC->conn);
 ?>
