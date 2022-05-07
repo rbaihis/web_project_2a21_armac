@@ -11,6 +11,7 @@
       <change afterPath="$PROJECT_DIR$/back/view_back/reservation.php" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/back/view_back/updateCategorie.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/assets/css/bootstrap.min.css" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/css/fontawesome.min.css" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/css/fullcalendar.min.css" beforeDir="false" />
@@ -185,20 +186,29 @@
       <change beforePath="$PROJECT_DIR$/assets/webfonts/fa-solid-900.ttf" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/webfonts/fa-solid-900.woff" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/webfonts/fa-solid-900.woff2" beforeDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/assets/css/utilseif.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/utilseif.css" afterDir="false" />
+>>>>>>> f8b034e49b01f73aac369fdc6344e7f552355262
       <change beforePath="$PROJECT_DIR$/back/controller_back/categC.php" beforeDir="false" afterPath="$PROJECT_DIR$/back/controller_back/categC.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/back/core/addCateg.php" beforeDir="false" afterPath="$PROJECT_DIR$/back/core/addCateg.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/back/core/updateService.php" beforeDir="false" afterPath="$PROJECT_DIR$/back/core/updateService.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/back/view_back/Footer.php" beforeDir="false" afterPath="$PROJECT_DIR$/back/view_back/Footer.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/back/view_back/Service.php" beforeDir="false" afterPath="$PROJECT_DIR$/back/view_back/Service.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/back/view_back/nav-bar.php" beforeDir="false" afterPath="$PROJECT_DIR$/back/view_back/nav-bar.php" afterDir="false" />
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/back/view_back/updateService.php" beforeDir="false" afterPath="$PROJECT_DIR$/back/view_back/updateService.php" afterDir="false" />
+=======
+>>>>>>> f8b034e49b01f73aac369fdc6344e7f552355262
       <change beforePath="$PROJECT_DIR$/front/controller/reservationC.php" beforeDir="false" afterPath="$PROJECT_DIR$/front/controller/reservationC.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/front/controller/service_C.php" beforeDir="false" afterPath="$PROJECT_DIR$/front/controller/service_C.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/front/core/addRes.php" beforeDir="false" afterPath="$PROJECT_DIR$/front/core/addRes.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/front/model/reservation.php" beforeDir="false" afterPath="$PROJECT_DIR$/front/model/reservation.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/front/view/categ.php" beforeDir="false" afterPath="$PROJECT_DIR$/front/view/categ.php" afterDir="false" />
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/front/view/footer.php" beforeDir="false" afterPath="$PROJECT_DIR$/front/view/footer.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/front/view/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/front/view/header.php" afterDir="false" />
+=======
+>>>>>>> f8b034e49b01f73aac369fdc6344e7f552355262
       <change beforePath="$PROJECT_DIR$/front/view/reservation.php" beforeDir="false" afterPath="$PROJECT_DIR$/front/view/reservation.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/front/view/service.php" beforeDir="false" afterPath="$PROJECT_DIR$/front/view/service.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/front/view/updateRes.php" beforeDir="false" />
@@ -243,7 +253,11 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+<<<<<<< HEAD
     <property name="last_opened_file_path" value="$PROJECT_DIR$/front" />
+=======
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../stripe" />
+>>>>>>> f8b034e49b01f73aac369fdc6344e7f552355262
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -253,11 +267,19 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+<<<<<<< HEAD
       <recent name="C:\xampp\htdocs\Service_G\front" />
       <recent name="C:\xampp\htdocs\Service_G\back" />
       <recent name="C:\xampp\htdocs\Service_G\back\view_back" />
       <recent name="C:\xampp\htdocs\Service_G\back\core" />
       <recent name="C:\xampp\htdocs\Service_G\front\core" />
+=======
+      <recent name="C:\xampp\htdocs\Service_G\back\view_back" />
+      <recent name="C:\xampp\htdocs\Service_G\back\core" />
+      <recent name="C:\xampp\htdocs\Service_G\front\core" />
+      <recent name="C:\xampp\htdocs\Service_G\front" />
+      <recent name="C:\xampp\htdocs\Service_G\front\controller" />
+>>>>>>> f8b034e49b01f73aac369fdc6344e7f552355262
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\xampp\htdocs\Service_G\front" />
@@ -283,7 +305,11 @@
       <workItem from="1651487237452" duration="956000" />
       <workItem from="1651537792955" duration="1185000" />
       <workItem from="1651700364039" duration="14888000" />
+<<<<<<< HEAD
       <workItem from="1651763378180" duration="34357000" />
+=======
+      <workItem from="1651763378180" duration="24130000" />
+>>>>>>> f8b034e49b01f73aac369fdc6344e7f552355262
     </task>
     <servers />
   </component>

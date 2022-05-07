@@ -24,11 +24,17 @@ class myPDF extends FPDF{
     function headerTable()
     {
         $this->SetFont('Times','B',12);
+<<<<<<< HEAD
 
         $this->Cell(30,10,'Service',1,0,'C');
         $this->Cell(30,10,'Date',1,0,'C');
         $this->Cell(40,10,'Prix/dt',1,0,'C');
         $this->Cell(60,10,'Email',1,0,'C');
+=======
+        $this->Cell(30,10,'Date',1,0,'C');
+        $this->Cell(30,10,'Service',1,0,'C');
+        $this->Cell(40,10,'Prix/dt',1,0,'C');
+>>>>>>> f8b034e49b01f73aac369fdc6344e7f552355262
 
         $this->Ln();
     }
@@ -37,10 +43,16 @@ class myPDF extends FPDF{
         $this->SetFont('Times','',12);
         $stmt= $db->query('SELECT * FROM reservation,service WHERE reservation.id=service.id');
         while($data =$stmt->fetch(PDO::FETCH_OBJ)){
+<<<<<<< HEAD
             $this->Cell(30,15,$data->nom,1,0,'C');
             $this->Cell(30,15,$data->date,1,0,'C');
             $this->Cell(40,15,$data->prix,1,0,'C');
             $this->Cell(60,15,$data->email,1,0,'C');
+=======
+            $this->Cell(30,15,$data->date,1,0,'C');
+            $this->Cell(30,15,$data->nom,1,0,'C');
+            $this->Cell(40,15,$data->prix,1,0,'C');
+>>>>>>> f8b034e49b01f73aac369fdc6344e7f552355262
             $this->Ln();
         }
     }

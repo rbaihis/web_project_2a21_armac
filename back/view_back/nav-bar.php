@@ -20,7 +20,11 @@
     <!-- https://fullcalendar.io/ -->
     <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
     <!-- https://getbootstrap.com/ -->
+<<<<<<< HEAD
     <link rel="stylesheet" href="../assets/css/tooplate.css">
+=======
+    <link rel="stylesheet" href="../../assets/css/tooplate.css">
+>>>>>>> f8b034e49b01f73aac369fdc6344e7f552355262
 
 
 

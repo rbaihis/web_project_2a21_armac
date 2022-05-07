@@ -32,8 +32,13 @@ $prix=0;
     {   display: table;
         background: #111111;
         table-layout: fixed;
+<<<<<<< HEAD
         width: 118%;
         height: 200%;}
+=======
+        width: 100%;
+        height: 150%;}
+>>>>>>> f8b034e49b01f73aac369fdc6344e7f552355262
 
 </style>
     <div class="container">
@@ -49,6 +54,38 @@ $prix=0;
             <h1 class="page-headline">Reservation</h1>
             <i class="iconstartitle textmagenta fa fa-star"></i>
 
+            <section class="content-area">
+                <div class="table-area">
+                    <table class="responsive-table table">
+                        <thead>
+
+                        <tr>
+                            <th style="font-size: 40px "> Date</th>
+                            <th style="font-size: 40px " >Service</th>
+                            <th style="font-size: 40px " >Prix</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <?php while ($reservationC = $response->fetch()) { ?>
+                        <tr>
+                            <td style="font-size: 20px;   "  ><?php  echo $reservationC['date']; ?></td>
+                            <td style="font-size: 20px "><?php  echo $reservationC['nom']; ?></td>
+                            <td style="font-size: 20px "><?php  echo $reservationC['prix']; ?></td>
+                            <?php $prix+= $reservationC['prix']; ?>
+
+                            <form action="../core/deleteRes.php" method="POST" enctype="multipart/form-data">
+                                <td >
+                                    <button style="background: #A50965" type="submit" name="id" value="<?php echo $reservationC['idR']; ?>"
+                                            class="btn btn-danger">Delete
+                                    </button>
+
+                                </td>
+
+                            </form>
+
+                        </tr>
+                            
+                        <?php } ?>
 
                 <div class="table-area">
                     <table class="responsive-table table">
@@ -96,6 +133,23 @@ $prix=0;
                 </div>
 
 
+<<<<<<< HEAD
+=======
+                            <td >
+                                <button   style="background: #A50965" type="submit" name="id"
+                                        class="btn btn-danger">Total:<?php echo $prix; ?>dt
+                                </button>
+
+                                  <a href="./PDF.php" style="background: #A50965"class="btn btn-danger"> Ticket </a>
+                            </td>
+
+
+
+                    </table>
+                </div>
+            </section>
+
+>>>>>>> f8b034e49b01f73aac369fdc6344e7f552355262
 
 
 

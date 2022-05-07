@@ -73,8 +73,12 @@ $response = $serviceC->getServiceByType($_GET['id'],$serviceC->conn);
                     <?php while ($serviceC = $response->fetch()) { ?>
                         <div class="col-6">
                             <div class="cardC">
+<<<<<<< HEAD
                                 <label style="font-size: 30px "><?php  echo $serviceC['nom']; ?>    </label>
                                 <label style="font-size: 20px "> Prix:<?php  echo $serviceC['prix']; ?>dt</label>
+=======
+                                <label style="font-size: 20px "><?php  echo $serviceC['nom']; ?> </label>
+>>>>>>> f8b034e49b01f73aac369fdc6344e7f552355262
                                 <input type="checkbox"  name="id" id="id" value="<?php echo $serviceC['id'] ?>" >
 
                             </div>

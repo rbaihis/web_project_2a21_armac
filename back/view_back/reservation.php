@@ -22,11 +22,17 @@ $response = $reservationC->afficherRes($reservationC->conn);
                 <table class="table table-hover table-striped tm-table-striped-even mt-3">
                     <thead>
                     <tr class="tm-bg-gray">
+<<<<<<< HEAD
                         <th> email</th>
                         <th> Date</th>
                         <th> Service</th>
                         <th> Prix</th>
 
+=======
+                        <th> Date</th>
+                        <th> Service</th>
+                        <th> Prix</th>
+>>>>>>> f8b034e49b01f73aac369fdc6344e7f552355262
                         <th scope="col"></th>
                     </tr>
                     </thead>
@@ -35,7 +41,10 @@ $response = $reservationC->afficherRes($reservationC->conn);
                     while ($reservationC = $response->fetch()) {
                     ?>
                     <tr>
+<<<<<<< HEAD
                         <td> <?php echo $reservationC['email']; ?></td>
+=======
+>>>>>>> f8b034e49b01f73aac369fdc6344e7f552355262
 
                         <td> <?php echo $reservationC['date']; ?></td>
                         <td> <?php echo $reservationC['nom']; ?></td>
@@ -48,9 +57,14 @@ $response = $reservationC->afficherRes($reservationC->conn);
                     </tbody>
                 </table>
 
+<<<<<<< HEAD
             <br />
             <h2 align="center"><a href="#">Reservation Calender</a></h2>
             <br />
+=======
+
+            <h2 align="center"><a href="#">Reservation Calender</a></h2>
+>>>>>>> f8b034e49b01f73aac369fdc6344e7f552355262
             <div class="container">
                 <div id="calendar"></div>
             </div>
