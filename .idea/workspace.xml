@@ -4,7 +4,205 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e364f300-6249-4049-af1c-80bc915cdc38" name="Changes" comment="" />
+    <list default="true" id="e364f300-6249-4049-af1c-80bc915cdc38" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/back/core/deleteCategorie.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/back/core/updateCategorie.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/back/view_back/categorie.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/back/view_back/reservation.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/back/view_back/updateCategorie.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/css/bootstrap.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/css/fontawesome.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/css/fullcalendar.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/css/mainseif.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/css/mainseif2.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/css/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/css/tooplate.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/css/updateseif.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/css/utilseif.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/fontsseif/Linearicons-Free-v1.0.0/WebFont/Linearicons-Free.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/fontsseif/Linearicons-Free-v1.0.0/WebFont/Linearicons-Free.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/fontsseif/Linearicons-Free-v1.0.0/WebFont/Linearicons-Free.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/fontsseif/Linearicons-Free-v1.0.0/WebFont/Linearicons-Free.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/fontsseif/Linearicons-Free-v1.0.0/WebFont/Linearicons-Free.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/fontsseif/Linearicons-Free-v1.0.0/icon-font.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/fontsseif/font-awesome-4.7.0/HELP-US-OUT.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/fontsseif/font-awesome-4.7.0/css/font-awesome.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/fontsseif/font-awesome-4.7.0/css/font-awesome.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/fontsseif/font-awesome-4.7.0/fonts/FontAwesome.otf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/fontsseif/font-awesome-4.7.0/fonts/fontawesome-webfont.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/fontsseif/font-awesome-4.7.0/fonts/fontawesome-webfont.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/fontsseif/font-awesome-4.7.0/fonts/fontawesome-webfont.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/fontsseif/font-awesome-4.7.0/fonts/fontawesome-webfont.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/fontsseif/font-awesome-4.7.0/fonts/fontawesome-webfont.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/fontsseif/font-awesome-4.7.0/less/animated.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/fontsseif/font-awesome-4.7.0/less/bordered-pulled.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/fontsseif/font-awesome-4.7.0/less/core.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/fontsseif/font-awesome-4.7.0/less/fixed-width.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/fontsseif/font-awesome-4.7.0/less/font-awesome.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/fontsseif/font-awesome-4.7.0/less/icons.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/fontsseif/font-awesome-4.7.0/less/larger.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/fontsseif/font-awesome-4.7.0/less/list.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/fontsseif/font-awesome-4.7.0/less/mixins.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/fontsseif/font-awesome-4.7.0/less/path.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/fontsseif/font-awesome-4.7.0/less/rotated-flipped.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/fontsseif/font-awesome-4.7.0/less/screen-reader.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/fontsseif/font-awesome-4.7.0/less/stacked.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/fontsseif/font-awesome-4.7.0/less/variables.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/fontsseif/font-awesome-4.7.0/scss/_animated.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/fontsseif/font-awesome-4.7.0/scss/_bordered-pulled.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/fontsseif/font-awesome-4.7.0/scss/_core.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/fontsseif/font-awesome-4.7.0/scss/_fixed-width.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/fontsseif/font-awesome-4.7.0/scss/_icons.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/fontsseif/font-awesome-4.7.0/scss/_larger.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/fontsseif/font-awesome-4.7.0/scss/_list.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/fontsseif/font-awesome-4.7.0/scss/_mixins.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/fontsseif/font-awesome-4.7.0/scss/_path.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/fontsseif/font-awesome-4.7.0/scss/_rotated-flipped.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/fontsseif/font-awesome-4.7.0/scss/_screen-reader.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/fontsseif/font-awesome-4.7.0/scss/_stacked.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/fontsseif/font-awesome-4.7.0/scss/_variables.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/fontsseif/font-awesome-4.7.0/scss/font-awesome.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/fontsseif/montserrat/Montserrat-Black.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/fontsseif/montserrat/Montserrat-BlackItalic.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/fontsseif/montserrat/Montserrat-Bold.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/fontsseif/montserrat/Montserrat-BoldItalic.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/fontsseif/montserrat/Montserrat-ExtraBold.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/fontsseif/montserrat/Montserrat-ExtraBoldItalic.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/fontsseif/montserrat/Montserrat-ExtraLight.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/fontsseif/montserrat/Montserrat-ExtraLightItalic.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/fontsseif/montserrat/Montserrat-Italic.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/fontsseif/montserrat/Montserrat-Light.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/fontsseif/montserrat/Montserrat-LightItalic.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/fontsseif/montserrat/Montserrat-Medium.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/fontsseif/montserrat/Montserrat-MediumItalic.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/fontsseif/montserrat/Montserrat-Regular.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/fontsseif/montserrat/Montserrat-SemiBold.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/fontsseif/montserrat/Montserrat-SemiBoldItalic.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/fontsseif/montserrat/Montserrat-Thin.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/fontsseif/montserrat/Montserrat-ThinItalic.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/fontsseif/montserrat/OFL.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/fontsseif/poppins/Poppins-Black.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/fontsseif/poppins/Poppins-BlackItalic.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/fontsseif/poppins/Poppins-Bold.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/fontsseif/poppins/Poppins-BoldItalic.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/fontsseif/poppins/Poppins-ExtraBold.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/fontsseif/poppins/Poppins-ExtraBoldItalic.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/fontsseif/poppins/Poppins-ExtraLight.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/fontsseif/poppins/Poppins-ExtraLightItalic.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/fontsseif/poppins/Poppins-Italic.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/fontsseif/poppins/Poppins-Light.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/fontsseif/poppins/Poppins-LightItalic.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/fontsseif/poppins/Poppins-Medium.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/fontsseif/poppins/Poppins-MediumItalic.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/fontsseif/poppins/Poppins-Regular.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/fontsseif/poppins/Poppins-SemiBold.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/fontsseif/poppins/Poppins-SemiBoldItalic.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/fontsseif/poppins/Poppins-Thin.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/fontsseif/poppins/Poppins-ThinItalic.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/fontsseif/raleway/OFL.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/fontsseif/raleway/Raleway-Black.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/fontsseif/raleway/Raleway-BlackItalic.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/fontsseif/raleway/Raleway-Bold.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/fontsseif/raleway/Raleway-BoldItalic.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/fontsseif/raleway/Raleway-ExtraBold.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/fontsseif/raleway/Raleway-ExtraBoldItalic.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/fontsseif/raleway/Raleway-ExtraLight.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/fontsseif/raleway/Raleway-ExtraLightItalic.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/fontsseif/raleway/Raleway-Italic.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/fontsseif/raleway/Raleway-Light.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/fontsseif/raleway/Raleway-LightItalic.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/fontsseif/raleway/Raleway-Medium.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/fontsseif/raleway/Raleway-MediumItalic.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/fontsseif/raleway/Raleway-Regular.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/fontsseif/raleway/Raleway-SemiBold.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/fontsseif/raleway/Raleway-SemiBoldItalic.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/fontsseif/raleway/Raleway-Thin.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/fontsseif/raleway/Raleway-ThinItalic.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/img/bg1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/img/bg2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/img/bg3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/img/bg4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/img/bg5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/img/bg6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/img/bg7.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/img/dash-bg-01.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/img/dash-bg-02.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/img/dash-bg-03.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/img/icons/favicon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/img/img-01.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/img/product-image.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/img/profile-image.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/jquery-ui-datepicker/AUTHORS.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/jquery-ui-datepicker/LICENSE.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/jquery-ui-datepicker/external/jquery/jquery.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/jquery-ui-datepicker/images/ui-bg_glass_75_d0e5f5_1x400.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/jquery-ui-datepicker/images/ui-bg_glass_85_dfeffc_1x400.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/jquery-ui-datepicker/images/ui-bg_glass_95_fef1ec_1x400.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/jquery-ui-datepicker/images/ui-bg_gloss-wave_55_5c9ccc_500x100.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/jquery-ui-datepicker/images/ui-bg_inset-hard_100_f5f8f9_1x100.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/jquery-ui-datepicker/images/ui-bg_inset-hard_100_fcfdfd_1x100.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/jquery-ui-datepicker/images/ui-icons_217bc0_256x240.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/jquery-ui-datepicker/images/ui-icons_2e83ff_256x240.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/jquery-ui-datepicker/images/ui-icons_469bdd_256x240.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/jquery-ui-datepicker/images/ui-icons_6da8d5_256x240.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/jquery-ui-datepicker/images/ui-icons_cd0a0a_256x240.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/jquery-ui-datepicker/images/ui-icons_d8e7f3_256x240.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/jquery-ui-datepicker/images/ui-icons_f9bd01_256x240.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/jquery-ui-datepicker/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/jquery-ui-datepicker/jquery-ui.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/jquery-ui-datepicker/jquery-ui.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/jquery-ui-datepicker/jquery-ui.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/jquery-ui-datepicker/jquery-ui.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/jquery-ui-datepicker/jquery-ui.structure.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/jquery-ui-datepicker/jquery-ui.structure.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/jquery-ui-datepicker/jquery-ui.theme.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/jquery-ui-datepicker/jquery-ui.theme.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/jquery-ui-datepicker/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/Chart.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/bootstrap.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/common.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/fullcalendar.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/home.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/jquery-3.3.1.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/moment.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/nicescroll.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/testimonials.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/tooplate-scripts.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/utils.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/webfonts/fa-brands-400.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/webfonts/fa-brands-400.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/webfonts/fa-brands-400.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/webfonts/fa-brands-400.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/webfonts/fa-brands-400.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/webfonts/fa-regular-400.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/webfonts/fa-regular-400.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/webfonts/fa-regular-400.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/webfonts/fa-regular-400.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/webfonts/fa-regular-400.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/webfonts/fa-solid-900.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/webfonts/fa-solid-900.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/webfonts/fa-solid-900.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/webfonts/fa-solid-900.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/webfonts/fa-solid-900.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/back/controller_back/categC.php" beforeDir="false" afterPath="$PROJECT_DIR$/back/controller_back/categC.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/back/core/addCateg.php" beforeDir="false" afterPath="$PROJECT_DIR$/back/core/addCateg.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/back/core/updateService.php" beforeDir="false" afterPath="$PROJECT_DIR$/back/core/updateService.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/back/view_back/Footer.php" beforeDir="false" afterPath="$PROJECT_DIR$/back/view_back/Footer.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/back/view_back/Service.php" beforeDir="false" afterPath="$PROJECT_DIR$/back/view_back/Service.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/back/view_back/nav-bar.php" beforeDir="false" afterPath="$PROJECT_DIR$/back/view_back/nav-bar.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/back/view_back/updateService.php" beforeDir="false" afterPath="$PROJECT_DIR$/back/view_back/updateService.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/controller/reservationC.php" beforeDir="false" afterPath="$PROJECT_DIR$/front/controller/reservationC.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/controller/service_C.php" beforeDir="false" afterPath="$PROJECT_DIR$/front/controller/service_C.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/core/addRes.php" beforeDir="false" afterPath="$PROJECT_DIR$/front/core/addRes.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/model/reservation.php" beforeDir="false" afterPath="$PROJECT_DIR$/front/model/reservation.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/view/categ.php" beforeDir="false" afterPath="$PROJECT_DIR$/front/view/categ.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/view/footer.php" beforeDir="false" afterPath="$PROJECT_DIR$/front/view/footer.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/view/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/front/view/header.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/view/reservation.php" beforeDir="false" afterPath="$PROJECT_DIR$/front/view/reservation.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/view/service.php" beforeDir="false" afterPath="$PROJECT_DIR$/front/view/service.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/view/updateRes.php" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -20,10 +218,22 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="288WdGCjMV6hqNswgudASSeH6Wl" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="autoscrollToSource" value="true" />
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -33,7 +243,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/front/core" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/front" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -43,11 +253,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\xampp\htdocs\Service_G\front\core" />
       <recent name="C:\xampp\htdocs\Service_G\front" />
-      <recent name="C:\xampp\htdocs\Service_G\front\controller" />
-      <recent name="C:\xampp\htdocs\Service_G\front\model" />
-      <recent name="C:\xampp\htdocs\Service_G\front\view" />
+      <recent name="C:\xampp\htdocs\Service_G\back" />
+      <recent name="C:\xampp\htdocs\Service_G\back\view_back" />
+      <recent name="C:\xampp\htdocs\Service_G\back\core" />
+      <recent name="C:\xampp\htdocs\Service_G\front\core" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\xampp\htdocs\Service_G\front" />
@@ -67,7 +277,13 @@
       <workItem from="1650761301517" duration="169000" />
       <workItem from="1650767368777" duration="820000" />
       <workItem from="1650768298880" duration="18863000" />
-      <workItem from="1650852488384" duration="31216000" />
+      <workItem from="1650852488384" duration="34193000" />
+      <workItem from="1651058360937" duration="1880000" />
+      <workItem from="1651119532523" duration="2751000" />
+      <workItem from="1651487237452" duration="956000" />
+      <workItem from="1651537792955" duration="1185000" />
+      <workItem from="1651700364039" duration="14888000" />
+      <workItem from="1651763378180" duration="34357000" />
     </task>
     <servers />
   </component>

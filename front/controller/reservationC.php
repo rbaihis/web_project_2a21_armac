@@ -11,8 +11,9 @@ class reservationC{
 
         $date =$res->getDate();
         $id = $res->getId();
-        $sql ="INSERT INTO reservation (date ,id ) 
-			VALUES ('$date','$id')";
+        $email = $res->getEmail();
+        $sql ="INSERT INTO reservation (date ,id,email ) 
+			VALUES ('$date','$email','$id')";
         echo $sql;
         $connection->exec($sql);
 
@@ -40,8 +41,14 @@ class reservationC{
         $date=$reservation->getDate();
         $id =$reservation->getId();
 
-        $sql ="UPDATE service SET date='$date' ,idR='$id' WHERE (idR= $id)";
+        $sql ="UPDATE reservation SET date='$date' ,idR='$id' WHERE (idR= $id)";
         echo $sql;
+        $connection->exec($sql);
+    }
+
+    function countService($connection)
+    {
+        $sql= "SELECT COUNT (*) FROM `reservation`" ;
         $connection->exec($sql);
     }
 }

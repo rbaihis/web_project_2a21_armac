@@ -4,17 +4,42 @@ class reservation{
 
     private $idR;
     private $date;
+    private $email;
     private $id;
+
+    /**
+     * @param $date
+     * @param $email
+     * @param $id
+     */
+    public function __construct($date, $email, $id)
+    {
+        $this->date = $date;
+        $this->email = $email;
+        $this->id = $id;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getEmail()
+    {
+        return $this->email;
+    }
+
+    /**
+     * @param mixed $email
+     */
+    public function setEmail($email)
+    {
+        $this->email = $email;
+    }
 
     /**
      * @param $date
      * @param $id
      */
-    public function __construct($date, $id)
-    {
-        $this->date = $date;
-        $this->id = $id;
-    }
+
 
     /**
      * @return mixed

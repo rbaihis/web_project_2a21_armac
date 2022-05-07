@@ -30,8 +30,8 @@ class service_C{
         echo $sql;
         $connection->exec($sql);
     }
-    function supprimerRes($idR,$connection){
-        $sql="DELETE FROM reservation WHERE idR='$idR'";
+    function supprimerService($id_Service,$connection){
+        $sql="DELETE FROM service WHERE id='$id_Service'";
         $connection->exec($sql);
 
 
@@ -42,13 +42,6 @@ class service_C{
         $reponse = $conntion->query($sql);
         return $reponse;
     }
-    function getServiceByid($idS,$conntion)
-    {
-        $sql = "SELECT * FROM service WHERE id = '$idS'";
-        $reponse = $conntion->query($sql);
-        return $reponse;
-    }
-
     function afficherService($conntion)
     {
         $sql = "SELECT * FROM service";

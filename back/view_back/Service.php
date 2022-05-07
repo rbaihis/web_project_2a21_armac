@@ -13,14 +13,11 @@ $response = $service_C->afficherService($service_C->conn);
             </div>
             <div class="col-md-4 col-sm-12 text-right">
                 <a href="addService.php" class="btn btn-small btn-primary">Add New Service</a>
-                <a href="addCateg.php" class="btn btn-small btn-primary">Add New categ</a>
             </div>
         </div>
 
         <div class="table-responsive">
-            <?php
-            while ($service = $response->fetch()) {
-                ?>
+
                 <table class="table table-hover table-striped tm-table-striped-even mt-3">
                     <thead>
                     <tr class="tm-bg-gray">
@@ -34,6 +31,9 @@ $response = $service_C->afficherService($service_C->conn);
                     </tr>
                     </thead>
                     <tbody>
+                    <?php
+                    while ($service = $response->fetch()) {
+                    ?>
                     <tr>
 
                         <td> <?php echo $service['type']; ?></td>
@@ -71,9 +71,10 @@ $response = $service_C->afficherService($service_C->conn);
                                 </div>
                             </form></td>
                     </tr>
+                    <?php } ?>
                     </tbody>
                 </table>
-            <?php } ?>
+
         </div>
 
         <div class="tm-table-mt tm-table-actions-row">

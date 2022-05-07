@@ -18,25 +18,22 @@ class categC{
 
     }
 
-    function modifierService($service,$connection){
-        $id=$service->getId();
-        $type =$service->getType();
-        $nom = $service->getNom();
-        $prix =$service->getPrix();
-        $desc =$service->getDescription();
-        $sql ="UPDATE service SET type='$type' ,nom='$nom',prix='$prix',description='$desc' WHERE (id= $id)";
+    function modifierCategorie($categorie,$connection){
+
+        $type =$categorie->getType();
+        $sql ="UPDATE categorie SET type='$type' WHERE (type = $type)";
         echo $sql;
         $connection->exec($sql);
     }
-    function supprimerService($id_Service,$connection){
-        $sql="DELETE FROM service WHERE id='$id_Service'";
+    function supprimerCategorie($type,$connection){
+        $sql="DELETE FROM categorie WHERE type ='$type'";
         $connection->exec($sql);
 
 
     }
-    function getServieById($id,$conntion)
+    function getCategorieByType($type,$conntion)
     {
-        $sql = "SELECT * FROM service WHERE id = '$id'";
+        $sql = "SELECT * FROM categorie WHERE type = '$type'";
         $reponse = $conntion->query($sql);
         return $reponse;
     }
@@ -46,5 +43,7 @@ class categC{
         $reponse = $conntion->query($sql);
         return $reponse;
     }
+
+
 
 }

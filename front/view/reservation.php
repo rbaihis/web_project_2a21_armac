@@ -20,9 +20,22 @@ include ('../model/reservation.php');
 include('../controller/reservationC.php');
 $reservationC = new reservationC();
 $response = $reservationC->afficherRes($reservationC->conn);
-
+$prix=0;
 ?>
+<style>
+    .table-area {
+        position: relative;
+        z-index: 0;
+        margin-top: 50px;
+    }
+    table.responsive-table
+    {   display: table;
+        background: #111111;
+        table-layout: fixed;
+        width: 118%;
+        height: 200%;}
 
+</style>
     <div class="container">
         <div class="logoarea">
             <div class="intro">
@@ -33,51 +46,61 @@ $response = $reservationC->afficherRes($reservationC->conn);
             </div>
         </div>
         <div class="pagearea">
-            <h1 class="page-headline">Service</h1>
+            <h1 class="page-headline">Reservation</h1>
             <i class="iconstartitle textmagenta fa fa-star"></i>
 
 
+                <div class="table-area">
+                    <table class="responsive-table table">
+                        <thead>
+                        <tr>
+                            <th style="font-size: 40px "> Date</th>
+                            <th style="font-size: 40px " >Service</th>
+                            <th style="font-size: 40px " >Prix</th>
+                        </tr>
+                        </thead>
+                        <?php while ($reservationC = $response->fetch()) { ?>
 
-            <body>
-            <div class="table-title">
+                        <tr>
+                            <td style="font-size: 20px;   "  ><?php  echo $reservationC['date']; ?></td>
+                            <td style="font-size: 20px "><?php  echo $reservationC['nom']; ?></td>
+                            <td style="font-size: 20px "><?php  echo $reservationC['prix']; ?></td>
+                            <?php $prix+= $reservationC['prix']; ?>
 
-            </div>
+                            <form action="../core/deleteRes.php" method="POST" enctype="multipart/form-data">
+                                <td >
+                                    <button style="background: #A50965" type="submit" name="id" value="<?php echo $reservationC['idR']; ?>"
+                                            class="btn btn-danger">Delete
+                                    </button>
 
-            <table class="table-fill">
-                <thead>
-                <tr>
-                    <td class="text-left">Date</td>
-                    <td  class="text-left">Service</td>
-                </tr>
-                </thead>
-                <tbody class="table-hover">
-                <?php while ($reservationC = $response->fetch()) { ?>
-                <tr>
+                                </td>
 
-                    <td class="text-left"><?php  echo $reservationC['date']; ?></td>
+                            </form>
 
-                    <td class="text-left"><?php  echo $reservationC['nom']; ?></td>
-                    <form action="../core/deleteRes.php" method="POST" enctype="multipart/form-data">
-                    <td class="text-left">
-                        <button type="submit" name="id" value="<?php echo $reservationC['idR']; ?>"
-                                                   class="btn btn-danger">Delete
-                        </button>
-                    </td>
-                    </form>
-                    <form action="../core/updateRes.php" method="POST" enctype="multipart/form-data">
-                        <td class="text-left">
-                            <button type="submit" name="id" value="<?php echo $reservationC['idR']; ?>"
-                                    class="btn btn-danger">update
-                            </button>
-                        </td>
-                    </form>
-                </tr>
+                        </tr>
+                        <?php } ?>
 
-                    </tr>
-                <?php } ?>
-                </tbody>
-            </table>
-            </body>
+
+                            <td >
+                                <button   style="background: #A50965" type="submit" name="id"
+                                        class="btn btn-danger">Prix Total:<?php echo $prix; ?>dt
+                                </button>
+                               <td>
+                                  <a href="./PDF.php" style="background: #A50965"class="btn btn-danger">Get Ticket </a>
+                            </td>
+                            </td>
+
+
+
+                    </table>
+                </div>
+
+
+
+
+
+
+
         </div>
 
     </div>

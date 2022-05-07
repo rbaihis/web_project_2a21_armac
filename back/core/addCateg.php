@@ -18,7 +18,7 @@ else
 
     $categ=new categ($typea);
     $categC->ajouterCat($categ,$categC->conn);
-    header('Location: ../view_back/Service.php');
+    header('Location: ../view_back/categorie.php');
 }
 ?>
 

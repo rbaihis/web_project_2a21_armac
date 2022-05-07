@@ -6,20 +6,16 @@ $service_C=new service_C();
 
 if (isset($_POST["id"]))
 {
-
     $id = $_POST['id'];
-
 
 $type=$_POST['type'];
 $nom=$_POST['nom'];
 $prix=$_POST['prix'];
 $desc=$_POST['description'];
 
-
-
 $service=new service ($type,$nom,$prix,$desc);
 $service->setId($id);
-echo  $id;
+
 
 $service_C->modifierService($service,$service_C->conn);
 

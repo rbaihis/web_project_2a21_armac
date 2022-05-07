@@ -18,7 +18,7 @@ while ($serviceU = $response->fetch()) {
             <div class="bg-white tm-block">
                 <div class="row">
                     <div class="col-12">
-                        <h2 class="tm-block-title d-inline-block">Add Servive</h2>
+                        <h2 class="tm-block-title d-inline-block">Update Servive</h2>
                     </div>
                 </div>
                 <div class="row mt-4 tm-edit-product-row">
@@ -43,7 +43,7 @@ while ($serviceU = $response->fetch()) {
 
                             <div class="input-group mb-3">
                                 <label for="description" class="col-xl-4 col-lg-4 col-md-4 col-sm-5 mb-2">Description</label>
-                                <input id="description" name="description" type="text"  value="<?php echo $service->getType()?>" class="form-control validate col-xl-9 col-lg-8 col-md-8 col-sm-7">
+                                <input id="description" name="description" type="text"  value="<?php echo $service->getDescription()?>" class="form-control validate col-xl-9 col-lg-8 col-md-8 col-sm-7">
                             </div>
 
                             <div class="input-group mb-3">
