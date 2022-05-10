@@ -1,3 +1,6 @@
+
+<?php session_start(); ?>
+
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -9,6 +12,9 @@
 	<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 	<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
+ <link href="../../front/assets/css/styleseif.css" rel="stylesheet">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -60,14 +66,17 @@
 </head>
 <body style="background-color: #FDF1F3;">
 
-<div class="menu-outer">
-		<div class="menu-icon">
-			<div class="bar"></div>
+
+    
+    
+    
+    <div class="menu-outer">
+        <div class="menu-icon">
+            <div class="bar"></div>
 			<div class="bar"></div>
 			<div class="bar"></div>
 		</div>
 		<nav>
-        <br>
             <br>
             <br>
             <br>
@@ -77,35 +86,101 @@
             <br>
             <br>
             <br>
-			<ul>
-            <li><a href="../view/homepage.php">Home</a></li>
-           <!-- moh cy -->
-				<li><a href="index.php">Offre et promo</a></li>
+            <br> 
+            <ul>
+                <!-- <li><a href="../view/homepage.php">Home</a></li> -->
+                <!-- moh cy -->
+				<!-- <li><a href="index.php">Offre et promo</a></li>
 				<li><a href="store.php">Produits</a></li>
-                <li><a href="etoile.php">Avis</a></li>
-            <!-- end moh cy  -->
-	
+                <li><a href="etoile.php">Avis</a></li> -->
+                <!-- end moh cy  -->
+                
+                
+                
+                
+                
+                
+                <!--  -->
+                <!--  -->
+                <!--  -->
+                <?php  if( isset($_SESSION['account']) ) 
+{  ?>
 
-			</ul>
-		</nav>
-	</div>
-	<a class="menu-close" onClick="return true">
-		<div class="menu-icon">
-			<div class="bar"></div>
-			<div class="bar"></div>
-		</div>
-	</a>
+<li><a href="homepage.php">Home</a></li>
+<li><a href="account.php">account</a></li>
+<li><a href="index.php">Offre et promo</a></li>
+<li><a href="store.php">Produits</a></li>
+<li><a href="etoile.php">Avis</a></li>
+<li><a href="view/front/produits.php">Store</a></li>
+<li><a href="view/front/panier.php">panier</a></li>
+<li><a href="categ.php">Service</a></li>
+<li><a href="reservation.php">Reservaion</a></li>
+<li><a href="forum.php">Forum</a></li>
 
+<?php   
+} else{ 
+    ?>
+        <li><a href="homepage.php">Home</a></li> 
+        <li><a href="index.php">Offre et promo</a></li>
+        <li><a href="store.php">Produits</a></li>
+        <li><a href="etoile.php">Avis</a></li>
+        <li><a href="view/front/produits.php">Store</a></li>
+        <li><a href="view/front/panier.php">panier</a></li>
+        <li><a href="categ.php">Service</a></li>
+        <li><a href="forum.php">Forum</a></li>
+        
+        <?php   }  ?>
+        <!--  -->
+        <!--  -->
+        
+        
+        
+        
+        
+        
+        
+        
+	</ul>
+</nav>
 </div>
+<a class="menu-close" onClick="return true">
+    <div class="menu-icon">
+        <div class="bar"></div>
+        <div class="bar"></div>
+    </div>
+</a>
 <!-- zeyed -->
-<div class="fixedcallicon">
-<i class="fa fa-text"><a href="../view/login.php"><h3 style=" font-size: 20px;  margin: 15px 0px 0px 2px; "> <b> LogIn </b> </h3></a></i>
- <span class="hide"> <a href="../view/register.php" style=" font-size: 20px;  margin: 15px 0px 0px 2px; ">  <b> Register </b> </a></span>
+
 </div>
+
+<?php  if( isset($_SESSION['account']) ) 
+{  ?>
+
+  <!-- == LOGIN & register == -->
+<div class="fixedcalliconlogout">
+    <i class="fa fa-text"  style="color:rgba(255, 255, 255, 0.62)"> 
+        <a  href="logout.php">
+            <h3 style=" font-size: 18px;  margin: 15px 0px 0px 2px; ">
+             <b>LogOut</b> 
+            </h3>
+        </a>
+    </i>
+</div>
+
+<?php  } else{   ?>
+
+   <!-- == LOGIN & register == -->
+<div class="fixedcallicon">
+<i class="fa fa-text"><a href="login.php"><h3 style=" font-size: 20px;  margin: 15px 0px 0px 2px; "> <b> LogIn </b> </h3></a></i>
+ <span class="hide"> <a href="register.php" style=" font-size: 20px;  margin: 15px 0px 0px 2px; ">  <b> Register </b> </a></span>
+</div>
+
+<?php  }  ?> 
+
 <!-- end zeyed -->
 
 <?php require_once 'submit_rating.php'; ?> 
-    <?php require_once '../controller/process.php'; ?> 
+<?php require_once '../controller/process.php'; ?> 
     <?php require_once '../controller/process3.php'; ?> 
     <?php
         $result = $con->query("SELECT id, itemName, price FROM dataoffre") ;

@@ -1,4 +1,13 @@
-<?php include "nav-bar.php" ?>
+<?php 
+session_start();
+
+if( !isset($_SESSION['admin_on']) ){
+    header("Location: loginadmin.php" );
+    exit();
+  }  
+
+
+include "nav-bar.php" ?>
 <?php
 include('../controller_back/service_C.php');
 $service_C = new service_C();

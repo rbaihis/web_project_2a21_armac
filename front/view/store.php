@@ -1,5 +1,5 @@
 <?PHP
-
+session_start();
 include "../controller/produitC.php";
 include "../controller/categorie_c.php";
 
@@ -54,6 +54,8 @@ $con = mysqli_connect('localhost','root','','gestionoffre');
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>store</title>
+	<link href="../../front/assets/css/styleseif.css" rel="stylesheet"> 
+
 	<link type="text/css" rel="stylesheet" href="css/slick.css" />
     <link type="text/css" rel="stylesheet" href="css/slick-theme.css" />
 	<link rel="stylesheet" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css">
@@ -75,8 +77,6 @@ $con = mysqli_connect('localhost','root','','gestionoffre');
 <body style="background-color: #FDF1F3;">
 
 
-
-
 	 <div class="menu-outer">
 		<div class="menu-icon">
 			<div class="bar"></div>
@@ -85,21 +85,35 @@ $con = mysqli_connect('localhost','root','','gestionoffre');
 		</div>
 
 		 <nav>
-		<br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-			<ul>
-          
-				<li><a href="homepage.html">Home</a></li>
-				<li><a href="index.php">Offre et promo</a></li>
-				<li><a href="store.php">Produits</a></li>
-                <li><a href="etoile.php">Avis</a></li>
+		
+			<?php  if( isset($_SESSION['account']) ) 
+{  ?>
+
+<li><a href="homepage.php">Home</a></li>
+<li><a href="account.php">account</a></li>
+<li><a href="index.php">Offre et promo</a></li>
+<li><a href="store.php">Produits</a></li>
+<li><a href="etoile.php">Avis</a></li>
+<li><a href="view/front/produits.php">Store</a></li>
+<li><a href="view/front/panier.php">panier</a></li>
+<li><a href="categ.php">Service</a></li>
+<li><a href="reservation.php">Reservaion</a></li>
+<li><a href="forum.php">Forum</a></li>
+
+<?php   
+} else{ 
+    ?>
+        <li><a href="homepage.php">Home</a></li> 
+        <li><a href="index.php">Offre et promo</a></li>
+        <li><a href="store.php">Produits</a></li>
+        <li><a href="etoile.php">Avis</a></li>
+        <li><a href="view/front/produits.php">Store</a></li>
+        <li><a href="view/front/panier.php">panier</a></li>
+        <li><a href="categ.php">Service</a></li>
+        <li><a href="forum.php">Forum</a></li>
+        
+        <?php   }  ?>
+
 
 			</ul>
 		</nav> 
@@ -110,6 +124,30 @@ $con = mysqli_connect('localhost','root','','gestionoffre');
 			<div class="bar"></div>
 		</div>
 	</a> 
+
+	<?php  if( isset($_SESSION['account']) ) 
+{  ?>
+
+  <!-- == LOGIN & register == -->
+<div class="fixedcalliconlogout">
+    <i class="fa fa-text"  style="color:rgba(255, 255, 255, 0.62)"> 
+        <a  href="logout.php">
+            <h3 style=" font-size: 18px;  margin: 15px 0px 0px 2px; ">
+             <b>LogOut</b> 
+            </h3>
+        </a>
+    </i>
+</div>
+
+<?php  } else{   ?>
+
+   <!-- == LOGIN & register == -->
+<div class="fixedcallicon">
+<i class="fa fa-text"><a href="login.php"><h3 style=" font-size: 20px;  margin: 15px 0px 0px 2px; "> <b> LogIn </b> </h3></a></i>
+ <span class="hide"> <a href="register.php" style=" font-size: 20px;  margin: 15px 0px 0px 2px; ">  <b> Register </b> </a></span>
+</div>
+
+<?php  }  ?>
 
 	<div class="wrapper">
 		<div class="d-md-flex align-items-md-center">

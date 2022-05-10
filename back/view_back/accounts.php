@@ -6,7 +6,7 @@ if( !isset($_SESSION['admin_on']) ){
 
     
     header("Location: ../../back/view_back/loginadmin.php" );
-    
+    exit();
    
 }
  else{

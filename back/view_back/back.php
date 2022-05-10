@@ -1,3 +1,14 @@
+<?php 
+if(session_status() !== PHP_SESSION_ACTIVE) {
+    session_start();    }     
+    
+    if( !isset($_SESSION['admin_on']) ){
+        header("Location: loginadmin.php" );
+        exit();
+    }  
+?>
+
+
 <html lang="en">
 <head>
 <meta charset="UTF-8">

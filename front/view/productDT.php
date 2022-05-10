@@ -1,5 +1,6 @@
 
 <?PHP
+session_start();
 
 include "../controller/produitC.php";
 include "../controller/categorie_c.php";
@@ -14,6 +15,8 @@ $categorieC = new categorieC();
 
 
 ?>
+  <link href="../../front/assets/css/styleseif.css" rel="stylesheet"> 
+
 <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
@@ -254,6 +257,31 @@ button:hover {
   }
 }
 </style></head><body>
+<?php  if( isset($_SESSION['account']) ) 
+{  ?>
+
+  <!-- == LOGIN & register == -->
+<div class="fixedcalliconlogout">
+    <i class="fa fa-text"  style="color:rgba(255, 255, 255, 0.62)"> 
+        <a  href="logout.php">
+            <h3 style=" font-size: 18px;  margin: 15px 0px 0px 2px; ">
+             <b>LogOut</b> 
+            </h3>
+        </a>
+    </i>
+</div>
+
+<?php  } else{   ?>
+
+   <!-- == LOGIN & register == -->
+<div class="fixedcallicon">
+<i class="fa fa-text"><a href="login.php"><h3 style=" font-size: 20px;  margin: 15px 0px 0px 2px; "> <b> LogIn </b> </h3></a></i>
+ <span class="hide"> <a href="register.php" style=" font-size: 20px;  margin: 15px 0px 0px 2px; ">  <b> Register </b> </a></span>
+</div>
+
+<?php  }  ?>
+
+
 <?php foreach ($listeProduit as $produit) :
 						 ?>
 <div id="wrapper">

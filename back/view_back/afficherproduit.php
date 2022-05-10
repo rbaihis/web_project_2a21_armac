@@ -1,9 +1,22 @@
 <?php
+session_start();
+
+if( !isset($_SESSION['admin_on']) ){
+    header("Location: loginadmin.php" );
+    exit();
+  }  
+
+
+
 include '../controller_back/produitC.php';
 $ProduitC = new produitC();
 $listep = $ProduitC->afficherproduit();
 $con = mysqli_connect("localhost","root","","gestionoffre");
- 
+if(isset($_GET['recherche']))
+{
+    $search_value=$_GET["recherche"];
+    $listep=$ProduitC->recherche($search_value);
+}
 if(isset($_GET['trie']))
       {
            $listep = $ProduitC->triclub($_GET["tri1"], $_GET["tri2"]);
@@ -85,10 +98,42 @@ if(isset($_GET['trie']))
                         <div class="collapse navbar-collapse" id="navbarSupportedContent">
                             <ul class="navbar-nav mx-auto">
                                
-                            <li class="nav-item ">
-                                
-                                    <a class="nav-link" href="acceuil.html">Dashboard</a>
-                                </li>
+                            
+
+
+                                <li class="nav-item">
+                                <a class="nav-link" href="accounts.php">Accounts</a>
+                            </li>
+
+
+                           
+
+		    <li class="nav-item">
+                       <a class="nav-link" href="view/back/affichageCommande.php">Commande</a>
+                     </li>
+                   
+
+                   
+
+
+                            
+                            <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+                           aria-expanded="false">
+                            Services 
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="Service.php">Service</a>
+                            <a class="dropdown-item" href="categorie.php">Categorie</a>
+                            <a class="dropdown-item" href="reservation.php">Reservation</a>
+                        </div>
+                    </li>
+
+
+
+
+
+
                     
                                         <li class="nav-item active dropdown">
                                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
@@ -113,7 +158,15 @@ if(isset($_GET['trie']))
                                                 <a class="dropdown-item" href="commande.php">Les commandes</a>
                                             </div>
                                         </li>
-            
+                            </ul>
+                            <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link d-flex" href="logout.php">
+                            <i class="far fa-user mr-2 tm-logout-icon"></i>
+                            <span>Logout</span>
+                        </a>
+                    </li>
+                </ul>
                               
                         </div>
                     </nav> 
@@ -197,7 +250,22 @@ if(isset($_GET['trie']))
                 <div class="col-xl-4 col-lg-12 tm-md-12 tm-sm-12 tm-col"   >
                     <div class="bg-white tm-block h-100"  >
                         <h2 class="tm-block-title d-inline-block">options</h2>
+
+                        <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search" method="get" action="afficherproduit.php">
+                                                            <div class="input-group">
+                                                                <input type="text" class="form-control bg-light border-0 small" placeholder="Rechercher un évènement "
+                                                                    aria-label="Search" aria-describedby="basic-addon2" name="recherche">
+                                                                <div class="input-group-append">
+                                                                    <button class="btn btn-primary" type="submit" value="Chercher">
+                                                                        <i class="fas fa-search fa-sm"></i>
+                                                                    </button>
+                                                                </div>
+                                                            </div>
+                                                        </form>
+
                         <form method="get" action="afficherproduit.php">
+                        <br><br>
+                      
 
 <select class="btn btn-outline-primary" style="width: 300px; " name="tri1" id="tri1" class"form-control">
 
@@ -227,10 +295,7 @@ if(isset($_GET['trie']))
                         <div id="piechart" style="width: 250px; "></div>    
                         </table>
                         
-                        <div class="tm-table-actions-col-left">
-                                
-                        <a href="stat.php" class="btn btn-danger">percantage</a>
-                        </div>
+                        
                     </div>
                 </div>
             </div>

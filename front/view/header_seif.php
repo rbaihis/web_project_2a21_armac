@@ -12,12 +12,13 @@
 
 <!--==========*** home **=========================================================-->	
 <!-- CSS -->
-<link href="../../front/assets/css/styleseif.css" rel="stylesheet">
+<link href="../../front/assets/css/styleseifseif.css" rel="stylesheet">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 <link href='https://fonts.googleapis.com/css?family=Great+Vibes' rel='stylesheet' type='text/css'>
 <link href='https://fonts.googleapis.com/css?family=Oswald:400,700,300' rel='stylesheet' type='text/css'>
 <link href='https://fonts.googleapis.com/css?family=Roboto+Condensed:400,400italic,300italic,300,700,700italic' rel='stylesheet' type='text/css'>     
 <!--==========*** end home **=========================================================-->	
+<link href="../../front/assets/css/styleseif.css" rel="stylesheet"> 
 
 <!-- ------------------------------------------------------------------------------------------------------------- -->
 

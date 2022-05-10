@@ -1,4 +1,13 @@
 <?php
+session_start();
+
+if( !isset($_SESSION['admin_on']) ){
+    header("Location: loginadmin.php" );
+    exit();
+  }  
+
+
+
 include '../controller_back/categorie_c.php';
 $categorieC = new categorieC();
 $listec = $categorieC->afficherCategorie();
@@ -49,11 +58,29 @@ $listec = $categorieC->afficherCategorie();
                         <div class="collapse navbar-collapse" id="navbarSupportedContent">
                             <ul class="navbar-nav mx-auto">
                                
-                            <li class="nav-item ">
-                                
-                                <a class="nav-link" href="acceuil.html">Dashboard</a>
-                            </li>
-                
+                            
+                            <li class="nav-item">
+                          <a class="nav-link" href="accounts.php">Accounts</a>
+                    </li>
+
+		    <li class="nav-item">
+                       <a class="nav-link" href="view/back/affichageCommande.php">Commande</a>
+                     </li>
+                   
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+                           aria-expanded="false">
+                            Services 
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="Service.php">Service</a>
+                            <a class="dropdown-item" href="categorie.php">Categorie</a>
+                            <a class="dropdown-item" href="reservation.php">Reservation</a>
+                        </div>
+                    </li>
+
+
                                     <li class="nav-item active dropdown">
                                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
                                             aria-expanded="false">
@@ -77,7 +104,15 @@ $listec = $categorieC->afficherCategorie();
                                             <a class="dropdown-item" href="commande.php">Les commandes</a>
                                         </div>
                                     </li>
-        
+                            </ul>
+                            <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link d-flex" href="logout.php">
+                            <i class="far fa-user mr-2 tm-logout-icon"></i>
+                            <span>Logout</span>
+                        </a>
+                    </li>
+                </ul>
                               
                         </div>
                     </nav> 

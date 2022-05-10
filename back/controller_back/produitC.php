@@ -186,6 +186,23 @@ include "../model_back/produit.php";
 					die('Erreur: '.$e->getMessage());
 				}	
 		 }
+		 function recherche($search_value)
+		 {
+			 $sql="SELECT * FROM produit where libelle like '$search_value' ";
+		 
+			 //global $db;
+			 $db =Config::getConnexion();
+		 
+			 try{
+				 $result=$db->query($sql);
+		 
+				 return $result;
+		 
+			 }
+			 catch (Exception $e){
+				 die('Erreur: '.$e->getMessage());
+			 }
+		 }
 	 
 	}
 

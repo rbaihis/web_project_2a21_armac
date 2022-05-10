@@ -36,8 +36,12 @@
            <li><a href="index.php">Offre et promo</a></li>
 				<li><a href="store.php">Produits</a></li>
                 <li><a href="etoile.php">Avis</a></li>
+                <li><a href="view/front/produits.php">Store</a></li>
+                <li><a href="view/front/panier.php">panier</a></li>
            <li><a href="categ.php">Service</a></li>
            <li><a href="reservation.php">Reservaion</a></li>
+           <li><a href="forum.php">Forum</a></li>
+
 <!-- =============================================================================== -->
         </ul>
    </nav>

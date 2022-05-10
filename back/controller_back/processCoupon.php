@@ -1,6 +1,7 @@
 <?php
 error_reporting(E_ALL ^ E_NOTICE);  
-session_start();
+if(session_status() !== PHP_SESSION_ACTIVE) {
+    session_start();    }  
 error_reporting(E_ALL ^ E_NOTICE);  
 require_once '../../config.php';
 

@@ -26,6 +26,10 @@
                                 <a class="nav-link" href="../../back/view_back/accounts.php">Accounts</a>
                             </li>
 
+                            <li class="nav-item">
+                            <a class="nav-link" href="view/back/affichageCommande.php">Commande</a>
+                            </li>
+
 
                             
 
@@ -45,6 +49,7 @@
 
                     
 
+                    
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
                            aria-expanded="false">
@@ -81,3 +86,10 @@
             </div>
         </div>
     </div>
+
+
+
+
+
+
+              

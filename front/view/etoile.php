@@ -1,8 +1,15 @@
+<?php session_start(); ?>
+
 <!DOCTYPE HTML>
 <html>
 <head>
 <meta charset="utf-8" />
     <title>Review & Rating System </title>
+	<link href="../../front/assets/css/styleseif.css" rel="stylesheet"> 
+
+
+
+	
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
@@ -22,8 +29,31 @@
 <body style="background-color: #FDF1F3;">
 
 
+	<?php  if( isset($_SESSION['account']) ) 
+	{  ?>
+	
+	  <!-- == LOGIN & register == -->
+	<div class="fixedcalliconlogout">
+		<i class="fa fa-text"  style="color:rgba(255, 255, 255, 0.62)"> 
+			<a  href="logout.php">
+				<h3 style=" font-size: 18px;  margin: 15px 0px 0px 2px; ">
+				 <b>LogOut</b> 
+				</h3>
+			</a>
+		</i>
+	</div>
+	
+	<?php  } else{   ?>
+	
+	   <!-- == LOGIN & register == -->
+	<div class="fixedcallicon">
+	<i class="fa fa-text"><a href="login.php"><h3 style=" font-size: 20px;  margin: 15px 0px 0px 2px; "> <b> LogIn </b> </h3></a></i>
+	 <span class="hide"> <a href="register.php" style=" font-size: 20px;  margin: 15px 0px 0px 2px; ">  <b> Register </b> </a></span>
+	</div>
+	
+	<?php  }  ?> 
 
-   
+	
 <div class="menu-outer">
 		<div class="menu-icon">
 			<div class="bar"></div>
@@ -31,21 +61,43 @@
 			<div class="bar"></div>
 		</div>
 		<nav>
-		<br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
+			<br>
+            
+			
+            
 			<ul>
-           
-				<li><a href="homepage.html">Home</a></li>
-				<li><a href="index.php">Offre et promo</a></li>
+				
+				<?php  if( isset($_SESSION['account']) ) 
+{  ?>
+
+            <li><a href="homepage.php">Home</a></li>
+           <li><a href="account.php">account</a></li>
+           <li><a href="index.php">Offre et promo</a></li>
 				<li><a href="store.php">Produits</a></li>
-				<li><a href="etoile.php">Avis</a></li>
+                <li><a href="etoile.php">Avis</a></li>
+                <li><a href="view/front/produits.php">Store</a></li>
+                <li><a href="view/front/panier.php">panier</a></li>
+           <li><a href="categ.php">Service</a></li>
+           <li><a href="reservation.php">Reservaion</a></li>
+           <li><a href="forum.php">Forum</a></li>
+
+<?php   
+} else{ 
+?>
+        <li><a href="homepage.php">Home</a></li> 
+        <li><a href="index.php">Offre et promo</a></li>
+				<li><a href="store.php">Produits</a></li>
+        <li><a href="etoile.php">Avis</a></li>
+        <li><a href="view/front/produits.php">Store</a></li>
+        <li><a href="view/front/panier.php">panier</a></li>
+        <li><a href="categ.php">Service</a></li>
+        <li><a href="forum.php">Forum</a></li>
+        
+<?php   }  ?>
+
+
+
+
 			</ul>
 		</nav>
 	</div>
@@ -57,6 +109,7 @@
 	</a>
 
 </div>
+
 
 <!-- 
 <div class="fixedcallicon">

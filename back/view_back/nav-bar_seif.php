@@ -59,7 +59,11 @@
                                 <a class="nav-link" href="../../back/view_back/accounts.php">Accounts</a>
                             </li>
 
+                   
 
+                            <li class="nav-item">
+                            <a class="nav-link" href="view/back/affichageCommande.php">Commande</a>
+                            </li>
                             
 
 

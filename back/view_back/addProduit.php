@@ -1,4 +1,12 @@
 <?php
+session_start();
+
+if( !isset($_SESSION['admin_on']) ){
+    header("Location: loginadmin.php" );
+    exit();
+  }  
+
+
 include '../controller_back/categorie_c.php';
 include_once '../controller_back/produitC.php';
 include_once '../model_back/produit.php';
@@ -58,7 +66,7 @@ if (
         <div class="row">
             <div class="col-12">
                 <nav class="navbar navbar-expand-xl navbar-light bg-light">
-                    <a class="navbar-brand" href="index.html">
+                    <a class="navbar-brand" href="index.php">
                         <i class="fas fa-3x fa-tachometer-alt tm-site-icon"></i>
                         <h1 class="tm-site-title mb-0">Bioté center</h1>
                     </a>
@@ -72,10 +80,27 @@ if (
                            
                       
                                
-                                <li class="nav-item ">
-                                
-                                <a class="nav-link" href="acceuil.html">Dashboard</a>
-                            </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="accounts.php">Accounts</a>
+                    </li>
+
+		    <li class="nav-item">
+                       <a class="nav-link" href="view/back/affichageCommande.php">Commande</a>
+                     </li>
+                   
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+                           aria-expanded="false">
+                            Services 
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="Service.php">Service</a>
+                            <a class="dropdown-item" href="categorie.php">Categorie</a>
+                            <a class="dropdown-item" href="reservation.php">Reservation</a>
+                        </div>
+                    </li>
+
                 
                                     <li class="nav-item active dropdown">
                                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
@@ -100,7 +125,15 @@ if (
                                             <a class="dropdown-item" href="commande.php">Les commandes</a>
                                         </div>
                                     </li>
-        
+                        </ul>
+                        <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link d-flex" href="logout.php">
+                            <i class="far fa-user mr-2 tm-logout-icon"></i>
+                            <span>Logout</span>
+                        </a>
+                    </li>
+                </ul>
                     </div>
                 </nav>
             </div>

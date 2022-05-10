@@ -1,5 +1,13 @@
 <?PHP
-                                                  ob_start();
+session_start();
+
+if( !isset($_SESSION['admin_on']) ){
+    header("Location: loginadmin.php" );
+    exit();
+  }  
+
+
+                                    ob_start();
                                                   include_once '../controller_back/produitC.php';
 
                                                   include_once '../model_back/produit.php';

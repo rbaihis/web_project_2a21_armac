@@ -1,3 +1,13 @@
+<?php 
+ if(session_status() !== PHP_SESSION_ACTIVE) {
+    session_start();    }     
+
+    if( !isset($_SESSION['admin_on']) ){
+        header("Location: loginadmin.php" );
+        exit();
+      }  
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -105,11 +115,11 @@
                     <th scope="col">price</th>
                       
                     
-                        <th scope="col">card holder</th>
-                        <th scope="col">MM</th>
-                        <th scope="col">YY</th>
-                        <th scope="col">CARD number</th>
-                        <th scope="col">CVC</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Adresse</th>
+                        <th scope="col">Code Postal</th>
+                        <th scope="col">Number</th>
+                        <th scope="col">Name</th>
                   
                     </tr>
                 </thead>

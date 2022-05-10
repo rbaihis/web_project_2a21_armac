@@ -22,22 +22,22 @@
 <!--==========**********login*************=========================================================-->	
 <link rel="icon" type="image/png" href="../assets/img/icons/favicon.ico"/>
 <!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="../assets/fontsseif/font-awesome-4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="../assets/fontsseif/font-awesome-4.7.0/css/font-awesome.min.css">
 <!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="../assets/fontsseif/Linearicons-Free-v1.0.0/icon-font.min.css">
+<link rel="stylesheet" type="text/css" href="../assets/fontsseif/Linearicons-Free-v1.0.0/icon-font.min.css">
 <!--===============================================================================================-->
 <!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="../assets/css/utilseif.css">
+<link rel="stylesheet" type="text/css" href="../assets/css/utilseif.css">
 <!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="../assets/css/mainseif.css">
+<link rel="stylesheet" type="text/css" href="../assets/css/mainseif.css">
 <!--===============================================================================================-->
 <!--====================== end  login sources=====================================================-->
 
 <!-- ------------------------------------------------------------------------------------------------------------- -->
 
 <!--==========**********Register *************=========================================================-->
-    <!-- Main CSS-->
-    <link href="../assets/css/mainseif2.css" rel="stylesheet" media="all">	
+<!-- Main CSS-->
+<link href="../assets/css/mainseif2.css" rel="stylesheet" media="all">	
 <!--===============================================================================================-->
 <!--====================== end register sources =====================================================-->
 
@@ -46,12 +46,13 @@
 <!-- ------------------------------------------------------------------------------------------------------------- -->
 
 <!--==========********** UpdateRead *************=========================================================-->
-    <!-- Main CSS-->
-    <link href="../assets/css/updateseif.css" rel="stylesheet" media="all">	
+<!-- Main CSS-->
+<link href="../assets/css/updateseif.css" rel="stylesheet" media="all">	
 <!--===============================================================================================-->
 <!--====================== end updateread =====================================================-->
 
 <!-- ------------------------------------------------------------------------------------------------------------- -->
+<link href="../../front/assets/css/styleseif.css" rel="stylesheet"> 
 
 </head>
 

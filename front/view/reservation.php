@@ -2,6 +2,11 @@
 // add this to every page you create
 // -------------------------------------
 session_start();
+
+
+if( !( isset($_SESSION['account']) )  ) 
+{ header("Location: ../../front/view/homepage.php");  } 
+
 require "header.php";
 
 if( isset($_SESSION['account']) )

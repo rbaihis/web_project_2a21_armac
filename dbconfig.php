@@ -18,7 +18,7 @@ function login_api_by_google(  & $google_client ){
     $google_client->setClientSecret('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');
     
     //Set the OAuth 2.0 Redirect URI
-    $google_client->setRedirectUri('https://localhost/ARMAC_WEB/app/front/view/login.php');
+    $google_client->setRedirectUri('https://localhost/biote/front/view/login.php');
     
     //
     $google_client->addScope('email');
