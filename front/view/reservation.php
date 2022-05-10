@@ -60,40 +60,65 @@ $prix=0;
                         <thead>
                         <tr>
                             <th style="font-size: 40px "> Date</th>
+                            <th style="font-size: 40px "> </th>
                             <th style="font-size: 40px " >Service</th>
+                            <th style="font-size: 40px " ></th>
                             <th style="font-size: 40px " >Prix</th>
+                            <th style="font-size: 40px " ></th>
                         </tr>
                         </thead>
                         <?php while ($reservationC = $response->fetch()) { ?>
 
                         <tr>
                             <td style="font-size: 20px;   "  ><?php  echo $reservationC['date']; ?></td>
+                            <td style="font-size: 20px;   "  ></td>
                             <td style="font-size: 20px "><?php  echo $reservationC['nom']; ?></td>
+                            <td style="font-size: 20px "></td>
                             <td style="font-size: 20px "><?php  echo $reservationC['prix']; ?></td>
+                            <td style="font-size: 20px "></td>
                             <?php $prix+= $reservationC['prix']; ?>
-
-                            <form action="../core/deleteRes.php" method="POST" enctype="multipart/form-data">
-                                <td >
-                                    <button style="background: #A50965" type="submit" name="id" value="<?php echo $reservationC['idR']; ?>"
-                                            class="btn btn-danger">Delete
-                                    </button>
-
-                                </td>
-
-                            </form>
-
-                        </tr>
-                        <?php } ?>
-
-
+                            
                             <td >
-                                <button   style="background: #A50965" type="submit" name="id"
-                                        class="btn btn-danger">Prix Total:<?php echo $prix; ?>dt
+                                <form action="../core/deleteRes.php" method="POST" enctype="multipart/form-data">
+                                    <button style="background: #A50965" type="submit" name="id" value="<?php echo $reservationC['idR']; ?>"
+                                    class="btn btn-danger">Delete
                                 </button>
-                               <td>
-                                  <a href="./PDF.php" style="background: #A50965"class="btn btn-danger">Get Ticket </a>
-                            </td>
-                            </td>
+                                
+                                
+                            </form>
+                        </td>
+                        <td style="font-size: 20px "></td>
+                        <td style="font-size: 20px "> </td>
+                        </tr>
+
+                            <?php } ?>
+                            
+                         <tr>
+
+                             <td >
+                                 <button   style="background: #A50965" type="submit" name="id" class="btn btn-danger">
+                                 Prix Total:<?php echo $prix; ?>dt
+                                </button>
+                             </td>
+                             <td >
+                                 <!-- <button   style="background: #A50965" type="submit" name="id" class="btn btn-danger">
+                                 Prix Total:<?php echo $prix; ?>dt
+                                </button> -->
+                             </td>
+                             <td >
+                                 <!-- <button   style="background: #A50965" type="submit" name="id" class="btn btn-danger">
+                                 Prix Total:<?php echo $prix; ?>dt
+                                </button> -->
+                             </td>
+                                <td>
+                                       <a href="./PDF.php" >
+                                       
+                                        <button   style="background: #A50965" type="submit" name="id" class="btn btn-danger">
+                                 Get ticket
+                                </button></a> 
+                                </td>
+                            <!-- </td> -->
+                        </tr>   
 
 
 

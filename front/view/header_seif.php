@@ -10,6 +10,9 @@
 
 
 
+
+<link href="../../front/assets/css/updateseifseif.css" rel="stylesheet" media="all">
+
 <!--==========*** home **=========================================================-->	
 <!-- CSS -->
 <link href="../../front/assets/css/styleseifseif.css" rel="stylesheet">
@@ -50,10 +53,18 @@
 
 <!--==========********** UpdateRead *************=========================================================-->
     <!-- Main CSS-->
-    <link href="../../front/assets/css/updateseifseif.css" rel="stylesheet" media="all">	
+    	
 <!--===============================================================================================-->
 <!--====================== end updateread =====================================================-->
+<style>html{scroll-behavior: auto;}
 
+body {
+  overflow-x: scroll !important;
+  overflow-y: scroll !important;
+  height: 100%;
+}
+
+</style>
 <!-- ------------------------------------------------------------------------------------------------------------- -->
 
 </head>

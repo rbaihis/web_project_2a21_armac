@@ -8,6 +8,8 @@
 <link rel="icon" href="#">
 <title>Bioté center</title>
 
+
+<link href="../../front/assets/css/styleseif.css" rel="stylesheet"> 
 <!--==========*** home **=========================================================-->	
 <!-- CSS -->
 <link href="../assets/css/style.css" rel="stylesheet">
@@ -52,7 +54,34 @@
 <!--====================== end updateread =====================================================-->
 
 <!-- ------------------------------------------------------------------------------------------------------------- -->
-<link href="../../front/assets/css/styleseif.css" rel="stylesheet"> 
+
+
+
+<style>html{scroll-behavior: auto;}
+body {
+  overflow-x: scroll !important;
+  overflow-y: scroll !important;
+  height: 100%;
+}
+
+main,
+.content__container {
+  height: 100%; 
+}
+
+main {
+  overflow-y: scroll;
+  background-color: red;
+  border: 1px solid blue;
+}
+
+.content__container {
+  max-width: 200px;
+  margin: 0 auto;
+  background-color: aqua;
+  height: 1000x;
+}
+</style>
 
 </head>
 

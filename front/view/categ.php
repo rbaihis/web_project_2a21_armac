@@ -49,7 +49,7 @@ $response = $categC->afficherCateg($categC->conn);
                    width: 200px;
                    height: 270px;
                    transition: all 1.5s ease;
-                   transition-style: preserve-3d;
+                   /* transition-style: preserve-3d; */
                }
 
                .cardC:hover {
@@ -81,7 +81,9 @@ $response = $categC->afficherCateg($categC->conn);
 
 
             </body>
-
+            <a class="btn btn-danger" style="background: #0000CC"  href="https://www.facebook.com/sharer.php?u=http://vishal.webhostingindia.racing/social/" target="_blank">Facebook</a>
+<a class="btn btn-danger" style="background: #5ea4f3" href="https://www.twitter.com/share?text=text&url=http://vishal.webhostingindia.racing/social/&hashtags=#PHP" target="_blank">Twitre</a>
+<a class="btn btn-danger" style="background: #28a745" href="https://api.whatsapp.com/send?phone=&text=<?php urlencode('Hi hello') ?>http://vishal.webhostingindia.racing/social/" target="_blank">Whatsapp</a>
 
 
 		</div>
